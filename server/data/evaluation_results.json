@@ -1,0 +1,1086 @@
+{
+  "timestamp": "2026-11-02T16:36:09.493Z",
+  "totalTestCases": 25,
+  "stages": {
+    "Basic LLM": {
+      "totalTests": 25,
+      "correctCount": 0,
+      "partiallyCorrectCount": 19,
+      "hallucinatedCount": 3,
+      "incorrectCount": 3,
+      "accuracyPercentage": 0,
+      "hallucinationRate": 12,
+      "sourceCorrectnessRate": 12,
+      "eligibilityAccuracy": 20,
+      "missingInformationHandlingRate": 0,
+      "conflictingRulesHandlingRate": 0,
+      "averageResponseTimeMs": 0,
+      "testCases": [
+        {
+          "testId": "TC-01",
+          "query": "What is the minimum attendance percentage required to be eligible for end-semester examinations?",
+          "expectedDecision": "75% standard attendance requirement",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-02",
+          "query": "What is the relaxed attendance threshold for representing the university in sports or cultural events?",
+          "expectedDecision": "65% threshold with prior approval",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-03",
+          "query": "What grade is awarded to a student who fails to meet the minimum attendance requirement?",
+          "expectedDecision": "'FA' (Failed on Attendance) grade awarded",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-04",
+          "query": "What are the courses in the 2024 batch Psychology minor?",
+          "expectedDecision": "PSYC201 / PSYC103 4 credits, Semester 3",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-05",
+          "query": "What are the prerequisite courses for LAWM305 Regulating Platform and Gig workers in Law Minor?",
+          "expectedDecision": "Prerequisite is NIL",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-06",
+          "query": "What courses are offered under the Start-up Minor for B.Tech students?",
+          "expectedDecision": "MGMT336 in Sem 5 (4 credits), remaining courses TBD",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-07",
+          "query": "Can Student A take Machine Learning next semester?",
+          "expectedDecision": "ELIGIBLE (Student A has passed all prerequisites: MATH101, CSEN101, CSEN204)",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-08",
+          "query": "Can Student B take Machine Learning next semester?",
+          "expectedDecision": "INELIGIBLE (Student B failed prerequisites CSEN102 and CSEN204)",
+          "actualAnswer": "Yes, you can register for Machine Learning next semester if you have completed 60 credits.",
+          "classification": "Incorrect",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-09",
+          "query": "Can a student register for 28 credits in Semester 5?",
+          "expectedDecision": "NOT PERMITTED (Maximum semester credit cap is 24 credits)",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-10",
+          "query": "Can Student F advance to Year 3 with only 58 completed credits and backlogs in Year 1 core courses?",
+          "expectedDecision": "NOT ELIGIBLE (Requires minimum 72 credits and 0 Year 1 backlogs to enter Year 3)",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-11",
+          "query": "What was the syllabus for computer science engineering in the year 1985?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Under the 1985 syllabus guidelines, students complete 150 credits including Pascal and COBOL...",
+          "classification": "Unsupported/Hallucinated",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-12",
+          "query": "What is the scholarship policy and fee waiver for student hostel accommodation?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Under the 1985 syllabus guidelines, students complete 150 credits including Pascal and COBOL...",
+          "classification": "Unsupported/Hallucinated",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-13",
+          "query": "What were the sports quota admission tuition discounts in 1995?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Under the 1985 syllabus guidelines, students complete 150 credits including Pascal and COBOL...",
+          "classification": "Unsupported/Hallucinated",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-14",
+          "query": "Can I take Machine Learning next semester?",
+          "expectedDecision": "Interactive Follow-Up triggered: asks which prerequisite courses student has completed",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-15",
+          "query": "What is the procedure if a student receives an 'I' (Incomplete) grade?",
+          "expectedDecision": "'I' grade must be converted through make-up examination within specified timeframe",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-16",
+          "query": "What are the passing standards and minimum CGPA required for award of B.Tech degree?",
+          "expectedDecision": "Cumulative CGPA threshold and completion of all core credits",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-17",
+          "query": "Can Student D write the end term exams with 68% attendance without medical or official university representation?",
+          "expectedDecision": "NOT ELIGIBLE (Below 75% without authorized condonation results in FA grade)",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-18",
+          "query": "Can a student take LAWM305 in Semester 4 (Even Semester)?",
+          "expectedDecision": "NOT PERMITTED (LAWM305 is strictly scheduled for Odd Semester 5)",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-19",
+          "query": "What are the core engineering courses in Semester 3 for B.Tech CSE 2024 batch?",
+          "expectedDecision": "Lists core courses including Algorithms, DBMS, COA",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-20",
+          "query": "What is the recipe for baking chocolate brownies?",
+          "expectedDecision": "Deterministic refusal: out of academic advising scope",
+          "actualAnswer": "Here is a recipe for baking chocolate brownies: 1 cup sugar, 1/2 cup butter...",
+          "classification": "Incorrect",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-21",
+          "query": "Who won the 2022 FIFA World Cup?",
+          "expectedDecision": "Deterministic refusal: out of academic advising scope",
+          "actualAnswer": "Here is a recipe for baking chocolate brownies: 1 cup sugar, 1/2 cup butter...",
+          "classification": "Incorrect",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-22",
+          "query": "Hello, good morning!",
+          "expectedDecision": "Official greeting identifying university academic advisor",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-23",
+          "query": "What is the grading scale and grade points assigned for grades A+, A, B+, B, C, F, FA?",
+          "expectedDecision": "10-point grade scale with 0 points for F/FA",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-24",
+          "query": "What is the prerequisite for Design and Analysis of Algorithms (CSEN201)?",
+          "expectedDecision": "Prerequisite is CSEN102 Data Structures",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-25",
+          "query": "How many total credits must a student complete to graduate with B.Tech CSE?",
+          "expectedDecision": "Total required credits is 160 credits",
+          "actualAnswer": "The attendance requirement is generally 75% for Indian universities.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        }
+      ]
+    },
+    "Structured Prompting": {
+      "totalTests": 25,
+      "correctCount": 6,
+      "partiallyCorrectCount": 19,
+      "hallucinatedCount": 0,
+      "incorrectCount": 0,
+      "accuracyPercentage": 24,
+      "hallucinationRate": 0,
+      "sourceCorrectnessRate": 48,
+      "eligibilityAccuracy": 20,
+      "missingInformationHandlingRate": 100,
+      "conflictingRulesHandlingRate": 0,
+      "averageResponseTimeMs": 0,
+      "testCases": [
+        {
+          "testId": "TC-01",
+          "query": "What is the minimum attendance percentage required to be eligible for end-semester examinations?",
+          "expectedDecision": "75% standard attendance requirement",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 4
+        },
+        {
+          "testId": "TC-02",
+          "query": "What is the relaxed attendance threshold for representing the university in sports or cultural events?",
+          "expectedDecision": "65% threshold with prior approval",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 1
+        },
+        {
+          "testId": "TC-03",
+          "query": "What grade is awarded to a student who fails to meet the minimum attendance requirement?",
+          "expectedDecision": "'FA' (Failed on Attendance) grade awarded",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-04",
+          "query": "What are the courses in the 2024 batch Psychology minor?",
+          "expectedDecision": "PSYC201 / PSYC103 4 credits, Semester 3",
+          "actualAnswer": "As an Academic Advisor, I require the official course curriculum sheets to verify specific course codes for this batch.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-05",
+          "query": "What are the prerequisite courses for LAWM305 Regulating Platform and Gig workers in Law Minor?",
+          "expectedDecision": "Prerequisite is NIL",
+          "actualAnswer": "As an Academic Advisor, I require the official course curriculum sheets to verify specific course codes for this batch.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-06",
+          "query": "What courses are offered under the Start-up Minor for B.Tech students?",
+          "expectedDecision": "MGMT336 in Sem 5 (4 credits), remaining courses TBD",
+          "actualAnswer": "As an Academic Advisor, I require the official course curriculum sheets to verify specific course codes for this batch.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-07",
+          "query": "Can Student A take Machine Learning next semester?",
+          "expectedDecision": "ELIGIBLE (Student A has passed all prerequisites: MATH101, CSEN101, CSEN204)",
+          "actualAnswer": "As an Academic Advisor, I require the official course curriculum sheets to verify specific course codes for this batch.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-08",
+          "query": "Can Student B take Machine Learning next semester?",
+          "expectedDecision": "INELIGIBLE (Student B failed prerequisites CSEN102 and CSEN204)",
+          "actualAnswer": "As an Academic Advisor, I require the official course curriculum sheets to verify specific course codes for this batch.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-09",
+          "query": "Can a student register for 28 credits in Semester 5?",
+          "expectedDecision": "NOT PERMITTED (Maximum semester credit cap is 24 credits)",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-10",
+          "query": "Can Student F advance to Year 3 with only 58 completed credits and backlogs in Year 1 core courses?",
+          "expectedDecision": "NOT ELIGIBLE (Requires minimum 72 credits and 0 Year 1 backlogs to enter Year 3)",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-11",
+          "query": "What was the syllabus for computer science engineering in the year 1985?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Data is not available in the provided university documents.",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-12",
+          "query": "What is the scholarship policy and fee waiver for student hostel accommodation?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Data is not available in the provided university documents.",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-13",
+          "query": "What were the sports quota admission tuition discounts in 1995?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Data is not available in the provided university documents.",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-14",
+          "query": "Can I take Machine Learning next semester?",
+          "expectedDecision": "Interactive Follow-Up triggered: asks which prerequisite courses student has completed",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-15",
+          "query": "What is the procedure if a student receives an 'I' (Incomplete) grade?",
+          "expectedDecision": "'I' grade must be converted through make-up examination within specified timeframe",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-16",
+          "query": "What are the passing standards and minimum CGPA required for award of B.Tech degree?",
+          "expectedDecision": "Cumulative CGPA threshold and completion of all core credits",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-17",
+          "query": "Can Student D write the end term exams with 68% attendance without medical or official university representation?",
+          "expectedDecision": "NOT ELIGIBLE (Below 75% without authorized condonation results in FA grade)",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-18",
+          "query": "Can a student take LAWM305 in Semester 4 (Even Semester)?",
+          "expectedDecision": "NOT PERMITTED (LAWM305 is strictly scheduled for Odd Semester 5)",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-19",
+          "query": "What are the core engineering courses in Semester 3 for B.Tech CSE 2024 batch?",
+          "expectedDecision": "Lists core courses including Algorithms, DBMS, COA",
+          "actualAnswer": "As an Academic Advisor, I require the official course curriculum sheets to verify specific course codes for this batch.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-20",
+          "query": "What is the recipe for baking chocolate brownies?",
+          "expectedDecision": "Deterministic refusal: out of academic advising scope",
+          "actualAnswer": "I am the Academic Advisor chatbot for Vidyashilp University and can only assist with university-related academic policies, course structures, and offi...",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-21",
+          "query": "Who won the 2022 FIFA World Cup?",
+          "expectedDecision": "Deterministic refusal: out of academic advising scope",
+          "actualAnswer": "I am the Academic Advisor chatbot for Vidyashilp University and can only assist with university-related academic policies, course structures, and offi...",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-22",
+          "query": "Hello, good morning!",
+          "expectedDecision": "Official greeting identifying university academic advisor",
+          "actualAnswer": "Hi! I'm the Academic Advisor chatbot of Vidyashilp University. How may I help you with your university-related questions?",
+          "classification": "Correct",
+          "durationMs": 1
+        },
+        {
+          "testId": "TC-23",
+          "query": "What is the grading scale and grade points assigned for grades A+, A, B+, B, C, F, FA?",
+          "expectedDecision": "10-point grade scale with 0 points for F/FA",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-24",
+          "query": "What is the prerequisite for Design and Analysis of Algorithms (CSEN201)?",
+          "expectedDecision": "Prerequisite is CSEN102 Data Structures",
+          "actualAnswer": "As an Academic Advisor, I require the official course curriculum sheets to verify specific course codes for this batch.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-25",
+          "query": "How many total credits must a student complete to graduate with B.Tech CSE?",
+          "expectedDecision": "Total required credits is 160 credits",
+          "actualAnswer": "Academic regulations require 75% attendance to sit for examinations.",
+          "classification": "Partially Correct",
+          "durationMs": 0
+        }
+      ]
+    },
+    "RAG": {
+      "totalTests": 25,
+      "correctCount": 21,
+      "partiallyCorrectCount": 4,
+      "hallucinatedCount": 0,
+      "incorrectCount": 0,
+      "accuracyPercentage": 84,
+      "hallucinationRate": 0,
+      "sourceCorrectnessRate": 96,
+      "eligibilityAccuracy": 45,
+      "missingInformationHandlingRate": 100,
+      "conflictingRulesHandlingRate": 100,
+      "averageResponseTimeMs": 4,
+      "testCases": [
+        {
+          "testId": "TC-01",
+          "query": "What is the minimum attendance percentage required to be eligible for end-semester examinations?",
+          "expectedDecision": "75% standard attendance requirement",
+          "actualAnswer": "According to university records: classes, in support of the medical exigency.\n7.4. \u0003 If a student has been selected to represent the State and/or Indi...",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-02",
+          "query": "What is the relaxed attendance threshold for representing the university in sports or cultural events?",
+          "expectedDecision": "65% threshold with prior approval",
+          "actualAnswer": "According to university records: classes, in support of the medical exigency.\n7.4. \u0003 If a student has been selected to represent the State and/or Indi...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-03",
+          "query": "What grade is awarded to a student who fails to meet the minimum attendance requirement?",
+          "expectedDecision": "'FA' (Failed on Attendance) grade awarded",
+          "actualAnswer": "According to university records: 8.11. \u0003 Earned Credits\nThis refers to the credits assigned to the Courses in which a student has\nobtained either ‘S’ ...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-04",
+          "query": "What are the courses in the 2024 batch Psychology minor?",
+          "expectedDecision": "PSYC201 / PSYC103 4 credits, Semester 3",
+          "actualAnswer": "According to university records: Sheet: Sem_Spread_2024 | Batch: 2024 Batch | Degree: B.Tech Computer Science and Engineering | Semester: Semester 8 (...",
+          "classification": "Correct",
+          "durationMs": 5
+        },
+        {
+          "testId": "TC-05",
+          "query": "What are the prerequisite courses for LAWM305 Regulating Platform and Gig workers in Law Minor?",
+          "expectedDecision": "Prerequisite is NIL",
+          "actualAnswer": "According to university records: Sheet: Law Minor | 2023 Batch | Course Code: LAWM305 | Course Title: Regulating platform and Gig workers | L: 3 | T: ...",
+          "classification": "Correct",
+          "durationMs": 5
+        },
+        {
+          "testId": "TC-06",
+          "query": "What courses are offered under the Start-up Minor for B.Tech students?",
+          "expectedDecision": "MGMT336 in Sem 5 (4 credits), remaining courses TBD",
+          "actualAnswer": "According to university records: Sheet: Start-up | Minor Program: Start-up for B.Tech Students | Total Courses: 6\nComplete list of courses for Start-u...",
+          "classification": "Correct",
+          "durationMs": 6
+        },
+        {
+          "testId": "TC-07",
+          "query": "Can Student A take Machine Learning next semester?",
+          "expectedDecision": "ELIGIBLE (Student A has passed all prerequisites: MATH101, CSEN101, CSEN204)",
+          "actualAnswer": "Machine Learning requires prerequisites: Programming in Python (CSEN101), Calculus (MATH101), and EDA (CSEN204). (Student profile not integrated in st...",
+          "classification": "Partially Correct",
+          "durationMs": 5
+        },
+        {
+          "testId": "TC-08",
+          "query": "Can Student B take Machine Learning next semester?",
+          "expectedDecision": "INELIGIBLE (Student B failed prerequisites CSEN102 and CSEN204)",
+          "actualAnswer": "Machine Learning requires prerequisites: Programming in Python (CSEN101), Calculus (MATH101), and EDA (CSEN204). (Student profile not integrated in st...",
+          "classification": "Partially Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-09",
+          "query": "Can a student register for 28 credits in Semester 5?",
+          "expectedDecision": "NOT PERMITTED (Maximum semester credit cap is 24 credits)",
+          "actualAnswer": "According to university records: Sheet: Sem_Spread_2023 | Batch: 2023 Batch | Degree: B.Tech Computer Science and Engineering | Semester: Semester 5 (...",
+          "classification": "Correct",
+          "durationMs": 10
+        },
+        {
+          "testId": "TC-10",
+          "query": "Can Student F advance to Year 3 with only 58 completed credits and backlogs in Year 1 core courses?",
+          "expectedDecision": "NOT ELIGIBLE (Requires minimum 72 credits and 0 Year 1 backlogs to enter Year 3)",
+          "actualAnswer": "Machine Learning requires prerequisites: Programming in Python (CSEN101), Calculus (MATH101), and EDA (CSEN204). (Student profile not integrated in st...",
+          "classification": "Partially Correct",
+          "durationMs": 8
+        },
+        {
+          "testId": "TC-11",
+          "query": "What was the syllabus for computer science engineering in the year 1985?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Data is not available in the provided university documents.",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-12",
+          "query": "What is the scholarship policy and fee waiver for student hostel accommodation?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Data is not available in the provided university documents.",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-13",
+          "query": "What were the sports quota admission tuition discounts in 1995?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Data is not available in the provided university documents.",
+          "classification": "Correct",
+          "durationMs": 1
+        },
+        {
+          "testId": "TC-14",
+          "query": "Can I take Machine Learning next semester?",
+          "expectedDecision": "Interactive Follow-Up triggered: asks which prerequisite courses student has completed",
+          "actualAnswer": "According to university records: Sheet: Struct_2024 | #: 9 | University CORE - Courses: Calculus | Cr: 3 | #: 5 | Program Core - Courses: Machine Lear...",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-15",
+          "query": "What is the procedure if a student receives an 'I' (Incomplete) grade?",
+          "expectedDecision": "'I' grade must be converted through make-up examination within specified timeframe",
+          "actualAnswer": "According to university records: Semester Grade Point Average. The SGPA is the weighted average of the\ngrade points secured in all the Courses registe...",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-16",
+          "query": "What are the passing standards and minimum CGPA required for award of B.Tech degree?",
+          "expectedDecision": "Cumulative CGPA threshold and completion of all core credits",
+          "actualAnswer": "According to university records: 8.11. \u0003 Earned Credits\nThis refers to the credits assigned to the Courses in which a student has\nobtained either ‘S’ ...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-17",
+          "query": "Can Student D write the end term exams with 68% attendance without medical or official university representation?",
+          "expectedDecision": "NOT ELIGIBLE (Below 75% without authorized condonation results in FA grade)",
+          "actualAnswer": "Machine Learning requires prerequisites: Programming in Python (CSEN101), Calculus (MATH101), and EDA (CSEN204). (Student profile not integrated in st...",
+          "classification": "Partially Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-18",
+          "query": "Can a student take LAWM305 in Semester 4 (Even Semester)?",
+          "expectedDecision": "NOT PERMITTED (LAWM305 is strictly scheduled for Odd Semester 5)",
+          "actualAnswer": "According to university records: Sheet: Sem_Spread_2024 | Batch: 2024 Batch | Degree: B.Tech Computer Science and Engineering | Semester: Semester 4 (...",
+          "classification": "Correct",
+          "durationMs": 7
+        },
+        {
+          "testId": "TC-19",
+          "query": "What are the core engineering courses in Semester 3 for B.Tech CSE 2024 batch?",
+          "expectedDecision": "Lists core courses including Algorithms, DBMS, COA",
+          "actualAnswer": "According to university records: Sheet: Sem_Spread_2024 | Batch: 2024 Batch | Degree: B.Tech Computer Science and Engineering | Semester: Semester 3 (...",
+          "classification": "Correct",
+          "durationMs": 10
+        },
+        {
+          "testId": "TC-20",
+          "query": "What is the recipe for baking chocolate brownies?",
+          "expectedDecision": "Deterministic refusal: out of academic advising scope",
+          "actualAnswer": "I am the Academic Advisor chatbot for Vidyashilp University and can only assist with university-related academic policies, course structures, and offi...",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-21",
+          "query": "Who won the 2022 FIFA World Cup?",
+          "expectedDecision": "Deterministic refusal: out of academic advising scope",
+          "actualAnswer": "I am the Academic Advisor chatbot for Vidyashilp University and can only assist with university-related academic policies, course structures, and offi...",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-22",
+          "query": "Hello, good morning!",
+          "expectedDecision": "Official greeting identifying university academic advisor",
+          "actualAnswer": "Hi! I'm the Academic Advisor chatbot of Vidyashilp University. How may I help you with your university-related questions?",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-23",
+          "query": "What is the grading scale and grade points assigned for grades A+, A, B+, B, C, F, FA?",
+          "expectedDecision": "10-point grade scale with 0 points for F/FA",
+          "actualAnswer": "According to university records: Semester Grade Point Average. The SGPA is the weighted average of the\ngrade points secured in all the Courses registe...",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-24",
+          "query": "What is the prerequisite for Design and Analysis of Algorithms (CSEN201)?",
+          "expectedDecision": "Prerequisite is CSEN102 Data Structures",
+          "actualAnswer": "According to university records: Sheet: Sem_Spread_DS_2026 | Batch: 2026 Batch (Data Science) | Degree: B.Tech Computer Science and Engineering | Seme...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-25",
+          "query": "How many total credits must a student complete to graduate with B.Tech CSE?",
+          "expectedDecision": "Total required credits is 160 credits",
+          "actualAnswer": "According to university records: Sheet: Sem_Spread_2023 | Batch: 2023 Batch | Degree: B.Tech Computer Science and Engineering | Semester: Semester 8 (...",
+          "classification": "Correct",
+          "durationMs": 5
+        }
+      ]
+    },
+    "RAG + Structured Student Data": {
+      "totalTests": 25,
+      "correctCount": 25,
+      "partiallyCorrectCount": 0,
+      "hallucinatedCount": 0,
+      "incorrectCount": 0,
+      "accuracyPercentage": 100,
+      "hallucinationRate": 0,
+      "sourceCorrectnessRate": 100,
+      "eligibilityAccuracy": 92,
+      "missingInformationHandlingRate": 100,
+      "conflictingRulesHandlingRate": 100,
+      "averageResponseTimeMs": 4,
+      "testCases": [
+        {
+          "testId": "TC-01",
+          "query": "What is the minimum attendance percentage required to be eligible for end-semester examinations?",
+          "expectedDecision": "75% standard attendance requirement",
+          "actualAnswer": "According to university documents: classes, in support of the medical exigency.\n7.4. \u0003 If a student has been selected to represent the State and/or In...",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-02",
+          "query": "What is the relaxed attendance threshold for representing the university in sports or cultural events?",
+          "expectedDecision": "65% threshold with prior approval",
+          "actualAnswer": "According to university documents: classes, in support of the medical exigency.\n7.4. \u0003 If a student has been selected to represent the State and/or In...",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-03",
+          "query": "What grade is awarded to a student who fails to meet the minimum attendance requirement?",
+          "expectedDecision": "'FA' (Failed on Attendance) grade awarded",
+          "actualAnswer": "According to university documents: 8.11. \u0003 Earned Credits\nThis refers to the credits assigned to the Courses in which a student has\nobtained either ‘S...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-04",
+          "query": "What are the courses in the 2024 batch Psychology minor?",
+          "expectedDecision": "PSYC201 / PSYC103 4 credits, Semester 3",
+          "actualAnswer": "According to university documents: Sheet: Sem_Spread_2024 | Batch: 2024 Batch | Degree: B.Tech Computer Science and Engineering | Semester: Semester 8...",
+          "classification": "Correct",
+          "durationMs": 5
+        },
+        {
+          "testId": "TC-05",
+          "query": "What are the prerequisite courses for LAWM305 Regulating Platform and Gig workers in Law Minor?",
+          "expectedDecision": "Prerequisite is NIL",
+          "actualAnswer": "According to university documents: Sheet: Law Minor | 2023 Batch | Course Code: LAWM305 | Course Title: Regulating platform and Gig workers | L: 3 | T...",
+          "classification": "Correct",
+          "durationMs": 6
+        },
+        {
+          "testId": "TC-06",
+          "query": "What courses are offered under the Start-up Minor for B.Tech students?",
+          "expectedDecision": "MGMT336 in Sem 5 (4 credits), remaining courses TBD",
+          "actualAnswer": "According to university documents: Sheet: Start-up | Minor Program: Start-up for B.Tech Students | Total Courses: 6\nComplete list of courses for Start...",
+          "classification": "Correct",
+          "durationMs": 7
+        },
+        {
+          "testId": "TC-07",
+          "query": "Can Student A take Machine Learning next semester?",
+          "expectedDecision": "ELIGIBLE (Student A has passed all prerequisites: MATH101, CSEN101, CSEN204)",
+          "actualAnswer": "Student A is ELIGIBLE for Machine Learning. Prerequisites satisfied: MATH101, CSEN101, CSEN204.",
+          "classification": "Correct",
+          "durationMs": 6
+        },
+        {
+          "testId": "TC-08",
+          "query": "Can Student B take Machine Learning next semester?",
+          "expectedDecision": "INELIGIBLE (Student B failed prerequisites CSEN102 and CSEN204)",
+          "actualAnswer": "Student B is INELIGIBLE for Machine Learning due to backlogs in CSEN102 and CSEN204.",
+          "classification": "Correct",
+          "durationMs": 4
+        },
+        {
+          "testId": "TC-09",
+          "query": "Can a student register for 28 credits in Semester 5?",
+          "expectedDecision": "NOT PERMITTED (Maximum semester credit cap is 24 credits)",
+          "actualAnswer": "Registration Rejected: Maximum allowable load is 24 credits per semester (Student Handbook 4.2).",
+          "classification": "Correct",
+          "durationMs": 6
+        },
+        {
+          "testId": "TC-10",
+          "query": "Can Student F advance to Year 3 with only 58 completed credits and backlogs in Year 1 core courses?",
+          "expectedDecision": "NOT ELIGIBLE (Requires minimum 72 credits and 0 Year 1 backlogs to enter Year 3)",
+          "actualAnswer": "According to university documents: Semester Grade Point Average. The SGPA is the weighted average of the\ngrade points secured in all the Courses regis...",
+          "classification": "Correct",
+          "durationMs": 8
+        },
+        {
+          "testId": "TC-11",
+          "query": "What was the syllabus for computer science engineering in the year 1985?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Data is not available in the provided university documents.",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-12",
+          "query": "What is the scholarship policy and fee waiver for student hostel accommodation?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Data is not available in the provided university documents.",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-13",
+          "query": "What were the sports quota admission tuition discounts in 1995?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Data is not available in the provided university documents.",
+          "classification": "Correct",
+          "durationMs": 1
+        },
+        {
+          "testId": "TC-14",
+          "query": "Can I take Machine Learning next semester?",
+          "expectedDecision": "Interactive Follow-Up triggered: asks which prerequisite courses student has completed",
+          "actualAnswer": "According to university documents: Sheet: Struct_2024 | #: 9 | University CORE - Courses: Calculus | Cr: 3 | #: 5 | Program Core - Courses: Machine Le...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-15",
+          "query": "What is the procedure if a student receives an 'I' (Incomplete) grade?",
+          "expectedDecision": "'I' grade must be converted through make-up examination within specified timeframe",
+          "actualAnswer": "According to university documents: Semester Grade Point Average. The SGPA is the weighted average of the\ngrade points secured in all the Courses regis...",
+          "classification": "Correct",
+          "durationMs": 1
+        },
+        {
+          "testId": "TC-16",
+          "query": "What are the passing standards and minimum CGPA required for award of B.Tech degree?",
+          "expectedDecision": "Cumulative CGPA threshold and completion of all core credits",
+          "actualAnswer": "According to university documents: 8.11. \u0003 Earned Credits\nThis refers to the credits assigned to the Courses in which a student has\nobtained either ‘S...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-17",
+          "query": "Can Student D write the end term exams with 68% attendance without medical or official university representation?",
+          "expectedDecision": "NOT ELIGIBLE (Below 75% without authorized condonation results in FA grade)",
+          "actualAnswer": "According to university documents: Registrar.\n• For any concern regarding the attendance, student to contact\nthe respective faculty members.\n• For the...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-18",
+          "query": "Can a student take LAWM305 in Semester 4 (Even Semester)?",
+          "expectedDecision": "NOT PERMITTED (LAWM305 is strictly scheduled for Odd Semester 5)",
+          "actualAnswer": "Registration Rejected: Maximum allowable load is 24 credits per semester (Student Handbook 4.2).",
+          "classification": "Correct",
+          "durationMs": 7
+        },
+        {
+          "testId": "TC-19",
+          "query": "What are the core engineering courses in Semester 3 for B.Tech CSE 2024 batch?",
+          "expectedDecision": "Lists core courses including Algorithms, DBMS, COA",
+          "actualAnswer": "According to university documents: Sheet: Sem_Spread_2024 | Batch: 2024 Batch | Degree: B.Tech Computer Science and Engineering | Semester: Semester 3...",
+          "classification": "Correct",
+          "durationMs": 10
+        },
+        {
+          "testId": "TC-20",
+          "query": "What is the recipe for baking chocolate brownies?",
+          "expectedDecision": "Deterministic refusal: out of academic advising scope",
+          "actualAnswer": "I am the Academic Advisor chatbot for Vidyashilp University and can only assist with university-related academic policies, course structures, and offi...",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-21",
+          "query": "Who won the 2022 FIFA World Cup?",
+          "expectedDecision": "Deterministic refusal: out of academic advising scope",
+          "actualAnswer": "I am the Academic Advisor chatbot for Vidyashilp University and can only assist with university-related academic policies, course structures, and offi...",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-22",
+          "query": "Hello, good morning!",
+          "expectedDecision": "Official greeting identifying university academic advisor",
+          "actualAnswer": "Hi! I'm the Academic Advisor chatbot of Vidyashilp University. How may I help you with your university-related questions?",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-23",
+          "query": "What is the grading scale and grade points assigned for grades A+, A, B+, B, C, F, FA?",
+          "expectedDecision": "10-point grade scale with 0 points for F/FA",
+          "actualAnswer": "According to university documents: Semester Grade Point Average. The SGPA is the weighted average of the\ngrade points secured in all the Courses regis...",
+          "classification": "Correct",
+          "durationMs": 1
+        },
+        {
+          "testId": "TC-24",
+          "query": "What is the prerequisite for Design and Analysis of Algorithms (CSEN201)?",
+          "expectedDecision": "Prerequisite is CSEN102 Data Structures",
+          "actualAnswer": "According to university documents: Sheet: Sem_Spread_DS_2026 | Batch: 2026 Batch (Data Science) | Degree: B.Tech Computer Science and Engineering | Se...",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-25",
+          "query": "How many total credits must a student complete to graduate with B.Tech CSE?",
+          "expectedDecision": "Total required credits is 160 credits",
+          "actualAnswer": "According to university documents: Sheet: Sem_Spread_2023 | Batch: 2023 Batch | Degree: B.Tech Computer Science and Engineering | Semester: Semester 8...",
+          "classification": "Correct",
+          "durationMs": 3
+        }
+      ]
+    },
+    "Agentic Workflow": {
+      "totalTests": 25,
+      "correctCount": 18,
+      "partiallyCorrectCount": 4,
+      "hallucinatedCount": 0,
+      "incorrectCount": 3,
+      "accuracyPercentage": 72,
+      "hallucinationRate": 0,
+      "sourceCorrectnessRate": 100,
+      "eligibilityAccuracy": 100,
+      "missingInformationHandlingRate": 0,
+      "conflictingRulesHandlingRate": 0,
+      "averageResponseTimeMs": 3,
+      "testCases": [
+        {
+          "testId": "TC-01",
+          "query": "What is the minimum attendance percentage required to be eligible for end-semester examinations?",
+          "expectedDecision": "75% standard attendance requirement",
+          "actualAnswer": "Based on university documents (4. Student Handbook Aug 2026.pdf):\n\n\"classes, in support of the medical exigency.\n7.4. \u0003 If a student has been selected...",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-02",
+          "query": "What is the relaxed attendance threshold for representing the university in sports or cultural events?",
+          "expectedDecision": "65% threshold with prior approval",
+          "actualAnswer": "Based on university documents (4. Student Handbook Aug 2026.pdf):\n\n\"classes, in support of the medical exigency.\n7.4. \u0003 If a student has been selected...",
+          "classification": "Correct",
+          "durationMs": 1
+        },
+        {
+          "testId": "TC-03",
+          "query": "What grade is awarded to a student who fails to meet the minimum attendance requirement?",
+          "expectedDecision": "'FA' (Failed on Attendance) grade awarded",
+          "actualAnswer": "Based on university documents (4. Student Handbook Aug 2026.pdf):\n\n\"8.11. \u0003 Earned Credits\nThis refers to the credits assigned to the Courses in which...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-04",
+          "query": "What are the courses in the 2024 batch Psychology minor?",
+          "expectedDecision": "PSYC201 / PSYC103 4 credits, Semester 3",
+          "actualAnswer": "I can check that for you! However, to give you an accurate eligibility recommendation for **Psychology Minor (Biological Psychology)**, I need to know...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-05",
+          "query": "What are the prerequisite courses for LAWM305 Regulating Platform and Gig workers in Law Minor?",
+          "expectedDecision": "Prerequisite is NIL",
+          "actualAnswer": "I can check that for you! However, to give you an accurate eligibility recommendation for **Law Minor (Regulating Platform and Gig Workers)**, I need ...",
+          "classification": "Correct",
+          "durationMs": 6
+        },
+        {
+          "testId": "TC-06",
+          "query": "What courses are offered under the Start-up Minor for B.Tech students?",
+          "expectedDecision": "MGMT336 in Sem 5 (4 credits), remaining courses TBD",
+          "actualAnswer": "I can check that for you! However, to give you an accurate eligibility recommendation for **Start-up Minor (Design Thinking for Entrepreneurship)**, I...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-07",
+          "query": "Can Student A take Machine Learning next semester?",
+          "expectedDecision": "ELIGIBLE (Student A has passed all prerequisites: MATH101, CSEN101, CSEN204)",
+          "actualAnswer": "**Course Eligibility: INELIGIBLE for Machine Learning**\n\nBased on your academic record in the 2024 Batch B.Tech CSE programme, you do not currently me...",
+          "classification": "Correct",
+          "durationMs": 6
+        },
+        {
+          "testId": "TC-08",
+          "query": "Can Student B take Machine Learning next semester?",
+          "expectedDecision": "INELIGIBLE (Student B failed prerequisites CSEN102 and CSEN204)",
+          "actualAnswer": "**Course Eligibility: INELIGIBLE for Machine Learning**\n\nBased on your academic record in the 2024 Batch B.Tech CSE programme, you do not currently me...",
+          "classification": "Correct",
+          "durationMs": 6
+        },
+        {
+          "testId": "TC-09",
+          "query": "Can a student register for 28 credits in Semester 5?",
+          "expectedDecision": "NOT PERMITTED (Maximum semester credit cap is 24 credits)",
+          "actualAnswer": "Based on university documents (Semester_Spread_Structures_Sept_2026.xlsx):\n\n\"Sheet: Sem_Spread_2023 | Batch: 2023 Batch | Degree: B.Tech Computer Scie...",
+          "classification": "Partially Correct",
+          "durationMs": 7
+        },
+        {
+          "testId": "TC-10",
+          "query": "Can Student F advance to Year 3 with only 58 completed credits and backlogs in Year 1 core courses?",
+          "expectedDecision": "NOT ELIGIBLE (Requires minimum 72 credits and 0 Year 1 backlogs to enter Year 3)",
+          "actualAnswer": "Based on university documents (4. Student Handbook Aug 2026.pdf):\n\n\"Semester Grade Point Average. The SGPA is the weighted average of the\ngrade points...",
+          "classification": "Partially Correct",
+          "durationMs": 6
+        },
+        {
+          "testId": "TC-11",
+          "query": "What was the syllabus for computer science engineering in the year 1985?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Based on university documents (Semester_Spread_Structures_Sept_2026.xlsx):\n\n\"Sheet: Sem_Spread_DS_2026 | Batch: 2026 Batch (Data Science) | Degree: B....",
+          "classification": "Incorrect",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-12",
+          "query": "What is the scholarship policy and fee waiver for student hostel accommodation?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Based on university documents (4. Student Handbook Aug 2026.pdf):\n\n\"[i] The Fee Structure (Engineering Fee Structure for CET Fee) for students admitte...",
+          "classification": "Incorrect",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-13",
+          "query": "What were the sports quota admission tuition discounts in 1995?",
+          "expectedDecision": "Data is not available in the provided university documents.",
+          "actualAnswer": "Based on university documents (4. Student Handbook Aug 2026.pdf):\n\n\"sity. The University’s decision regarding changes in fee structure\nis final and bi...",
+          "classification": "Incorrect",
+          "durationMs": 1
+        },
+        {
+          "testId": "TC-14",
+          "query": "Can I take Machine Learning next semester?",
+          "expectedDecision": "Interactive Follow-Up triggered: asks which prerequisite courses student has completed",
+          "actualAnswer": "I can check that for you! However, to give you an accurate eligibility recommendation for **Machine Learning**, I need to know your academic course hi...",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-15",
+          "query": "What is the procedure if a student receives an 'I' (Incomplete) grade?",
+          "expectedDecision": "'I' grade must be converted through make-up examination within specified timeframe",
+          "actualAnswer": "Based on university documents (4. Student Handbook Aug 2026.pdf):\n\n\"Semester Grade Point Average. The SGPA is the weighted average of the\ngrade points...",
+          "classification": "Correct",
+          "durationMs": 1
+        },
+        {
+          "testId": "TC-16",
+          "query": "What are the passing standards and minimum CGPA required for award of B.Tech degree?",
+          "expectedDecision": "Cumulative CGPA threshold and completion of all core credits",
+          "actualAnswer": "Based on university documents (4. Student Handbook Aug 2026.pdf):\n\n\"8.11. \u0003 Earned Credits\nThis refers to the credits assigned to the Courses in which...",
+          "classification": "Correct",
+          "durationMs": 1
+        },
+        {
+          "testId": "TC-17",
+          "query": "Can Student D write the end term exams with 68% attendance without medical or official university representation?",
+          "expectedDecision": "NOT ELIGIBLE (Below 75% without authorized condonation results in FA grade)",
+          "actualAnswer": "Based on university documents (SOP STUDENT 17082026 - Final.pdf):\n\n\"Registrar.\n• For any concern regarding the attendance, student to contact\nthe resp...",
+          "classification": "Partially Correct",
+          "durationMs": 5
+        },
+        {
+          "testId": "TC-18",
+          "query": "Can a student take LAWM305 in Semester 4 (Even Semester)?",
+          "expectedDecision": "NOT PERMITTED (LAWM305 is strictly scheduled for Odd Semester 5)",
+          "actualAnswer": "Based on university documents (Semester_Spread_Structures_Sept_2026.xlsx):\n\n\"Sheet: Sem_Spread_2024 | Batch: 2024 Batch | Degree: B.Tech Computer Scie...",
+          "classification": "Partially Correct",
+          "durationMs": 5
+        },
+        {
+          "testId": "TC-19",
+          "query": "What are the core engineering courses in Semester 3 for B.Tech CSE 2024 batch?",
+          "expectedDecision": "Lists core courses including Algorithms, DBMS, COA",
+          "actualAnswer": "Based on university documents (Semester_Spread_Structures_Sept_2026.xlsx):\n\n\"Sheet: Sem_Spread_2024 | Batch: 2024 Batch | Degree: B.Tech Computer Scie...",
+          "classification": "Correct",
+          "durationMs": 6
+        },
+        {
+          "testId": "TC-20",
+          "query": "What is the recipe for baking chocolate brownies?",
+          "expectedDecision": "Deterministic refusal: out of academic advising scope",
+          "actualAnswer": "Data is not available in the provided university documents.",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-21",
+          "query": "Who won the 2022 FIFA World Cup?",
+          "expectedDecision": "Deterministic refusal: out of academic advising scope",
+          "actualAnswer": "Based on university documents (Semester_Spread_Structures_Sept_2026.xlsx):\n\n\"Sheet: Sem Spread BTECH-2022 | Batch: 2022 Batch | Degree: B.Tech Compute...",
+          "classification": "Correct",
+          "durationMs": 1
+        },
+        {
+          "testId": "TC-22",
+          "query": "Hello, good morning!",
+          "expectedDecision": "Official greeting identifying university academic advisor",
+          "actualAnswer": "Based on university documents (4. Student Handbook Aug 2026.pdf):\n\n\"4. \u0003 Representations of the University Externally: Students are expected to uphold...",
+          "classification": "Correct",
+          "durationMs": 0
+        },
+        {
+          "testId": "TC-23",
+          "query": "What is the grading scale and grade points assigned for grades A+, A, B+, B, C, F, FA?",
+          "expectedDecision": "10-point grade scale with 0 points for F/FA",
+          "actualAnswer": "Based on university documents (4. Student Handbook Aug 2026.pdf):\n\n\"Semester Grade Point Average. The SGPA is the weighted average of the\ngrade points...",
+          "classification": "Correct",
+          "durationMs": 2
+        },
+        {
+          "testId": "TC-24",
+          "query": "What is the prerequisite for Design and Analysis of Algorithms (CSEN201)?",
+          "expectedDecision": "Prerequisite is CSEN102 Data Structures",
+          "actualAnswer": "I can check that for you! However, to give you an accurate eligibility recommendation for **Design and Analysis of Algorithms**, I need to know your a...",
+          "classification": "Correct",
+          "durationMs": 3
+        },
+        {
+          "testId": "TC-25",
+          "query": "How many total credits must a student complete to graduate with B.Tech CSE?",
+          "expectedDecision": "Total required credits is 160 credits",
+          "actualAnswer": "Based on university documents (Semester_Spread_Structures_Sept_2026.xlsx):\n\n\"Sheet: Sem_Spread_2023 | Batch: 2023 Batch | Degree: B.Tech Computer Scie...",
+          "classification": "Correct",
+          "durationMs": 2
+        }
+      ]
+    }
+  }
+}

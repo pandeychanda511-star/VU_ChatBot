@@ -1,0 +1,4102 @@
+[
+  {
+    "transcriptId": "TR-VU-2024-001",
+    "studentProfileId": "student_a",
+    "studentName": "Synthetic Student A",
+    "rollNumber": "VU24BTECH001",
+    "uan": "VU24BTECH001",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.65,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.4,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.55,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.3,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.47,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-002",
+    "studentProfileId": "student_b",
+    "studentName": "Synthetic Student B",
+    "rollNumber": "VU24BTECH002",
+    "uan": "VU24BTECH002",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 2.8,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "B",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 2.6,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "B",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 2.5,
+        "creditsEarned": 10,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "F",
+            "status": "Failed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "F",
+            "status": "Failed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 2.7,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 64,
+    "cumulativeCGPA": 2.65,
+    "standing": "Academic Warning (Backlogs Present)",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-003",
+    "studentProfileId": "student_c",
+    "studentName": "Synthetic Student C",
+    "rollNumber": "VU24BTECH003",
+    "uan": "VU24BTECH003",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.5,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.7,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.6,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.8,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.65,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-004",
+    "studentProfileId": "student_d",
+    "studentName": "Synthetic Student D",
+    "rollNumber": "VU24BTECH004",
+    "uan": "VU24BTECH004",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 2.9,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "B",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 2.75,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "B",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 2.65,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 2.8,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "B",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 2.78,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-005",
+    "studentProfileId": "student_e",
+    "studentName": "Synthetic Student E",
+    "rollNumber": "VU24BTECH005",
+    "uan": "VU24BTECH005",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.32,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.38,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.48,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.47,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.41,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-006",
+    "studentProfileId": "student_f",
+    "studentName": "Synthetic Student F",
+    "rollNumber": "VU24BTECH006",
+    "uan": "VU24BTECH006",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.05,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.1,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.1,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.06,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-007",
+    "studentProfileId": "student_g",
+    "studentName": "Synthetic Student G",
+    "rollNumber": "VU24BTECH007",
+    "uan": "VU24BTECH007",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.62,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.66,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.76,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.77,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.7,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-008",
+    "studentProfileId": "student_h",
+    "studentName": "Synthetic Student H",
+    "rollNumber": "VU24BTECH008",
+    "uan": "VU24BTECH008",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.41,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.44,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.54,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.56,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.49,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-009",
+    "studentProfileId": "student_i",
+    "studentName": "Synthetic Student I",
+    "rollNumber": "VU24BTECH009",
+    "uan": "VU24BTECH009",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.44,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.46,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.56,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.59,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.51,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-010",
+    "studentProfileId": "student_j",
+    "studentName": "Synthetic Student J",
+    "rollNumber": "VU24BTECH010",
+    "uan": "VU24BTECH010",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.25,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.24,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.26,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.3,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.26,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-011",
+    "studentProfileId": "student_k",
+    "studentName": "Synthetic Student K",
+    "rollNumber": "VU24BTECH011",
+    "uan": "VU24BTECH011",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.7,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.7,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.8,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.85,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.76,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-012",
+    "studentProfileId": "student_l",
+    "studentName": "Synthetic Student L",
+    "rollNumber": "VU24BTECH012",
+    "uan": "VU24BTECH012",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.53,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.52,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.62,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.68,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.59,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-013",
+    "studentProfileId": "student_m",
+    "studentName": "Synthetic Student M",
+    "rollNumber": "VU24BTECH013",
+    "uan": "VU24BTECH013",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.56,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.54,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.64,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.71,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.61,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-014",
+    "studentProfileId": "student_n",
+    "studentName": "Synthetic Student N",
+    "rollNumber": "VU24BTECH014",
+    "uan": "VU24BTECH014",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.45,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.48,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.42,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "B+",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "B+",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.5,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.46,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-015",
+    "studentProfileId": "student_o",
+    "studentName": "Synthetic Student O",
+    "rollNumber": "VU24BTECH015",
+    "uan": "VU24BTECH015",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.78,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.74,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.84,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.93,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.82,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-016",
+    "studentProfileId": "student_p",
+    "studentName": "Synthetic Student P",
+    "rollNumber": "VU24BTECH016",
+    "uan": "VU24BTECH016",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.65,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.6,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.7,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.8,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.69,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-017",
+    "studentProfileId": "student_q",
+    "studentName": "Synthetic Student Q",
+    "rollNumber": "VU24BTECH017",
+    "uan": "VU24BTECH017",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.68,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.62,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.72,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.83,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.71,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-018",
+    "studentProfileId": "student_r",
+    "studentName": "Synthetic Student R",
+    "rollNumber": "VU24BTECH018",
+    "uan": "VU24BTECH018",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.65,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.72,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.58,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.7,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.66,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-019",
+    "studentProfileId": "student_s",
+    "studentName": "Synthetic Student S",
+    "rollNumber": "VU24BTECH019",
+    "uan": "VU24BTECH019",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.86,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.78,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.88,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 4.01,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.88,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  },
+  {
+    "transcriptId": "TR-VU-2024-020",
+    "studentProfileId": "student_t",
+    "studentName": "Synthetic Student T",
+    "rollNumber": "VU24BTECH020",
+    "uan": "VU24BTECH020",
+    "degree": "Bachelor of Technology",
+    "major": "Computer Science and Engineering",
+    "academicYear": "2024-2026",
+    "semesters": [
+      {
+        "semester": 1,
+        "gpa": 3.77,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "UCOR103",
+            "name": "Communication Skills",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR104",
+            "name": "Problem Solving with Design Thinking",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "UCOR102",
+            "name": "Introduction to writing",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH202",
+            "name": "Probability Theory",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "COMP132",
+            "name": "Design Workshop",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MTSC111",
+            "name": "Materials for Smart Devices",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "PSYC101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "DATA131",
+            "name": "Visualizing Data for Story Telling",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "gpa": 3.68,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN101",
+            "name": "Programming in Python",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "MATH201",
+            "name": "Calculus and Linear Algebra",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "ELEC101",
+            "name": "Digital Logic Design",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "HUMA101",
+            "name": "Ethics and Values",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN103",
+            "name": "Web Technologies Lab",
+            "credits": 3,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 3,
+        "gpa": 3.78,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN102",
+            "name": "Data Structures",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN202",
+            "name": "Database Management Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN203",
+            "name": "Computer Organization and Architecture",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN204",
+            "name": "Exploratory Data Analysis",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "OPEN101",
+            "name": "Open Elective I",
+            "credits": 2,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      },
+      {
+        "semester": 4,
+        "gpa": 3.92,
+        "creditsEarned": 18,
+        "courses": [
+          {
+            "code": "CSEN201",
+            "name": "Design and Analysis of Algorithms",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN205",
+            "name": "Operating Systems",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN206",
+            "name": "Computer Networks",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN207",
+            "name": "Software Engineering",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          },
+          {
+            "code": "CSEN208",
+            "name": "Theory of Computation",
+            "credits": 4,
+            "grade": "A",
+            "status": "Passed"
+          }
+        ]
+      }
+    ],
+    "totalCreditsEarned": 72,
+    "cumulativeCGPA": 3.79,
+    "standing": "Good Academic Standing",
+    "issuedDate": "2026-06-30"
+  }
+]

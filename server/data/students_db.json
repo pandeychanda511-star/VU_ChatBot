@@ -1,0 +1,28 @@
+[
+  {
+    "id": "st_uun03",
+    "firebaseUid": "uv79XhJC34bVRxqKsYlRYIrcPis1",
+    "fullName": "chanda",
+    "uun": "UUN03",
+    "canonicalUan": "VU24BTECH03",
+    "email": "2023chanda@vidyashilp.edu.in",
+    "programme": "B.Tech Computer Science and Engineering",
+    "admissionCohort": "2024",
+    "currentSemester": 8,
+    "createdAt": "2026-11-02T17:39:50.121Z",
+    "updatedAt": "2026-11-02T17:56:35.660Z"
+  },
+  {
+    "id": "st_uun01",
+    "firebaseUid": "wiwaIqeZQbgNf9AAS0JG5xmEbCB3",
+    "fullName": "2023binni.singh",
+    "uun": "UUN01",
+    "canonicalUan": "VU24BTECH01",
+    "email": "2023binni.singh@vidyashilp.edu.in",
+    "programme": "B.Tech Computer Science and Engineering",
+    "admissionCohort": "2024",
+    "currentSemester": 8,
+    "createdAt": "2026-11-02T18:36:18.732Z",
+    "updatedAt": "2026-11-02T18:36:18.732Z"
+  }
+]

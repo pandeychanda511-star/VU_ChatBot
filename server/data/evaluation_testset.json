@@ -1,0 +1,258 @@
+[
+  {
+    "id": "TC-01",
+    "category": "Academic Regulations",
+    "query": "What is the minimum attendance percentage required to be eligible for end-semester examinations?",
+    "expectedAnswerKeywords": ["75%", "attendance", "eligible", "examination"],
+    "expectedSource": "4. Student Handbook Aug 2026.pdf (Page 29)",
+    "expectedDecision": "75% standard attendance requirement",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-02",
+    "category": "Academic Regulations",
+    "query": "What is the relaxed attendance threshold for representing the university in sports or cultural events?",
+    "expectedAnswerKeywords": ["65%", "attendance", "representation", "sports"],
+    "expectedSource": "4. Student Handbook Aug 2026.pdf (Page 29)",
+    "expectedDecision": "65% threshold with prior approval",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-03",
+    "category": "Academic Regulations",
+    "query": "What grade is awarded to a student who fails to meet the minimum attendance requirement?",
+    "expectedAnswerKeywords": ["FA", "Failed due to Attendance", "grade"],
+    "expectedSource": "4. Student Handbook Aug 2026.pdf (Page 30)",
+    "expectedDecision": "'FA' (Failed on Attendance) grade awarded",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-04",
+    "category": "Curriculum & Prerequisites",
+    "query": "What are the courses in the 2024 batch Psychology minor?",
+    "expectedAnswerKeywords": ["PSYC201", "PSYC103", "Biological Psychology", "Foundations of Psychology"],
+    "expectedSource": "Minor_Courses_for_BTech_Students.xlsx (Sheet: Psychology)",
+    "expectedDecision": "PSYC201 / PSYC103 4 credits, Semester 3",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-05",
+    "category": "Curriculum & Prerequisites",
+    "query": "What are the prerequisite courses for LAWM305 Regulating Platform and Gig workers in Law Minor?",
+    "expectedAnswerKeywords": ["Nil", "LAWM305", "prerequisite"],
+    "expectedSource": "Minor_Courses_for_BTech_Students.xlsx (Sheet: Law Minor)",
+    "expectedDecision": "Prerequisite is NIL",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-06",
+    "category": "Curriculum & Prerequisites",
+    "query": "What courses are offered under the Start-up Minor for B.Tech students?",
+    "expectedAnswerKeywords": ["MGMT336", "Design Thinking for Entrepreneurship", "TBD"],
+    "expectedSource": "Minor_Courses_for_BTech_Students.xlsx (Sheet: Start-up)",
+    "expectedDecision": "MGMT336 in Sem 5 (4 credits), remaining courses TBD",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-07",
+    "category": "Course Eligibility & Prerequisites",
+    "query": "Can Student A take Machine Learning next semester?",
+    "studentProfileId": "student_a",
+    "expectedAnswerKeywords": ["eligible", "passed", "Calculus and Linear Algebra", "Python", "EDA"],
+    "expectedSource": "Semester_Spread_Structures_Sept_2026.xlsx",
+    "expectedDecision": "ELIGIBLE (Student A has passed all prerequisites: MATH101, CSEN101, CSEN204)",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-08",
+    "category": "Course Eligibility & Prerequisites",
+    "query": "Can Student B take Machine Learning next semester?",
+    "studentProfileId": "student_b",
+    "expectedAnswerKeywords": ["ineligible", "missing", "failed", "EDA", "Data Structures"],
+    "expectedSource": "Semester_Spread_Structures_Sept_2026.xlsx",
+    "expectedDecision": "INELIGIBLE (Student B failed prerequisites CSEN102 and CSEN204)",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-09",
+    "category": "Conflicting Rules & Credit Caps",
+    "query": "Can a student register for 28 credits in Semester 5?",
+    "expectedAnswerKeywords": ["maximum", "24 credits", "not permitted", "overload"],
+    "expectedSource": "4. Student Handbook Aug 2026.pdf (Section 4.2)",
+    "expectedDecision": "NOT PERMITTED (Maximum semester credit cap is 24 credits)",
+    "isMissingData": false,
+    "isConflictingRule": true
+  },
+  {
+    "id": "TC-10",
+    "category": "Academic Progression Rules",
+    "query": "Can Student F advance to Year 3 with only 58 completed credits and backlogs in Year 1 core courses?",
+    "studentProfileId": "student_f",
+    "expectedAnswerKeywords": ["not eligible", "progression", "72 credits", "backlog"],
+    "expectedSource": "4. Student Handbook Aug 2026.pdf",
+    "expectedDecision": "NOT ELIGIBLE (Requires minimum 72 credits and 0 Year 1 backlogs to enter Year 3)",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-11",
+    "category": "Missing Information (Test 1)",
+    "query": "What was the syllabus for computer science engineering in the year 1985?",
+    "expectedAnswerKeywords": ["Data is not available in the provided university documents."],
+    "expectedSource": "None (Missing Data)",
+    "expectedDecision": "Data is not available in the provided university documents.",
+    "isMissingData": true,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-12",
+    "category": "Missing Information (Test 2)",
+    "query": "What is the scholarship policy and fee waiver for student hostel accommodation?",
+    "expectedAnswerKeywords": ["Data is not available in the provided university documents."],
+    "expectedSource": "None (Missing Data)",
+    "expectedDecision": "Data is not available in the provided university documents.",
+    "isMissingData": true,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-13",
+    "category": "Missing Information (Test 3)",
+    "query": "What were the sports quota admission tuition discounts in 1995?",
+    "expectedAnswerKeywords": ["Data is not available in the provided university documents."],
+    "expectedSource": "None (Missing Data)",
+    "expectedDecision": "Data is not available in the provided university documents.",
+    "isMissingData": true,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-14",
+    "category": "Interactive Follow-Up Questioning",
+    "query": "Can I take Machine Learning next semester?",
+    "studentProfileId": null,
+    "expectedAnswerKeywords": ["prerequisite", "completed", "EDA", "Calculus", "Python"],
+    "expectedSource": "Semester_Spread_Structures_Sept_2026.xlsx",
+    "expectedDecision": "Interactive Follow-Up triggered: asks which prerequisite courses student has completed",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-15",
+    "category": "Academic Regulations",
+    "query": "What is the procedure if a student receives an 'I' (Incomplete) grade?",
+    "expectedAnswerKeywords": ["Incomplete", "examination", "make-up", "grade"],
+    "expectedSource": "4. Student Handbook Aug 2026.pdf",
+    "expectedDecision": "'I' grade must be converted through make-up examination within specified timeframe",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-16",
+    "category": "Academic Regulations",
+    "query": "What are the passing standards and minimum CGPA required for award of B.Tech degree?",
+    "expectedAnswerKeywords": ["CGPA", "degree", "credits", "passing"],
+    "expectedSource": "4. Student Handbook Aug 2026.pdf",
+    "expectedDecision": "Cumulative CGPA threshold and completion of all core credits",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-17",
+    "category": "Attendance & Condonation",
+    "query": "Can Student D write the end term exams with 68% attendance without medical or official university representation?",
+    "studentProfileId": "student_d",
+    "expectedAnswerKeywords": ["not eligible", "68%", "75%", "FA grade", "medical"],
+    "expectedSource": "4. Student Handbook Aug 2026.pdf (Page 29)",
+    "expectedDecision": "NOT ELIGIBLE (Below 75% without authorized condonation results in FA grade)",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-18",
+    "category": "Conflicting Rules & Semester Offerings",
+    "query": "Can a student take LAWM305 in Semester 4 (Even Semester)?",
+    "expectedAnswerKeywords": ["Odd semester", "Semester 5", "not offered"],
+    "expectedSource": "Minor_Courses_for_BTech_Students.xlsx (Sheet: Law Minor)",
+    "expectedDecision": "NOT PERMITTED (LAWM305 is strictly scheduled for Odd Semester 5)",
+    "isMissingData": false,
+    "isConflictingRule": true
+  },
+  {
+    "id": "TC-19",
+    "category": "Curriculum Structure",
+    "query": "What are the core engineering courses in Semester 3 for B.Tech CSE 2024 batch?",
+    "expectedAnswerKeywords": ["CSEN201", "CSEN202", "CSEN203", "Data Structures", "Algorithms", "DBMS"],
+    "expectedSource": "Semester_Spread_Structures_Sept_2026.xlsx (Sheet: Sem_Spread_2024)",
+    "expectedDecision": "Lists core courses including Algorithms, DBMS, COA",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-20",
+    "category": "Out of Scope / Non-Academic",
+    "query": "What is the recipe for baking chocolate brownies?",
+    "expectedAnswerKeywords": ["authorized university academic information", "cannot answer"],
+    "expectedSource": "Deterministic Guardrail",
+    "expectedDecision": "Deterministic refusal: out of academic advising scope",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-21",
+    "category": "Out of Scope / Non-Academic",
+    "query": "Who won the 2022 FIFA World Cup?",
+    "expectedAnswerKeywords": ["authorized university academic information", "cannot answer"],
+    "expectedSource": "Deterministic Guardrail",
+    "expectedDecision": "Deterministic refusal: out of academic advising scope",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-22",
+    "category": "Greeting / Small Talk",
+    "query": "Hello, good morning!",
+    "expectedAnswerKeywords": ["Academic Advisor", "Vidyashilp University"],
+    "expectedSource": "Deterministic Guardrail",
+    "expectedDecision": "Official greeting identifying university academic advisor",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-23",
+    "category": "Academic Regulations",
+    "query": "What is the grading scale and grade points assigned for grades A+, A, B+, B, C, F, FA?",
+    "expectedAnswerKeywords": ["grade point", "scale", "10", "FA", "F"],
+    "expectedSource": "4. Student Handbook Aug 2026.pdf",
+    "expectedDecision": "10-point grade scale with 0 points for F/FA",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-24",
+    "category": "Course Eligibility & Prerequisites",
+    "query": "What is the prerequisite for Design and Analysis of Algorithms (CSEN201)?",
+    "expectedAnswerKeywords": ["CSEN102", "Data Structures"],
+    "expectedSource": "Semester_Spread_Structures_Sept_2026.xlsx",
+    "expectedDecision": "Prerequisite is CSEN102 Data Structures",
+    "isMissingData": false,
+    "isConflictingRule": false
+  },
+  {
+    "id": "TC-25",
+    "category": "Credit Audit & Graduation",
+    "query": "How many total credits must a student complete to graduate with B.Tech CSE?",
+    "expectedAnswerKeywords": ["160", "credits", "graduation"],
+    "expectedSource": "Semester_Spread_Structures_Sept_2026.xlsx",
+    "expectedDecision": "Total required credits is 160 credits",
+    "isMissingData": false,
+    "isConflictingRule": false
+  }
+]
+
