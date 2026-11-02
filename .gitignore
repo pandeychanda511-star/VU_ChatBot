@@ -19,7 +19,7 @@ build/
 
 # Processed data cache (can be regenerated reproducibly via pipeline)
 # Keep data/sources tracked or mounted locally
-server/data/processed/*.json
+# server/data/processed/*.json
 !server/data/processed/.gitkeep
 
 # Firebase Credentials & Local Secrets

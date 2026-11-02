@@ -1,0 +1,202 @@
+{
+  "pipelineVersion": "1.0.0",
+  "executedAt": "2026-10-31T19:36:37.418Z",
+  "status": "completed_all_success",
+  "totalSourcesConfigured": 4,
+  "sourcesFound": 4,
+  "sourcesProcessed": 4,
+  "sources": [
+    {
+      "fileName": "4. Student Handbook Aug 2026.pdf",
+      "fileType": "pdf",
+      "exists": true,
+      "fileSizeBytes": 3355213,
+      "status": "success",
+      "summary": {
+        "pageCount": 92,
+        "extractedPageCount": 74,
+        "emptyOrScannedPageCount": 18,
+        "emptyPages": [
+          2,
+          6,
+          8,
+          12,
+          14,
+          22,
+          48,
+          50,
+          56,
+          62,
+          64,
+          70,
+          72,
+          74,
+          78,
+          82,
+          84,
+          86
+        ]
+      },
+      "warnings": [
+        "Found 18 scanned, blank, or low-text pages (pages: 2, 6, 8, 12, 14, 22, 48, 50, 56, 62, 64, 70, 72, 74, 78, 82, 84, 86). OCR not active."
+      ],
+      "error": null,
+      "outputFile": "4__Student_Handbook_Aug_2026_pdf.json"
+    },
+    {
+      "fileName": "SOP STUDENT 17082026 - Final.pdf",
+      "fileType": "pdf",
+      "exists": true,
+      "fileSizeBytes": 4211358,
+      "status": "success",
+      "summary": {
+        "pageCount": 6,
+        "extractedPageCount": 6,
+        "emptyOrScannedPageCount": 0,
+        "emptyPages": []
+      },
+      "warnings": [],
+      "error": null,
+      "outputFile": "SOP_STUDENT_17082026_-_Final_pdf.json"
+    },
+    {
+      "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+      "fileType": "excel",
+      "exists": true,
+      "fileSizeBytes": 31150,
+      "status": "success",
+      "summary": {
+        "sheetCount": 7,
+        "sheetNames": [
+          "Law Minor",
+          "Design Minor",
+          "Psychology",
+          "Economics",
+          "Finance",
+          "Marketing",
+          "Start-up"
+        ],
+        "totalRecords": 186,
+        "perSheetBreakdown": [
+          {
+            "sheetName": "Law Minor",
+            "records": 17,
+            "emptyRows": 4
+          },
+          {
+            "sheetName": "Design Minor",
+            "records": 23,
+            "emptyRows": 5
+          },
+          {
+            "sheetName": "Psychology",
+            "records": 31,
+            "emptyRows": 4
+          },
+          {
+            "sheetName": "Economics",
+            "records": 26,
+            "emptyRows": 4
+          },
+          {
+            "sheetName": "Finance",
+            "records": 40,
+            "emptyRows": 32
+          },
+          {
+            "sheetName": "Marketing",
+            "records": 38,
+            "emptyRows": 34
+          },
+          {
+            "sheetName": "Start-up",
+            "records": 11,
+            "emptyRows": 27
+          }
+        ]
+      },
+      "warnings": [],
+      "error": null,
+      "outputFile": "Minor_Courses_for_BTech_Students_xlsx.json"
+    },
+    {
+      "fileName": "Semester_Spread_Structures_Sept_2026.xlsx",
+      "fileType": "excel",
+      "exists": true,
+      "fileSizeBytes": 197553,
+      "status": "success",
+      "summary": {
+        "sheetCount": 10,
+        "sheetNames": [
+          "Sem Spread BTECH-2022",
+          "Sem_Spread_2023",
+          "Sem_Spread_2024",
+          "Sem_Spread_2025",
+          "Sem_Spread_DS_2026",
+          "Struct_2022",
+          "Struct_2023",
+          "Struct_2024",
+          "Struct_2025",
+          "Struct_2026_DS"
+        ],
+        "totalRecords": 234,
+        "perSheetBreakdown": [
+          {
+            "sheetName": "Sem Spread BTECH-2022",
+            "records": 24,
+            "emptyRows": 874
+          },
+          {
+            "sheetName": "Sem_Spread_2023",
+            "records": 24,
+            "emptyRows": 7
+          },
+          {
+            "sheetName": "Sem_Spread_2024",
+            "records": 24,
+            "emptyRows": 1
+          },
+          {
+            "sheetName": "Sem_Spread_2025",
+            "records": 25,
+            "emptyRows": 0
+          },
+          {
+            "sheetName": "Sem_Spread_DS_2026",
+            "records": 25,
+            "emptyRows": 0
+          },
+          {
+            "sheetName": "Struct_2022",
+            "records": 16,
+            "emptyRows": 0
+          },
+          {
+            "sheetName": "Struct_2023",
+            "records": 16,
+            "emptyRows": 0
+          },
+          {
+            "sheetName": "Struct_2024",
+            "records": 26,
+            "emptyRows": 5
+          },
+          {
+            "sheetName": "Struct_2025",
+            "records": 30,
+            "emptyRows": 3
+          },
+          {
+            "sheetName": "Struct_2026_DS",
+            "records": 24,
+            "emptyRows": 8
+          }
+        ]
+      },
+      "warnings": [],
+      "error": null,
+      "outputFile": "Semester_Spread_Structures_Sept_2026_xlsx.json"
+    }
+  ],
+  "errors": []
+}

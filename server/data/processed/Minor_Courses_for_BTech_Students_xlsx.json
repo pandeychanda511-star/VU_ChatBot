@@ -1,0 +1,3272 @@
+{
+  "sourceType": "excel",
+  "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+  "sheetNames": [
+    "Law Minor",
+    "Design Minor",
+    "Psychology",
+    "Economics",
+    "Finance",
+    "Marketing",
+    "Start-up"
+  ],
+  "totalRecords": 186,
+  "sheets": [
+    {
+      "sheetName": "Law Minor",
+      "totalRows": 21,
+      "recordCount": 17,
+      "emptyRows": 4,
+      "headers": [
+        "Column_1",
+        "Course Code",
+        "Course Title",
+        "L",
+        "T",
+        "P",
+        "Credit",
+        "Semester",
+        "Pre-rq",
+        "Column_10",
+        "Column_11"
+      ],
+      "records": [
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 1,
+          "cellValues": {
+            "Course Code": "Course Code",
+            "Course Title": "Course Title",
+            "L": "L",
+            "T": "T",
+            "P": "P",
+            "Credit": "Credit",
+            "Semester": "Semester",
+            "Pre-rq": "Pre-rq"
+          },
+          "text": "Course Code: Course Code | Course Title: Course Title | L: L | T: T | P: P | Credit: Credit | Semester: Semester | Pre-rq: Pre-rq"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 3,
+          "cellValues": {
+            "Col_A": "2023 Batch",
+            "Course Code": "LAWM305",
+            "Course Title": "Regulating platform and Gig workers",
+            "L": "3",
+            "T": "0",
+            "P": "2",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "NIL"
+          },
+          "text": "2023 Batch | Course Code: LAWM305 | Course Title: Regulating platform and Gig workers | L: 3 | T: 0 | P: 2 | Credit: 4 | Semester: 5 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 4,
+          "cellValues": {
+            "Course Code": "LAWE200",
+            "Course Title": "Moral Philosophy and Justice",
+            "L": "2",
+            "T": "0",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "6",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: LAWE200 | Course Title: Moral Philosophy and Justice | L: 2 | T: 0 | P: 0 | Credit: 2 | Semester: 6 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 5,
+          "cellValues": {
+            "Course Code": "LAWC410",
+            "Course Title": "Introduction to Alternative Dispute Resolution Methods",
+            "L": "2",
+            "T": "0",
+            "P": "2",
+            "Credit": "3",
+            "Semester": "6",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: LAWC410 | Course Title: Introduction to Alternative Dispute Resolution Methods | L: 2 | T: 0 | P: 2 | Credit: 3 | Semester: 6 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 6,
+          "cellValues": {
+            "Course Code": "LAWB210",
+            "Course Title": "Criminology and Victimology",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: LAWB210 | Course Title: Criminology and Victimology | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 7,
+          "cellValues": {
+            "Course Code": "LAWM306",
+            "Course Title": "Law Relating to start-ups",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: LAWM306 | Course Title: Law Relating to start-ups | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 8,
+          "cellValues": {
+            "Course Code": "LAWE301",
+            "Course Title": "Intellectual Property Rights",
+            "L": "2",
+            "T": "0",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: LAWE301 | Course Title: Intellectual Property Rights | L: 2 | T: 0 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 9,
+          "cellValues": {
+            "Course Title": "Don’t Know",
+            "Credit": "5"
+          },
+          "text": "Course Title: Don’t Know | Credit: 5"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 11,
+          "cellValues": {
+            "Col_A": "2024 Batch",
+            "Course Code": "LAWP100",
+            "Course Title": "Political Science I",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "3",
+            "Pre-rq": "NIL"
+          },
+          "text": "2024 Batch | Course Code: LAWP100 | Course Title: Political Science I | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 3 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 12,
+          "cellValues": {
+            "Course Code": "LAWS301",
+            "Course Title": "Legal Methods",
+            "L": "2",
+            "T": "0",
+            "P": "2",
+            "Credit": "3",
+            "Semester": "3",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: LAWS301 | Course Title: Legal Methods | L: 2 | T: 0 | P: 2 | Credit: 3 | Semester: 3 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 13,
+          "cellValues": {
+            "Course Code": "LAWM301",
+            "Course Title": "Constitution for Citizens",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: LAWM301 | Course Title: Constitution for Citizens | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 14,
+          "cellValues": {
+            "Course Code": "LAWM302",
+            "Course Title": "Basics of International Law",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: LAWM302 | Course Title: Basics of International Law | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 15,
+          "cellValues": {
+            "Course Title": "TBA",
+            "Credit": "10"
+          },
+          "text": "Course Title: TBA | Credit: 10"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 17,
+          "cellValues": {
+            "Col_A": "2025 Batch",
+            "Course Code": "LAWS301",
+            "Course Title": "Legal Methods",
+            "L": "2",
+            "T": "0",
+            "P": "2",
+            "Credit": "3",
+            "Semester": "3",
+            "Pre-rq": "NIL"
+          },
+          "text": "2025 Batch | Course Code: LAWS301 | Course Title: Legal Methods | L: 2 | T: 0 | P: 2 | Credit: 3 | Semester: 3 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 18,
+          "cellValues": {
+            "Course Code": "LAWP101",
+            "Course Title": "Introduction to Political science",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "2",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: LAWP101 | Course Title: Introduction to Political science | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 2 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 19,
+          "cellValues": {
+            "Course Title": "TBA",
+            "Credit": "17"
+          },
+          "text": "Course Title: TBA | Credit: 17"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Law Minor",
+          "rowNumber": 21,
+          "cellValues": {
+            "Col_A": "2026 Batch",
+            "Course Title": "TBA",
+            "Credit": "24"
+          },
+          "text": "2026 Batch | Course Title: TBA | Credit: 24"
+        }
+      ]
+    },
+    {
+      "sheetName": "Design Minor",
+      "totalRows": 28,
+      "recordCount": 23,
+      "emptyRows": 5,
+      "headers": [
+        "2022 Batch",
+        "Course Code",
+        "Course Title",
+        "L",
+        "T",
+        "P",
+        "Credit",
+        "Semester",
+        "Pre-rq"
+      ],
+      "records": [
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 1,
+          "cellValues": {
+            "2022 Batch": "2022 Batch",
+            "Course Code": "Course Code",
+            "Course Title": "Course Title",
+            "L": "L",
+            "T": "T",
+            "P": "P",
+            "Credit": "Credit",
+            "Semester": "Semester",
+            "Pre-rq": "Pre-rq"
+          },
+          "text": "2022 Batch: 2022 Batch | Course Code: Course Code | Course Title: Course Title | L: L | T: T | P: P | Credit: Credit | Semester: Semester | Pre-rq: Pre-rq"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 2,
+          "cellValues": {
+            "Course Code": "CDES105",
+            "Course Title": "Appreciating and Deconstructing Art and Media",
+            "L": "3",
+            "T": "0",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "3",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES105 | Course Title: Appreciating and Deconstructing Art and Media | L: 3 | T: 0 | P: 0 | Credit: 3 | Semester: 3 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 3,
+          "cellValues": {
+            "Course Code": "CDES203",
+            "Course Title": "Motion Graphic Design",
+            "L": "1",
+            "T": "0",
+            "P": "2",
+            "Credit": "2",
+            "Semester": "5",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES203 | Course Title: Motion Graphic Design | L: 1 | T: 0 | P: 2 | Credit: 2 | Semester: 5 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 4,
+          "cellValues": {
+            "Course Code": "CDES504",
+            "Course Title": "Environment Design and Communication",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "5",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES504 | Course Title: Environment Design and Communication | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 5 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 5,
+          "cellValues": {
+            "Course Code": "CDES704",
+            "Course Title": "Integrative Studio VI- Exhibition/Museum",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES704 | Course Title: Integrative Studio VI- Exhibition/Museum | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 6,
+          "cellValues": {
+            "Course Code": "CDES402",
+            "Course Title": "Interaction Design- UI UX",
+            "L": "1",
+            "T": "3",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES402 | Course Title: Interaction Design- UI UX | L: 1 | T: 3 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 7,
+          "cellValues": {
+            "Course Code": "CDES216",
+            "Course Title": "Drawing and Moving Images",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES216 | Course Title: Drawing and Moving Images | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 8,
+          "cellValues": {
+            "Course Code": "CDES712",
+            "Course Title": "Designing Futures",
+            "L": "1",
+            "T": "2",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "7",
+            "Pre-rq": "(CDES402-Interaction Design- UI UX),\r\n(CDES504- Environment Design and Communication)"
+          },
+          "text": "Course Code: CDES712 | Course Title: Designing Futures | L: 1 | T: 2 | P: 0 | Credit: 3 | Semester: 7 | Pre-rq: (CDES402-Interaction Design- UI UX),\r\n(CDES504- Environment Design and Communication)"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 9,
+          "cellValues": {
+            "Course Title": "DON’T KNOW",
+            "Credit": "4"
+          },
+          "text": "Course Title: DON’T KNOW | Credit: 4"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 11,
+          "cellValues": {
+            "2022 Batch": "2023 Batch",
+            "Course Code": "CDES105",
+            "Course Title": "Appreciating and Deconstructing Art and Media",
+            "L": "3",
+            "T": "0",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "3",
+            "Pre-rq": "NIL"
+          },
+          "text": "2022 Batch: 2023 Batch | Course Code: CDES105 | Course Title: Appreciating and Deconstructing Art and Media | L: 3 | T: 0 | P: 0 | Credit: 3 | Semester: 3 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 12,
+          "cellValues": {
+            "Course Code": "CDES702",
+            "Course Title": "Integrative Studio II- Sensemaking, Visualization",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES702 | Course Title: Integrative Studio II- Sensemaking, Visualization | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 13,
+          "cellValues": {
+            "Course Code": "CDES221",
+            "Course Title": "Information Architecture and Design",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES221 | Course Title: Information Architecture and Design | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 14,
+          "cellValues": {
+            "Course Code": "CDES219",
+            "Course Title": "Elements of Sound",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES219 | Course Title: Elements of Sound | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 15,
+          "cellValues": {
+            "Course Code": "CDES301",
+            "Course Title": "Sketch to Story",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES301 | Course Title: Sketch to Story | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 16,
+          "cellValues": {
+            "Course Code": "CDES312",
+            "Course Title": "Designing Futures",
+            "L": "2",
+            "T": "2",
+            "P": "2",
+            "Credit": "5",
+            "Semester": "7",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES312 | Course Title: Designing Futures | L: 2 | T: 2 | P: 2 | Credit: 5 | Semester: 7 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 18,
+          "cellValues": {
+            "2022 Batch": "2024 Batch",
+            "Course Code": "CDES217",
+            "Course Title": "Making with Reframed Media",
+            "L": "2",
+            "T": "3",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "NIL"
+          },
+          "text": "2022 Batch: 2024 Batch | Course Code: CDES217 | Course Title: Making with Reframed Media | L: 2 | T: 3 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 19,
+          "cellValues": {
+            "Course Code": "CDES218",
+            "Course Title": "Frames and Frequencies",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES218 | Course Title: Frames and Frequencies | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 20,
+          "cellValues": {
+            "Course Code": "CDES221",
+            "Course Title": "Information Architecture and Design",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES221 | Course Title: Information Architecture and Design | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 21,
+          "cellValues": {
+            "Course Code": "CDES227",
+            "Course Title": "Drawing and Moving Image",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "NIL"
+          },
+          "text": "Course Code: CDES227 | Course Title: Drawing and Moving Image | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 22,
+          "cellValues": {
+            "Course Title": "TBD",
+            "Credit": "8"
+          },
+          "text": "Course Title: TBD | Credit: 8"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 25,
+          "cellValues": {
+            "2022 Batch": "2025 Batch",
+            "Course Code": "CDES217",
+            "Course Title": "Making with Reframed Media",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "NIL"
+          },
+          "text": "2022 Batch: 2025 Batch | Course Code: CDES217 | Course Title: Making with Reframed Media | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: NIL"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 26,
+          "cellValues": {
+            "Course Title": "TBD",
+            "Credit": "20"
+          },
+          "text": "Course Title: TBD | Credit: 20"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Design Minor",
+          "rowNumber": 28,
+          "cellValues": {
+            "2022 Batch": "2026 Batch",
+            "Course Title": "TBD",
+            "Credit": "24"
+          },
+          "text": "2022 Batch: 2026 Batch | Course Title: TBD | Credit: 24"
+        }
+      ]
+    },
+    {
+      "sheetName": "Psychology",
+      "totalRows": 35,
+      "recordCount": 31,
+      "emptyRows": 4,
+      "headers": [
+        "Column_1",
+        "Course Code",
+        "Course Title",
+        "L",
+        "T",
+        "P",
+        "Credit",
+        "Semester",
+        "Pre-rq"
+      ],
+      "records": [
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 1,
+          "cellValues": {
+            "Course Code": "Course Code",
+            "Course Title": "Course Title",
+            "L": "L",
+            "T": "T",
+            "P": "P",
+            "Credit": "Credit",
+            "Semester": "Semester",
+            "Pre-rq": "Pre-rq"
+          },
+          "text": "Course Code: Course Code | Course Title: Course Title | L: L | T: T | P: P | Credit: Credit | Semester: Semester | Pre-rq: Pre-rq"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 2,
+          "cellValues": {
+            "Col_A": "2022 Batch",
+            "Course Code": "PSYC201",
+            "Course Title": "Biological Psychology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "2022 Batch | Course Code: PSYC201 | Course Title: Biological Psychology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 3,
+          "cellValues": {
+            "Course Code": "PSYC202",
+            "Course Title": "Cognitive Psychology",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC202 | Course Title: Cognitive Psychology | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 4,
+          "cellValues": {
+            "Course Code": "PSYC255",
+            "Course Title": "Psychopathology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: PSYC255 | Course Title: Psychopathology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 5,
+          "cellValues": {
+            "Course Code": "PSYC241",
+            "Course Title": "Social Psychology",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC241 | Course Title: Social Psychology | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 6,
+          "cellValues": {
+            "Course Code": "PSYC204",
+            "Course Title": "Developmental Psychology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC204 | Course Title: Developmental Psychology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 7,
+          "cellValues": {
+            "Course Code": "PSYC303",
+            "Course Title": "Psychological Testing and Measurement",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "PSYC101, \r\nPSYC202,\r\nMATH131"
+          },
+          "text": "Course Code: PSYC303 | Course Title: Psychological Testing and Measurement | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: PSYC101, \r\nPSYC202,\r\nMATH131"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 9,
+          "cellValues": {
+            "Col_A": "2023 Batch",
+            "Course Code": "PSYC201",
+            "Course Title": "Biological Psychology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "2023 Batch | Course Code: PSYC201 | Course Title: Biological Psychology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 10,
+          "cellValues": {
+            "Course Code": "PSYC202",
+            "Course Title": "Cognitive Psychology",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC202 | Course Title: Cognitive Psychology | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 11,
+          "cellValues": {
+            "Course Code": "PSYC104",
+            "Course Title": "Lifespan Development I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC104 | Course Title: Lifespan Development I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 12,
+          "cellValues": {
+            "Course Code": "PSYC241",
+            "Course Title": "Social Psychology",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC241 | Course Title: Social Psychology | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 13,
+          "cellValues": {
+            "Course Code": "PSYC306",
+            "Course Title": "Health Psychology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "PSYC101, \r\nPSYC201"
+          },
+          "text": "Course Code: PSYC306 | Course Title: Health Psychology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: PSYC101, \r\nPSYC201"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 14,
+          "cellValues": {
+            "Course Code": "PSYC255",
+            "Course Title": "Psychopathology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: PSYC255 | Course Title: Psychopathology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 16,
+          "cellValues": {
+            "Col_A": "2024 Batch",
+            "Course Code": "PSYC201/\r\nPSYC103",
+            "Course Title": "Biological Psychology/\r\nFoundations of Psychology I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "2024 Batch | Course Code: PSYC201/\r\nPSYC103 | Course Title: Biological Psychology/\r\nFoundations of Psychology I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 17,
+          "cellValues": {
+            "Course Code": "PSYC202",
+            "Course Title": "Cognitive Psychology",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC202 | Course Title: Cognitive Psychology | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 18,
+          "cellValues": {
+            "Course Code": "PSYC241",
+            "Course Title": "Social Psychology",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC241 | Course Title: Social Psychology | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 19,
+          "cellValues": {
+            "Course Code": "PSYC306",
+            "Course Title": "Health Psychology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "PSYC101, \r\nPSYC201"
+          },
+          "text": "Course Code: PSYC306 | Course Title: Health Psychology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: PSYC101, \r\nPSYC201"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 20,
+          "cellValues": {
+            "Course Code": "PSYC104",
+            "Course Title": "Lifespan Development I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: PSYC104 | Course Title: Lifespan Development I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 21,
+          "cellValues": {
+            "Course Code": "PSYC255",
+            "Course Title": "Psychopathology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: PSYC255 | Course Title: Psychopathology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 23,
+          "cellValues": {
+            "Col_A": "2025 Batch",
+            "Course Code": "PSYC201/\r\nPSYC103",
+            "Course Title": "Biological Psychology/\r\nFoundations of Psychology I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "2025 Batch | Course Code: PSYC201/\r\nPSYC103 | Course Title: Biological Psychology/\r\nFoundations of Psychology I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 24,
+          "cellValues": {
+            "Course Code": "PSYC202",
+            "Course Title": "Cognitive Psychology",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC202 | Course Title: Cognitive Psychology | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 25,
+          "cellValues": {
+            "Course Code": "PSYC241",
+            "Course Title": "Social Psychology",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC241 | Course Title: Social Psychology | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 26,
+          "cellValues": {
+            "Course Code": "PSYC306",
+            "Course Title": "Health Psychology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "PSYC101, \r\nPSYC201"
+          },
+          "text": "Course Code: PSYC306 | Course Title: Health Psychology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: PSYC101, \r\nPSYC201"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 27,
+          "cellValues": {
+            "Course Code": "PSYC104",
+            "Course Title": "Lifespan Development I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: PSYC104 | Course Title: Lifespan Development I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 28,
+          "cellValues": {
+            "Course Code": "PSYC255",
+            "Course Title": "Psychopathology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: PSYC255 | Course Title: Psychopathology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 30,
+          "cellValues": {
+            "Col_A": "2026 Batch",
+            "Course Code": "PSYC201/\r\nPSYC103",
+            "Course Title": "Biological Psychology/\r\nFoundations of Psychology I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "2026 Batch | Course Code: PSYC201/\r\nPSYC103 | Course Title: Biological Psychology/\r\nFoundations of Psychology I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 31,
+          "cellValues": {
+            "Course Code": "PSYC202",
+            "Course Title": "Cognitive Psychology",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC202 | Course Title: Cognitive Psychology | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 32,
+          "cellValues": {
+            "Course Code": "PSYC241",
+            "Course Title": "Social Psychology",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "PSYC101"
+          },
+          "text": "Course Code: PSYC241 | Course Title: Social Psychology | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: PSYC101"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 33,
+          "cellValues": {
+            "Course Code": "PSYC306",
+            "Course Title": "Health Psychology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "PSYC101, \r\nPSYC201"
+          },
+          "text": "Course Code: PSYC306 | Course Title: Health Psychology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: PSYC101, \r\nPSYC201"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 34,
+          "cellValues": {
+            "Course Code": "PSYC104",
+            "Course Title": "Lifespan Development I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: PSYC104 | Course Title: Lifespan Development I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Psychology",
+          "rowNumber": 35,
+          "cellValues": {
+            "Course Code": "PSYC255",
+            "Course Title": "Psychopathology",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: PSYC255 | Course Title: Psychopathology | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: Nil"
+        }
+      ]
+    },
+    {
+      "sheetName": "Economics",
+      "totalRows": 30,
+      "recordCount": 26,
+      "emptyRows": 4,
+      "headers": [
+        "Column_1",
+        "Course Code",
+        "Course Title",
+        "L",
+        "T",
+        "P",
+        "Credit",
+        "Semester",
+        "Pre-rq"
+      ],
+      "records": [
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 1,
+          "cellValues": {
+            "Course Code": "Course Code",
+            "Course Title": "Course Title",
+            "L": "L",
+            "T": "T",
+            "P": "P",
+            "Credit": "Credit",
+            "Semester": "Semester",
+            "Pre-rq": "Pre-rq"
+          },
+          "text": "Course Code: Course Code | Course Title: Course Title | L: L | T: T | P: P | Credit: Credit | Semester: Semester | Pre-rq: Pre-rq"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 2,
+          "cellValues": {
+            "Col_A": "2022 Batch",
+            "Course Code": "ECON201",
+            "Course Title": "Microeconomics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "2022 Batch | Course Code: ECON201 | Course Title: Microeconomics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 3,
+          "cellValues": {
+            "Course Code": "ECON220",
+            "Course Title": "Behavourial Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: ECON220 | Course Title: Behavourial Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 4,
+          "cellValues": {
+            "Course Code": "ECON207",
+            "Course Title": "Macroeconomics and Applicants to Indian Economy",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: ECON207 | Course Title: Macroeconomics and Applicants to Indian Economy | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 5,
+          "cellValues": {
+            "Course Code": "ECON413",
+            "Course Title": "Industrial Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "ECON201,\r\nECON202/\r\nECON207"
+          },
+          "text": "Course Code: ECON413 | Course Title: Industrial Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: ECON201,\r\nECON202/\r\nECON207"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 6,
+          "cellValues": {
+            "Course Code": "ECON325",
+            "Course Title": "Public Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "ECON201,\r\nECON202/\r\nECON207"
+          },
+          "text": "Course Code: ECON325 | Course Title: Public Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: ECON201,\r\nECON202/\r\nECON207"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 7,
+          "cellValues": {
+            "Course Code": "ECON316",
+            "Course Title": "Digital Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "ECON201"
+          },
+          "text": "Course Code: ECON316 | Course Title: Digital Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: ECON201"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 9,
+          "cellValues": {
+            "Col_A": "2023 Batch",
+            "Course Code": "ECON201",
+            "Course Title": "Microeconomics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "2023 Batch | Course Code: ECON201 | Course Title: Microeconomics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 10,
+          "cellValues": {
+            "Course Code": "ECON209",
+            "Course Title": "Macroeconomics I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: ECON209 | Course Title: Macroeconomics I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 11,
+          "cellValues": {
+            "Course Code": "ECON316",
+            "Course Title": "Digital Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "ECON201"
+          },
+          "text": "Course Code: ECON316 | Course Title: Digital Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: ECON201"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 12,
+          "cellValues": {
+            "Course Code": "ECON315",
+            "Course Title": "Indian Economy",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "ECON201,\r\nECON209"
+          },
+          "text": "Course Code: ECON315 | Course Title: Indian Economy | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: ECON201,\r\nECON209"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 13,
+          "cellValues": {
+            "Course Code": "ECON322",
+            "Course Title": "Economics of Health and Education",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "ECON201"
+          },
+          "text": "Course Code: ECON322 | Course Title: Economics of Health and Education | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: ECON201"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 14,
+          "cellValues": {
+            "Course Code": "ECON301",
+            "Course Title": "International Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "ECON201, \r\nECON202"
+          },
+          "text": "Course Code: ECON301 | Course Title: International Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: ECON201, \r\nECON202"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 16,
+          "cellValues": {
+            "Col_A": "2024 Batch",
+            "Course Code": "No Students"
+          },
+          "text": "2024 Batch | Course Code: No Students"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 18,
+          "cellValues": {
+            "Col_A": "2025 Batch",
+            "Course Code": "ECON208",
+            "Course Title": "Microeconomics I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "2025 Batch | Course Code: ECON208 | Course Title: Microeconomics I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 19,
+          "cellValues": {
+            "Course Code": "ECON209",
+            "Course Title": "Macroeconomics I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: ECON209 | Course Title: Macroeconomics I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 20,
+          "cellValues": {
+            "Course Code": "ECON316",
+            "Course Title": "Digital Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "ECON201"
+          },
+          "text": "Course Code: ECON316 | Course Title: Digital Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: ECON201"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 21,
+          "cellValues": {
+            "Course Code": "ECON315",
+            "Course Title": "Indian Economy",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "ECON201,\r\nECON209"
+          },
+          "text": "Course Code: ECON315 | Course Title: Indian Economy | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: ECON201,\r\nECON209"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 22,
+          "cellValues": {
+            "Course Code": "ECON346",
+            "Course Title": "Financial Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "ECON208,\r\nECON209"
+          },
+          "text": "Course Code: ECON346 | Course Title: Financial Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: ECON208,\r\nECON209"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 23,
+          "cellValues": {
+            "Course Code": "ECON301",
+            "Course Title": "International Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "ECON201, \r\nECON202"
+          },
+          "text": "Course Code: ECON301 | Course Title: International Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: ECON201, \r\nECON202"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 25,
+          "cellValues": {
+            "Col_A": "2026 Batch",
+            "Course Code": "ECON208",
+            "Course Title": "Microeconomics I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "2026 Batch | Course Code: ECON208 | Course Title: Microeconomics I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 26,
+          "cellValues": {
+            "Course Code": "ECON209",
+            "Course Title": "Macroeconomics I",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "Nil"
+          },
+          "text": "Course Code: ECON209 | Course Title: Macroeconomics I | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 27,
+          "cellValues": {
+            "Course Code": "ECON316",
+            "Course Title": "Digital Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "ECON201"
+          },
+          "text": "Course Code: ECON316 | Course Title: Digital Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 5 | Pre-rq: ECON201"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 28,
+          "cellValues": {
+            "Course Code": "ECON315",
+            "Course Title": "Indian Economy",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "ECON201,\r\nECON209"
+          },
+          "text": "Course Code: ECON315 | Course Title: Indian Economy | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: ECON201,\r\nECON209"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 29,
+          "cellValues": {
+            "Course Code": "ECON346",
+            "Course Title": "Financial Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "ECON208,\r\nECON209"
+          },
+          "text": "Course Code: ECON346 | Course Title: Financial Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: ECON208,\r\nECON209"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Economics",
+          "rowNumber": 30,
+          "cellValues": {
+            "Course Code": "ECON301",
+            "Course Title": "International Economics",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "ECON201, \r\nECON202"
+          },
+          "text": "Course Code: ECON301 | Course Title: International Economics | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: ECON201, \r\nECON202"
+        }
+      ]
+    },
+    {
+      "sheetName": "Finance",
+      "totalRows": 72,
+      "recordCount": 40,
+      "emptyRows": 32,
+      "headers": [
+        "2022 Batch",
+        "Sl.No.",
+        "Course Code",
+        "Course Title",
+        "L",
+        "T",
+        "P",
+        "Credit",
+        "Semester",
+        "Pre-rq",
+        "Column_11",
+        "Column_12",
+        "Column_13",
+        "Column_14",
+        "Column_15",
+        "Column_16"
+      ],
+      "records": [
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 1,
+          "cellValues": {
+            "2022 Batch": "2022 Batch",
+            "Sl.No.": "Sl.No.",
+            "Course Code": "Course Code",
+            "Course Title": "Course Title",
+            "L": "L",
+            "T": "T",
+            "P": "P",
+            "Credit": "Credit",
+            "Semester": "Semester",
+            "Pre-rq": "Pre-rq"
+          },
+          "text": "2022 Batch: 2022 Batch | Sl.No.: Sl.No. | Course Code: Course Code | Course Title: Course Title | L: L | T: T | P: P | Credit: Credit | Semester: Semester | Pre-rq: Pre-rq"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 2,
+          "cellValues": {
+            "Sl.No.": "Finance Minor"
+          },
+          "text": "Sl.No.: Finance Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 3,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "DON’T KNOW",
+            "Course Title": "Financial and Management Accounting (FAMA)",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 1 | Course Code: DON’T KNOW | Course Title: Financial and Management Accounting (FAMA) | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 4,
+          "cellValues": {
+            "Sl.No.": "2",
+            "Course Code": "FINA333",
+            "Course Title": "Fiancial Institutions Markets and Services",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "4",
+            "Pre-rq": "MGMT208",
+            "Col_K": "Introduction to Financial Accounting"
+          },
+          "text": "Sl.No.: 2 | Course Code: FINA333 | Course Title: Fiancial Institutions Markets and Services | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 4 | Pre-rq: MGMT208 | Introduction to Financial Accounting"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 5,
+          "cellValues": {
+            "Sl.No.": "3",
+            "Course Code": "MGMT207",
+            "Course Title": "Corporate Finance",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "5",
+            "Pre-rq": "FAMA",
+            "Col_K": "Financial and management accounting"
+          },
+          "text": "Sl.No.: 3 | Course Code: MGMT207 | Course Title: Corporate Finance | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 5 | Pre-rq: FAMA | Financial and management accounting"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 6,
+          "cellValues": {
+            "Sl.No.": "4",
+            "Course Code": "MGMT209",
+            "Course Title": "Financial Statement Anaylsis",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "6",
+            "Pre-rq": "FINA201",
+            "Col_K": "Introduction to Financial Accounting"
+          },
+          "text": "Sl.No.: 4 | Course Code: MGMT209 | Course Title: Financial Statement Anaylsis | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 6 | Pre-rq: FINA201 | Introduction to Financial Accounting"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 7,
+          "cellValues": {
+            "Sl.No.": "5",
+            "Course Code": "MGMT210",
+            "Course Title": "Basics of INVESTMENT MANAGEMENT",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "FINA333",
+            "Col_K": "Financial Instituation, Markets and Services"
+          },
+          "text": "Sl.No.: 5 | Course Code: MGMT210 | Course Title: Basics of INVESTMENT MANAGEMENT | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: FINA333 | Financial Instituation, Markets and Services"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 8,
+          "cellValues": {
+            "Sl.No.": "6",
+            "Course Code": "MGMT213",
+            "Course Title": "Introduction To Fintech",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "FINA333",
+            "Col_K": "Financial Instituation, Markets and Services"
+          },
+          "text": "Sl.No.: 6 | Course Code: MGMT213 | Course Title: Introduction To Fintech | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: FINA333 | Financial Instituation, Markets and Services"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 9,
+          "cellValues": {
+            "Sl.No.": "7",
+            "Course Code": "MGMT323",
+            "Course Title": "Basics of Startup Finance",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "MGMT207",
+            "Col_K": "Corporate Finance"
+          },
+          "text": "Sl.No.: 7 | Course Code: MGMT323 | Course Title: Basics of Startup Finance | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: MGMT207 | Corporate Finance"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 10,
+          "cellValues": {
+            "Sl.No.": "8",
+            "Course Code": "MGMT203",
+            "Course Title": "Business Strategy Simulation",
+            "L": "0",
+            "T": "0",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "MKMT201/ MGMT207/ FINA201",
+            "Col_K": "Marketing Management/ Corporate Finance/\r\nFinancial and Management Accounting"
+          },
+          "text": "Sl.No.: 8 | Course Code: MGMT203 | Course Title: Business Strategy Simulation | L: 0 | T: 0 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: MKMT201/ MGMT207/ FINA201 | Marketing Management/ Corporate Finance/\r\nFinancial and Management Accounting"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 13,
+          "cellValues": {
+            "2022 Batch": "2023 Batch",
+            "Sl.No.": "Finance Minor"
+          },
+          "text": "2022 Batch: 2023 Batch | Sl.No.: Finance Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 14,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "MGMT208",
+            "Course Title": "Introduction to Financial Accounting",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 1 | Course Code: MGMT208 | Course Title: Introduction to Financial Accounting | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 15,
+          "cellValues": {
+            "Sl.No.": "2",
+            "Course Code": "FINA333",
+            "Course Title": "Fiancial Institutions Markets and Services",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "4",
+            "Pre-rq": "MGMT208",
+            "Col_K": "Introduction to Financial Accounting"
+          },
+          "text": "Sl.No.: 2 | Course Code: FINA333 | Course Title: Fiancial Institutions Markets and Services | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 4 | Pre-rq: MGMT208 | Introduction to Financial Accounting"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 16,
+          "cellValues": {
+            "Sl.No.": "3",
+            "Course Code": "MGMT207",
+            "Course Title": "Corporate Finance",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "5",
+            "Pre-rq": "MGMT208",
+            "Col_K": "Introduction to Financial Accounting"
+          },
+          "text": "Sl.No.: 3 | Course Code: MGMT207 | Course Title: Corporate Finance | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 5 | Pre-rq: MGMT208 | Introduction to Financial Accounting"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 17,
+          "cellValues": {
+            "Sl.No.": "4",
+            "Course Code": "MGMT209",
+            "Course Title": "Finacial Statement Analysis",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "6",
+            "Pre-rq": "MGMT208",
+            "Col_K": "Introduction to Financial Accounting"
+          },
+          "text": "Sl.No.: 4 | Course Code: MGMT209 | Course Title: Finacial Statement Analysis | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 6 | Pre-rq: MGMT208 | Introduction to Financial Accounting"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 18,
+          "cellValues": {
+            "Sl.No.": "5",
+            "Course Code": "MGMT210",
+            "Course Title": "Basics of Investment Management",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "FINA333",
+            "Col_K": "Fiancial Institutions Markets and Services"
+          },
+          "text": "Sl.No.: 5 | Course Code: MGMT210 | Course Title: Basics of Investment Management | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: FINA333 | Fiancial Institutions Markets and Services"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 19,
+          "cellValues": {
+            "Sl.No.": "6",
+            "Course Code": "MGMT323",
+            "Course Title": "Basics of Startup Finance",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "MGMT207",
+            "Col_K": "Corporate Finance"
+          },
+          "text": "Sl.No.: 6 | Course Code: MGMT323 | Course Title: Basics of Startup Finance | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: MGMT207 | Corporate Finance"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 20,
+          "cellValues": {
+            "Sl.No.": "7",
+            "Course Code": "MGMT213",
+            "Course Title": "Introduction To Fintech",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 7 | Course Code: MGMT213 | Course Title: Introduction To Fintech | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 21,
+          "cellValues": {
+            "Sl.No.": "8",
+            "Course Code": "MGMT307",
+            "Course Title": "Strategy & Decision Making",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 8 | Course Code: MGMT307 | Course Title: Strategy & Decision Making | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 24,
+          "cellValues": {
+            "2022 Batch": "2024 Batch",
+            "Sl.No.": "Finance Minor"
+          },
+          "text": "2022 Batch: 2024 Batch | Sl.No.: Finance Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 25,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "MGMT208",
+            "Course Title": "Introduction to Financial Accounting",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 1 | Course Code: MGMT208 | Course Title: Introduction to Financial Accounting | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 26,
+          "cellValues": {
+            "Sl.No.": "2",
+            "Course Code": "FINA333",
+            "Course Title": "Fiancial Institutions Markets and Services",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "4",
+            "Pre-rq": "MGMT208",
+            "Col_K": "Introduction to Financial Accounting"
+          },
+          "text": "Sl.No.: 2 | Course Code: FINA333 | Course Title: Fiancial Institutions Markets and Services | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 4 | Pre-rq: MGMT208 | Introduction to Financial Accounting"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 27,
+          "cellValues": {
+            "Sl.No.": "3",
+            "Course Code": "MGMT207",
+            "Course Title": "Corporate Finance",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "5",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 3 | Course Code: MGMT207 | Course Title: Corporate Finance | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 5 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 28,
+          "cellValues": {
+            "Sl.No.": "4",
+            "Course Code": "MGMT209",
+            "Course Title": "Finacial Statement Analysis",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "5",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 4 | Course Code: MGMT209 | Course Title: Finacial Statement Analysis | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 5 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 29,
+          "cellValues": {
+            "Sl.No.": "5",
+            "Course Code": "MGMT210",
+            "Course Title": "Basics of Investment Management",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "FINA333",
+            "Col_K": "Fiancial Institutions Markets and Services"
+          },
+          "text": "Sl.No.: 5 | Course Code: MGMT210 | Course Title: Basics of Investment Management | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: FINA333 | Fiancial Institutions Markets and Services"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 30,
+          "cellValues": {
+            "Sl.No.": "6",
+            "Course Code": "MGMT323",
+            "Course Title": "Basics of Startup Finance",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "MGMT207",
+            "Col_K": "Corporate Finance"
+          },
+          "text": "Sl.No.: 6 | Course Code: MGMT323 | Course Title: Basics of Startup Finance | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: MGMT207 | Corporate Finance"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 31,
+          "cellValues": {
+            "Sl.No.": "7",
+            "Course Code": "MGMT213",
+            "Course Title": "Introduction To Fintech",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 7 | Course Code: MGMT213 | Course Title: Introduction To Fintech | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 32,
+          "cellValues": {
+            "Sl.No.": "8",
+            "Course Code": "MGMT307",
+            "Course Title": "Strategy & Decision Making",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 8 | Course Code: MGMT307 | Course Title: Strategy & Decision Making | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 35,
+          "cellValues": {
+            "2022 Batch": "2025 Batch",
+            "Sl.No.": "Finance Minor"
+          },
+          "text": "2022 Batch: 2025 Batch | Sl.No.: Finance Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 36,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "MGMT330",
+            "Course Title": "Introduction to Financial Accounting (R )",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 1 | Course Code: MGMT330 | Course Title: Introduction to Financial Accounting (R ) | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 37,
+          "cellValues": {
+            "Sl.No.": "2",
+            "Course Code": "New",
+            "Course Title": "Financial Institutions Markets & Services with Fintech (GIVE NEW NAME)",
+            "Credit": "4",
+            "Semester": "4"
+          },
+          "text": "Sl.No.: 2 | Course Code: New | Course Title: Financial Institutions Markets & Services with Fintech (GIVE NEW NAME) | Credit: 4 | Semester: 4"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 38,
+          "cellValues": {
+            "Sl.No.": "3",
+            "Course Code": "New",
+            "Course Title": "Corporate Finance New Name",
+            "Credit": "4",
+            "Semester": "5"
+          },
+          "text": "Sl.No.: 3 | Course Code: New | Course Title: Corporate Finance New Name | Credit: 4 | Semester: 5"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 39,
+          "cellValues": {
+            "Sl.No.": "4",
+            "Course Code": "MGMT210",
+            "Course Title": "Basics of Investment Management",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "FINA333",
+            "Col_K": "Fiancial Institutions Markets and Services"
+          },
+          "text": "Sl.No.: 4 | Course Code: MGMT210 | Course Title: Basics of Investment Management | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: FINA333 | Fiancial Institutions Markets and Services"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 40,
+          "cellValues": {
+            "Sl.No.": "5",
+            "Course Code": "MGMT213",
+            "Course Title": "Introduction To Fintech",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "6",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 5 | Course Code: MGMT213 | Course Title: Introduction To Fintech | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 6 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 41,
+          "cellValues": {
+            "Sl.No.": "6",
+            "Course Code": "MGMT323",
+            "Course Title": "Basics of Startup Finance",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "7",
+            "Pre-rq": "MGMT207",
+            "Col_K": "Corporate Finance"
+          },
+          "text": "Sl.No.: 6 | Course Code: MGMT323 | Course Title: Basics of Startup Finance | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 7 | Pre-rq: MGMT207 | Corporate Finance"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 42,
+          "cellValues": {
+            "Course Title": "TBD",
+            "Credit": "2"
+          },
+          "text": "Course Title: TBD | Credit: 2"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 44,
+          "cellValues": {
+            "2022 Batch": "2026 Batch"
+          },
+          "text": "2022 Batch: 2026 Batch"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 45,
+          "cellValues": {
+            "Sl.No.": "Finance Minor"
+          },
+          "text": "Sl.No.: Finance Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 46,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "MGMT330",
+            "Course Title": "Introduction to Financial Accounting (R)",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3"
+          },
+          "text": "Sl.No.: 1 | Course Code: MGMT330 | Course Title: Introduction to Financial Accounting (R) | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Finance",
+          "rowNumber": 47,
+          "cellValues": {
+            "Course Title": "TBD",
+            "Credit": "20"
+          },
+          "text": "Course Title: TBD | Credit: 20"
+        }
+      ]
+    },
+    {
+      "sheetName": "Marketing",
+      "totalRows": 72,
+      "recordCount": 38,
+      "emptyRows": 34,
+      "headers": [
+        "2022 Batch",
+        "Sl.No.",
+        "Course Code",
+        "Course Title",
+        "L",
+        "T",
+        "P",
+        "Credit",
+        "Semester",
+        "Pre-rq",
+        "Column_11",
+        "Column_12",
+        "Column_13",
+        "Column_14",
+        "Column_15",
+        "Column_16",
+        "Column_17",
+        "Column_18",
+        "Column_19",
+        "Column_20"
+      ],
+      "records": [
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 1,
+          "cellValues": {
+            "2022 Batch": "2022 Batch",
+            "Sl.No.": "Sl.No.",
+            "Course Code": "Course Code",
+            "Course Title": "Course Title",
+            "L": "L",
+            "T": "T",
+            "P": "P",
+            "Credit": "Credit",
+            "Semester": "Semester",
+            "Pre-rq": "Pre-rq"
+          },
+          "text": "2022 Batch: 2022 Batch | Sl.No.: Sl.No. | Course Code: Course Code | Course Title: Course Title | L: L | T: T | P: P | Credit: Credit | Semester: Semester | Pre-rq: Pre-rq"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 2,
+          "cellValues": {
+            "Sl.No.": "Marketing Minor"
+          },
+          "text": "Sl.No.: Marketing Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 4,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "DON’T KNOW",
+            "Course Title": "Marketing Management",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 1 | Course Code: DON’T KNOW | Course Title: Marketing Management | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 5,
+          "cellValues": {
+            "Sl.No.": "2",
+            "Course Code": "MGMT302",
+            "Course Title": "Digital and Ecommerce Marketing",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 2 | Course Code: MGMT302 | Course Title: Digital and Ecommerce Marketing | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 6,
+          "cellValues": {
+            "Sl.No.": "3",
+            "Course Code": "MGMT304",
+            "Course Title": "Integrated Marketing Communications",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "5",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Marketing management"
+          },
+          "text": "Sl.No.: 3 | Course Code: MGMT304 | Course Title: Integrated Marketing Communications | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 5 | Pre-rq: MKTG201 | Marketing management"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 7,
+          "cellValues": {
+            "Sl.No.": "4",
+            "Course Code": "MGMT314",
+            "Course Title": "Sales and distribution management",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Marketing management"
+          },
+          "text": "Sl.No.: 4 | Course Code: MGMT314 | Course Title: Sales and distribution management | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: MKTG201 | Marketing management"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 8,
+          "cellValues": {
+            "Sl.No.": "5",
+            "Course Code": "MGMT320",
+            "Course Title": "Marketing Analytics",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 5 | Course Code: MGMT320 | Course Title: Marketing Analytics | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 9,
+          "cellValues": {
+            "Sl.No.": "6",
+            "Course Code": "MGMT305",
+            "Course Title": "Services Marketing",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "7",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 6 | Course Code: MGMT305 | Course Title: Services Marketing | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 7 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 10,
+          "cellValues": {
+            "Sl.No.": "7",
+            "Course Code": "MGMT211",
+            "Course Title": "Brand Management",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "7",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 7 | Course Code: MGMT211 | Course Title: Brand Management | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 7 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 11,
+          "cellValues": {
+            "Sl.No.": "8",
+            "Course Code": "MGMT203",
+            "Course Title": "Business Strategy Simulation",
+            "L": "0",
+            "T": "0",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "MKMT201/  MGMT207/ FINA201",
+            "Col_K": "Marketing Management/ Corporate Finance/\r\nFinancial and Management Accounting"
+          },
+          "text": "Sl.No.: 8 | Course Code: MGMT203 | Course Title: Business Strategy Simulation | L: 0 | T: 0 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: MKMT201/  MGMT207/ FINA201 | Marketing Management/ Corporate Finance/\r\nFinancial and Management Accounting"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 14,
+          "cellValues": {
+            "2022 Batch": "2023 Batch",
+            "Sl.No.": "Marketing Minor"
+          },
+          "text": "2022 Batch: 2023 Batch | Sl.No.: Marketing Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 15,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "MKTG201",
+            "Course Title": "Marketing Management",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 1 | Course Code: MKTG201 | Course Title: Marketing Management | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 16,
+          "cellValues": {
+            "Sl.No.": "2",
+            "Course Code": "MGMT302",
+            "Course Title": "Digital and Ecommerce Marketing",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 2 | Course Code: MGMT302 | Course Title: Digital and Ecommerce Marketing | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 17,
+          "cellValues": {
+            "Sl.No.": "3",
+            "Course Code": "MGMT304",
+            "Course Title": "Integrated Marketing Communications",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "5",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 3 | Course Code: MGMT304 | Course Title: Integrated Marketing Communications | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 5 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 18,
+          "cellValues": {
+            "Sl.No.": "4",
+            "Course Code": "MGMT314",
+            "Course Title": "Sales and Distribution Management",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 4 | Course Code: MGMT314 | Course Title: Sales and Distribution Management | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 19,
+          "cellValues": {
+            "Sl.No.": "5",
+            "Course Code": "MGMT305",
+            "Course Title": "Services Marketing",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "6",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 5 | Course Code: MGMT305 | Course Title: Services Marketing | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 6 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 20,
+          "cellValues": {
+            "Sl.No.": "6",
+            "Course Code": "MGMT211",
+            "Course Title": "Brand Management",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "6",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 6 | Course Code: MGMT211 | Course Title: Brand Management | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 6 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 21,
+          "cellValues": {
+            "Sl.No.": "7",
+            "Course Code": "MGMT320",
+            "Course Title": "Marketing Analytics",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 7 | Course Code: MGMT320 | Course Title: Marketing Analytics | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 22,
+          "cellValues": {
+            "Sl.No.": "8",
+            "Course Code": "MGMT307",
+            "Course Title": "Strategy & Decision Making",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 8 | Course Code: MGMT307 | Course Title: Strategy & Decision Making | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 25,
+          "cellValues": {
+            "2022 Batch": "2024 Batch",
+            "Sl.No.": "Marketing Minor"
+          },
+          "text": "2022 Batch: 2024 Batch | Sl.No.: Marketing Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 26,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "MKTG201",
+            "Course Title": "Marketing Management",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 1 | Course Code: MKTG201 | Course Title: Marketing Management | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 27,
+          "cellValues": {
+            "Sl.No.": "2",
+            "Course Code": "MGMT302",
+            "Course Title": "Digital and Ecommerce Marketing",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 2 | Course Code: MGMT302 | Course Title: Digital and Ecommerce Marketing | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 28,
+          "cellValues": {
+            "Sl.No.": "3",
+            "Course Code": "MGMT305",
+            "Course Title": "Services Marketing",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "5",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 3 | Course Code: MGMT305 | Course Title: Services Marketing | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 5 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 29,
+          "cellValues": {
+            "Sl.No.": "4",
+            "Course Code": "MGMT304",
+            "Course Title": "Integrated Marketing Communications",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "5",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 4 | Course Code: MGMT304 | Course Title: Integrated Marketing Communications | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 5 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 30,
+          "cellValues": {
+            "Sl.No.": "5",
+            "Course Code": "MGMT314",
+            "Course Title": "Sales and Distribution Management",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 5 | Course Code: MGMT314 | Course Title: Sales and Distribution Management | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 31,
+          "cellValues": {
+            "Sl.No.": "6",
+            "Course Code": "MGMT211",
+            "Course Title": "Brand Management",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "6",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 6 | Course Code: MGMT211 | Course Title: Brand Management | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 6 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 32,
+          "cellValues": {
+            "Sl.No.": "7",
+            "Course Code": "MGMT320",
+            "Course Title": "Marketing Analytics",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 7 | Course Code: MGMT320 | Course Title: Marketing Analytics | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 33,
+          "cellValues": {
+            "Sl.No.": "8",
+            "Course Code": "MGMT307",
+            "Course Title": "Strategy & Decision Making",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "7",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 8 | Course Code: MGMT307 | Course Title: Strategy & Decision Making | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 7 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 36,
+          "cellValues": {
+            "2022 Batch": "2025 Batch",
+            "Sl.No.": "Marketing Minor"
+          },
+          "text": "2022 Batch: 2025 Batch | Sl.No.: Marketing Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 37,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "MGMT328",
+            "Course Title": "Foundation of Marketing Management",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 1 | Course Code: MGMT328 | Course Title: Foundation of Marketing Management | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 38,
+          "cellValues": {
+            "Sl.No.": "2",
+            "Course Code": "MGMT302",
+            "Course Title": "Digital and Ecommerce Marketing",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 2 | Course Code: MGMT302 | Course Title: Digital and Ecommerce Marketing | L: 2 | T: 1 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 39,
+          "cellValues": {
+            "Sl.No.": "3",
+            "Course Code": "MGMT304",
+            "Course Title": "Integrated Marketing Communications",
+            "L": "2",
+            "T": "1",
+            "P": "0",
+            "Credit": "3",
+            "Semester": "5",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 3 | Course Code: MGMT304 | Course Title: Integrated Marketing Communications | L: 2 | T: 1 | P: 0 | Credit: 3 | Semester: 5 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 40,
+          "cellValues": {
+            "Sl.No.": "4",
+            "Course Code": "New",
+            "Course Title": "Services Marketing",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "TBD"
+          },
+          "text": "Sl.No.: 4 | Course Code: New | Course Title: Services Marketing | Credit: 4 | Semester: 5 | Pre-rq: TBD"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 41,
+          "cellValues": {
+            "Sl.No.": "5",
+            "Course Code": "MGMT314",
+            "Course Title": "Sales and Distribution Management",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "6",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 5 | Course Code: MGMT314 | Course Title: Sales and Distribution Management | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 6 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 42,
+          "cellValues": {
+            "Course Title": "TBD",
+            "Credit": "5"
+          },
+          "text": "Course Title: TBD | Credit: 5"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 45,
+          "cellValues": {
+            "2022 Batch": "2026 Batch",
+            "Sl.No.": "Marketing Minor"
+          },
+          "text": "2022 Batch: 2026 Batch | Sl.No.: Marketing Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 46,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "MGMT328",
+            "Course Title": "Foundations of Marketing Management",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3"
+          },
+          "text": "Sl.No.: 1 | Course Code: MGMT328 | Course Title: Foundations of Marketing Management | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 3"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Marketing",
+          "rowNumber": 47,
+          "cellValues": {
+            "Course Title": "TBD",
+            "Credit": "20"
+          },
+          "text": "Course Title: TBD | Credit: 20"
+        }
+      ]
+    },
+    {
+      "sheetName": "Start-up",
+      "totalRows": 38,
+      "recordCount": 11,
+      "emptyRows": 27,
+      "headers": [
+        "Column_1",
+        "Sl.No.",
+        "Course Code",
+        "Course Title",
+        "L",
+        "T",
+        "P",
+        "Credit",
+        "Semester",
+        "Pre-rq",
+        "Column_11"
+      ],
+      "records": [
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Start-up",
+          "rowNumber": 1,
+          "cellValues": {
+            "Sl.No.": "Sl.No.",
+            "Course Code": "Course Code",
+            "Course Title": "Course Title",
+            "L": "L",
+            "T": "T",
+            "P": "P",
+            "Credit": "Credit",
+            "Semester": "Semester",
+            "Pre-rq": "Pre-rq"
+          },
+          "text": "Sl.No.: Sl.No. | Course Code: Course Code | Course Title: Course Title | L: L | T: T | P: P | Credit: Credit | Semester: Semester | Pre-rq: Pre-rq"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Start-up",
+          "rowNumber": 2,
+          "cellValues": {
+            "Col_A": "2024 Batch",
+            "Sl.No.": "Start -up Minor"
+          },
+          "text": "2024 Batch | Sl.No.: Start -up Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Start-up",
+          "rowNumber": 3,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "MGMT326",
+            "Course Title": "Product Development",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "4",
+            "Pre-rq": "MKTG201",
+            "Col_K": "Introduction to digital business"
+          },
+          "text": "Sl.No.: 1 | Course Code: MGMT326 | Course Title: Product Development | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 4 | Pre-rq: MKTG201 | Introduction to digital business"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Start-up",
+          "rowNumber": 4,
+          "cellValues": {
+            "Sl.No.": "2",
+            "Course Code": "MGMT336",
+            "Course Title": "Design Thinking for Entrepreneurship",
+            "L": "2",
+            "T": "1",
+            "P": "2",
+            "Credit": "4",
+            "Semester": "5",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 2 | Course Code: MGMT336 | Course Title: Design Thinking for Entrepreneurship | L: 2 | T: 1 | P: 2 | Credit: 4 | Semester: 5 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Start-up",
+          "rowNumber": 5,
+          "cellValues": {
+            "Course Title": "TBD",
+            "Credit": "16"
+          },
+          "text": "Course Title: TBD | Credit: 16"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Start-up",
+          "rowNumber": 8,
+          "cellValues": {
+            "Col_A": "2025 Batch",
+            "Sl.No.": "Start -up Minor"
+          },
+          "text": "2025 Batch | Sl.No.: Start -up Minor"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Start-up",
+          "rowNumber": 9,
+          "cellValues": {
+            "Sl.No.": "1",
+            "Course Code": "MGMT330",
+            "Course Title": "Introduction to Financial Accounting (R )",
+            "L": "3",
+            "T": "1",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 1 | Course Code: MGMT330 | Course Title: Introduction to Financial Accounting (R ) | L: 3 | T: 1 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Start-up",
+          "rowNumber": 10,
+          "cellValues": {
+            "Sl.No.": "2",
+            "Course Code": "MGMT328",
+            "Course Title": "Foundation of Marketing Management",
+            "L": "2",
+            "T": "2",
+            "P": "0",
+            "Credit": "4",
+            "Semester": "3",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 2 | Course Code: MGMT328 | Course Title: Foundation of Marketing Management | L: 2 | T: 2 | P: 0 | Credit: 4 | Semester: 3 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Start-up",
+          "rowNumber": 11,
+          "cellValues": {
+            "Sl.No.": "3",
+            "Course Code": "MGMT336",
+            "Course Title": "Design Thinking for Entrepreneurship",
+            "L": "2",
+            "T": "1",
+            "P": "2",
+            "Credit": "4",
+            "Semester": "5"
+          },
+          "text": "Sl.No.: 3 | Course Code: MGMT336 | Course Title: Design Thinking for Entrepreneurship | L: 2 | T: 1 | P: 2 | Credit: 4 | Semester: 5"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Start-up",
+          "rowNumber": 12,
+          "cellValues": {
+            "Sl.No.": "4",
+            "Course Code": "MGMT213",
+            "Course Title": "Introduction To Fintech",
+            "L": "1",
+            "T": "1",
+            "P": "0",
+            "Credit": "2",
+            "Semester": "6",
+            "Pre-rq": "Nil"
+          },
+          "text": "Sl.No.: 4 | Course Code: MGMT213 | Course Title: Introduction To Fintech | L: 1 | T: 1 | P: 0 | Credit: 2 | Semester: 6 | Pre-rq: Nil"
+        },
+        {
+          "sourceType": "excel",
+          "fileName": "Minor_Courses_for_BTech_Students.xlsx",
+          "sheetName": "Start-up",
+          "rowNumber": 13,
+          "cellValues": {
+            "Course Title": "TBD",
+            "Credit": "10"
+          },
+          "text": "Course Title: TBD | Credit: 10"
+        }
+      ]
+    }
+  ]
+}
