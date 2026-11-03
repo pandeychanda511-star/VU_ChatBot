@@ -1,4 +1,5 @@
 import express from 'express';
+import { Resvg } from '@resvg/resvg-js';
 import { 
   generateStudentGradeCardSvg, 
   generateSemesterGradeCardSvg,
@@ -24,8 +25,6 @@ const router = express.Router();
 
 /**
  * GET /api/students
- * Returns all dynamically registered students from database.
- * No predefined mock students are returned.
  */
 router.get('/', optionalAuthenticateToken, (req, res) => {
   const students = getAllStudents();
@@ -37,7 +36,6 @@ router.get('/', optionalAuthenticateToken, (req, res) => {
 
 /**
  * GET /api/students/academic-config
- * Returns current university academic session and batch-progression mapping.
  */
 router.get('/academic-config', optionalAuthenticateToken, (req, res) => {
   const cfg = getAcademicCycleConfig();
@@ -46,7 +44,6 @@ router.get('/academic-config', optionalAuthenticateToken, (req, res) => {
 
 /**
  * PUT /api/students/academic-config
- * Admin updates academic cycle configuration.
  */
 router.put('/academic-config', authenticateToken, requireAdmin, (req, res) => {
   try {
@@ -62,8 +59,6 @@ router.put('/academic-config', authenticateToken, requireAdmin, (req, res) => {
 
 /**
  * GET /api/students/:id
- * Retrieves a single student record with full semester results and progression status.
- * RBAC: Students can only view their own record. Admins can view any record.
  */
 router.get('/:id', optionalAuthenticateToken, (req, res) => {
   const student = getStudentByIdOrUun(req.params.id);
@@ -83,7 +78,6 @@ router.get('/:id', optionalAuthenticateToken, (req, res) => {
 
 /**
  * PUT /api/students/:id
- * Admin updates a student profile (Name, Programme, Admission Cohort, Semester Override).
  */
 router.put('/:id', authenticateToken, requireAdmin, (req, res) => {
   const { fullName, programme, admissionCohort, currentSemesterOverride, email } = req.body;
@@ -107,7 +101,6 @@ router.put('/:id', authenticateToken, requireAdmin, (req, res) => {
 
 /**
  * DELETE /api/students/:id
- * Admin deletes a student and all associated academic records.
  */
 router.delete('/:id', authenticateToken, requireAdmin, (req, res) => {
   const success = deleteStudent(req.params.id);
@@ -123,7 +116,6 @@ router.delete('/:id', authenticateToken, requireAdmin, (req, res) => {
 
 /**
  * GET /api/students/:id/curriculum
- * Returns the official curriculum structure for the student's cohort.
  */
 router.get('/:id/curriculum', optionalAuthenticateToken, (req, res) => {
   const student = getStudentByIdOrUun(req.params.id);
@@ -137,7 +129,6 @@ router.get('/:id/curriculum', optionalAuthenticateToken, (req, res) => {
 
 /**
  * PUT /api/students/:id/grades
- * Admin updates grades for a specific semester (Semesters 1 to 7).
  */
 router.put('/:id/grades', authenticateToken, requireAdmin, (req, res) => {
   const { semester, grades } = req.body;
@@ -164,7 +155,7 @@ router.put('/:id/grades', authenticateToken, requireAdmin, (req, res) => {
 
 /**
  * GET /api/students/:id/card-image
- * Query params: ?semester=1..8 (If omitted, generates full card or current semester)
+ * Query params: ?semester=1..8 (If omitted, generates full card)
  * Dynamically generates and returns SVG grade card.
  */
 router.get('/:id/card-image', optionalAuthenticateToken, (req, res) => {
@@ -173,7 +164,6 @@ router.get('/:id/card-image', optionalAuthenticateToken, (req, res) => {
     return res.status(404).json({ error: `Student '${req.params.id}' not found.` });
   }
 
-  // Security check for student role
   if (req.user && req.user.role === 'student') {
     if (req.user.uid !== student.firebaseUid && normalizeUun(req.user.uun) !== normalizeUun(student.uun)) {
       return res.status(403).json({ error: 'Access denied. You can only view your own grade card.' });
@@ -194,7 +184,58 @@ router.get('/:id/card-image', optionalAuthenticateToken, (req, res) => {
 });
 
 /**
+ * GET /api/students/:id/card-png
+ * Query params: ?semester=1..8
+ * Renders SVG directly to high-resolution PNG image with embedded AI watermark & disclaimer.
+ */
+router.get('/:id/card-png', optionalAuthenticateToken, (req, res) => {
+  const student = getStudentByIdOrUun(req.params.id);
+  if (!student) {
+    return res.status(404).json({ error: `Student '${req.params.id}' not found.` });
+  }
+
+  if (req.user && req.user.role === 'student') {
+    if (req.user.uid !== student.firebaseUid && normalizeUun(req.user.uun) !== normalizeUun(student.uun)) {
+      return res.status(403).json({ error: 'Access denied. You can only download your own grade card.' });
+    }
+  }
+
+  const reqSem = req.query.semester ? parseInt(req.query.semester, 10) : null;
+  let svg;
+  if (reqSem && reqSem >= 1 && reqSem <= 8) {
+    svg = generateSemesterGradeCardSvg(student, reqSem);
+  } else {
+    svg = generateStudentGradeCardSvg(student);
+  }
+
+  try {
+    const resvg = new Resvg(svg, {
+      fitTo: { mode: 'width', value: 1200 }
+    });
+    const pngData = resvg.render();
+    const pngBuffer = pngData.asPng();
+
+    const semLabel = reqSem ? `_Semester_${reqSem}` : '';
+    const safeFilename = `${(student.fullName || student.name || 'Student').replace(/\s+/g, '_')}${semLabel}_Report.png`;
+
+    const isDownload = req.query.download === 'true';
+    res.setHeader('Content-Type', 'image/png');
+    if (isDownload) {
+      res.setHeader('Content-Disposition', `attachment; filename="${safeFilename}"`);
+    } else {
+      res.setHeader('Content-Disposition', `inline; filename="${safeFilename}"`);
+    }
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.send(pngBuffer);
+  } catch (err) {
+    console.error('Error generating PNG:', err);
+    res.status(500).json({ error: 'Failed to generate PNG image' });
+  }
+});
+
+/**
  * GET /api/students/:id/card-pdf
+ * Query params: ?semester=1..8
  */
 router.get('/:id/card-pdf', optionalAuthenticateToken, async (req, res) => {
   const student = getStudentByIdOrUun(req.params.id);
@@ -208,9 +249,13 @@ router.get('/:id/card-pdf', optionalAuthenticateToken, async (req, res) => {
     }
   }
 
+  const reqSem = req.query.semester ? parseInt(req.query.semester, 10) : null;
+
   try {
-    const pdfBuffer = await generateGradeCardPdf(student);
-    const safeFilename = `${(student.fullName || student.name || 'Student').replace(/\s+/g, '_')}_Grade_Card.pdf`;
+    const pdfBuffer = await generateGradeCardPdf(student, reqSem);
+    const semLabel = reqSem ? `_Semester_${reqSem}` : '';
+    const safeFilename = `${(student.fullName || student.name || 'Student').replace(/\s+/g, '_')}${semLabel}_Report.pdf`;
+
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `attachment; filename="${safeFilename}"`);
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');

@@ -16,14 +16,15 @@ function getGradeColor(grade) {
 }
 
 /**
- * Generates an official-looking, professional academic Grade Card PDF
- * covering Semesters 1-7 results, Semester 8 Upcoming, Credit Summary,
- * diagonal AI watermark, and mandatory footer disclaimer.
+ * Generates an official-looking, professional academic Grade Card PDF.
+ * If semesterNumber is provided (1-8), generates a Semester-Specific report.
+ * Otherwise generates the full report.
  *
  * @param {object} student - Student record with resolved dynamic performance
+ * @param {number|null} semesterNumber - Optional specific semester (1 to 8)
  * @returns {Promise<Buffer>} Generated PDF buffer
  */
-export function generateGradeCardPdf(student) {
+export function generateGradeCardPdf(student, semesterNumber = null) {
   return new Promise((resolve, reject) => {
     try {
       const doc = new PDFDocument({
@@ -31,7 +32,7 @@ export function generateGradeCardPdf(student) {
         margin: 36,
         bufferPages: true,
         info: {
-          Title: `Academic Grade Card - ${student.fullName || student.name}`,
+          Title: semesterNumber ? `Semester ${semesterNumber} Report - ${student.fullName || student.name}` : `Academic Grade Card - ${student.fullName || student.name}`,
           Author: 'Vidyashilp University Academic Advisor System',
           Subject: 'AI-Generated Mock Grade Card Report'
         }
@@ -46,107 +47,138 @@ export function generateGradeCardPdf(student) {
       const uun = student.uun || 'UUN01';
       const program = student.programme || student.program || 'B.Tech Computer Science and Engineering';
       const cohort = student.cohort || `${student.admissionCohort || '2024'} Batch`;
-      const cgpa = (student.cgpa !== undefined && student.cgpa !== null ? Number(student.cgpa) : 3.65).toFixed(2);
+      const currentSemester = student.currentSemester || 5;
+      const cgpa = (student.cgpa !== undefined && student.cgpa !== null ? Number(student.cgpa) : 8.85).toFixed(2);
       const completedCredits = student.completedCredits || 0;
       const totalCredits = student.totalCredits || 160;
-      const remainingCredits = student.remainingCredits !== undefined ? student.remainingCredits : Math.max(0, totalCredits - completedCredits);
-      const backlogs = student.failedCourses || [];
-      const semesters = student.semesters || [];
 
-      function drawWatermark() {
+      // Filter semesters if specific semester requested
+      const targetSemesters = semesterNumber 
+        ? [semesterNumber] 
+        : [1, 2, 3, 4, 5, 6, 7, 8];
+
+      const isSingleUpcoming = semesterNumber && semesterNumber > currentSemester;
+
+      // =========================================================================
+      // WATERMARK DRAWING FUNCTION
+      // =========================================================================
+      const drawWatermark = () => {
         doc.save();
-        doc.rotate(-32, { origin: [297, 420] });
-        doc.fontSize(22);
-        doc.font('Helvetica-Bold');
-        doc.fillColor('#94a3b8');
-        doc.fillOpacity(0.14);
-        doc.text('AI GENERATED – NOT AN OFFICIAL UNIVERSITY DOCUMENT', -50, 400, {
+        doc.fillColor('#64748b', 0.08);
+        doc.font('Helvetica-Bold').fontSize(26);
+        doc.rotate(-28, { origin: [297, 420] });
+        doc.text('AI GENERATED – NOT AN OFFICIAL UNIVERSITY DOCUMENT', -50, 410, {
           align: 'center',
           width: 700
         });
         doc.restore();
-        doc.fillOpacity(1.0);
-      }
+      };
 
-      // Page 1 Watermark
       drawWatermark();
 
       // =========================================================================
-      // 1. HEADER BANNER
+      // 1. UNIVERSITY & REPORT HEADER
       // =========================================================================
-      doc.rect(36, 36, 523, 62).fill('#0b2545');
+      const headerColor = isSingleUpcoming ? '#581c87' : '#0b2545';
+      doc.rect(36, 36, 523, 70).fill(headerColor);
 
-      doc.fillColor('#fbbf24').font('Helvetica-Bold').fontSize(15)
+      // Gold institution label
+      doc.fillColor('#fbbf24').font('Helvetica-Bold').fontSize(14)
          .text('VIDYASHILP UNIVERSITY', 50, 48);
-      doc.fillColor('#ffffff').font('Helvetica-Bold').fontSize(8.5)
-         .text('OFFICIAL STUDENT ACADEMIC GRADE CARD • SEMESTERS 1–8 REPORT', 50, 68);
-      doc.fillColor('#93c5fd').font('Helvetica').fontSize(8)
-         .text(`${program} • ${cohort}`, 50, 80);
 
-      // Student box inside header
-      doc.rect(380, 44, 165, 46).fillAndStroke('#133e6f', '#1e40af');
-      doc.fillColor('#ffffff').font('Helvetica-Bold').fontSize(11)
-         .text(name, 388, 52, { width: 150, ellipsis: true });
-      doc.fillColor('#fbbf24').font('Helvetica-Bold').fontSize(9)
-         .text(`UUN: ${uun}`, 388, 68);
+      const headerTitle = semesterNumber 
+        ? (isSingleUpcoming ? `UPCOMING SEMESTER ${semesterNumber} COURSE REPORT` : `OFFICIAL SEMESTER ${semesterNumber} ACADEMIC GRADE CARD`)
+        : 'OFFICIAL STUDENT ACADEMIC GRADE CARD';
 
-      // =========================================================================
-      // 2. ACADEMIC SUMMARY CARDS
-      // =========================================================================
-      const sumY = 106;
-      doc.rect(36, sumY, 523, 44).fillAndStroke('#f8fafc', '#cbd5e1');
+      doc.fillColor('#ffffff').font('Helvetica-Bold').fontSize(10)
+         .text(headerTitle, 50, 68);
 
-      // Metric 1: CGPA
-      doc.fillColor('#64748b').font('Helvetica-Bold').fontSize(7).text('CUMULATIVE CGPA (10 pt)', 48, sumY + 8);
-      doc.fillColor('#0b2545').font('Helvetica-Bold').fontSize(14).text(`${cgpa} / 10.0`, 48, sumY + 20);
+      doc.fillColor('#93c5fd').font('Helvetica').fontSize(8.5)
+         .text(`Programme: ${program}   |   Admission Batch: ${cohort}   |   Current Semester: ${currentSemester}`, 50, 84);
 
-      // Metric 2: Credits Completed
-      doc.fillColor('#64748b').font('Helvetica-Bold').fontSize(7).text('CREDITS COMPLETED', 145, sumY + 8);
-      doc.fillColor('#059669').font('Helvetica-Bold').fontSize(14).text(`${completedCredits}`, 145, sumY + 20);
+      // Student info pill in header right
+      doc.rect(385, 46, 164, 48).fillAndStroke('#ffffff', '#cbd5e1');
+      doc.fillColor('#0b2545').font('Helvetica-Bold').fontSize(10)
+         .text(name, 392, 53, { width: 150, ellipsis: true });
+      doc.fillColor('#d97706').font('Courier-Bold').fontSize(9)
+         .text(`UUN: ${uun}`, 392, 69);
+      doc.fillColor('#64748b').font('Helvetica').fontSize(7.5)
+         .text(`Batch: ${cohort}`, 392, 81);
 
-      // Metric 3: Credits Remaining
-      doc.fillColor('#64748b').font('Helvetica-Bold').fontSize(7).text('CREDITS REMAINING', 255, sumY + 8);
-      doc.fillColor('#d97706').font('Helvetica-Bold').fontSize(14).text(`${remainingCredits}`, 255, sumY + 20);
-
-      // Metric 4: Semesters
-      doc.fillColor('#64748b').font('Helvetica-Bold').fontSize(7).text('SEMESTERS COMPLETED', 365, sumY + 8);
-      doc.fillColor('#1e293b').font('Helvetica-Bold').fontSize(14).text('7 / 8', 365, sumY + 20);
-
-      // Metric 5: Standing
-      doc.fillColor('#64748b').font('Helvetica-Bold').fontSize(7).text('ACADEMIC STATUS', 460, sumY + 8);
-      doc.fillColor(backlogs.length > 0 ? '#b91c1c' : '#059669').font('Helvetica-Bold').fontSize(9.5)
-         .text(backlogs.length > 0 ? 'Warning (Backlog)' : 'Good Standing', 460, sumY + 22);
-
-      let curY = sumY + 52;
+      // Upcoming notice banner if single upcoming semester
+      let curY = 114;
+      if (isSingleUpcoming) {
+        doc.rect(36, curY, 523, 30).fillAndStroke('#faf5ff', '#c084fc');
+        doc.fillColor('#7e22ce').font('Helvetica-Bold').fontSize(8.5)
+           .text('THIS SEMESTER IS NOT YET COMPLETED. GRADES AND GPA ARE NOT AVAILABLE.', 46, curY + 6, { align: 'center', width: 503 });
+        doc.fillColor('#6b21a8').font('Helvetica').fontSize(7.5)
+           .text(`Official prospective curriculum overview for Semester ${semesterNumber} (${cohort} Batch).`, 46, curY + 18, { align: 'center', width: 503 });
+        curY += 38;
+      }
 
       // =========================================================================
-      // 3. SEMESTER-WISE TABLES (SEMESTERS 1 TO 8)
+      // 2. METRIC SUMMARY STRIP
       // =========================================================================
-      for (let s = 1; s <= 8; s++) {
-        const isUpcoming = (s === 8);
-        const semData = semesters.find(x => x.semester === s) || {
-          semester: s,
-          sgpa: 3.50,
-          totalCredits: 20,
-          earnedCredits: 20,
-          courses: []
-        };
+      const boxW = 125;
+      const boxH = 40;
+      const gap = 8;
+      let left = 36;
+
+      // Box 1: CGPA
+      doc.rect(left, curY, boxW, boxH).fill('#0b2545');
+      doc.fillColor('#93c5fd').font('Helvetica').fontSize(7.5).text('CUMULATIVE CGPA', left + 8, curY + 6);
+      doc.fillColor('#fbbf24').font('Helvetica-Bold').fontSize(13).text(`${cgpa}`, left + 8, curY + 18);
+      doc.fillColor('#94a3b8').font('Helvetica').fontSize(8).text('/ 10.00', left + 54, curY + 22);
+      left += boxW + gap;
+
+      // Box 2: Credits
+      doc.rect(left, curY, boxW, boxH).fill('#f8fafc');
+      doc.fillColor('#64748b').font('Helvetica').fontSize(7.5).text('COMPLETED CREDITS', left + 8, curY + 6);
+      doc.fillColor('#0f172a').font('Helvetica-Bold').fontSize(12).text(`${completedCredits} / ${totalCredits}`, left + 8, curY + 20);
+      left += boxW + gap;
+
+      // Box 3: Current Semester
+      doc.rect(left, curY, boxW, boxH).fill('#f8fafc');
+      doc.fillColor('#64748b').font('Helvetica').fontSize(7.5).text('CURRENT ENROLLMENT', left + 8, curY + 6);
+      doc.fillColor('#0f172a').font('Helvetica-Bold').fontSize(12).text(`Semester ${currentSemester}`, left + 8, curY + 20);
+      left += boxW + gap;
+
+      // Box 4: Academic Status
+      doc.rect(left, curY, boxW, boxH).fill('#f8fafc');
+      doc.fillColor('#64748b').font('Helvetica').fontSize(7.5).text('ACADEMIC STATUS', left + 8, curY + 6);
+      doc.fillColor(student.failedCourses && student.failedCourses.length > 0 ? '#b91c1c' : '#15803d')
+         .font('Helvetica-Bold').fontSize(9.5)
+         .text(student.failedCourses && student.failedCourses.length > 0 ? 'Warning (Backlog)' : 'Good Standing', left + 8, curY + 21);
+
+      curY += boxH + 14;
+
+      // =========================================================================
+      // 3. SEMESTER COURSE TABLES
+      // =========================================================================
+      const semMap = {};
+      (student.semesters || []).forEach(s => { semMap[s.semester] = s; });
+
+      for (const s of targetSemesters) {
+        const semData = semMap[s] || { semester: s, isUpcoming: s > currentSemester, courses: [] };
         const courses = semData.courses || [];
-        const requiredHeight = 30 + Math.max(1, courses.length) * 16;
+        const isUpcoming = semData.isUpcoming || s > currentSemester;
+        const isCurrent = s === currentSemester;
 
-        // Auto page break if table exceeds page margin
-        if (curY + requiredHeight > 750) {
+        const tableHeight = 32 + Math.max(1, courses.length) * 16 + 10;
+        if (curY + tableHeight > 740) {
           doc.addPage();
           drawWatermark();
-          curY = 40;
+          curY = 36;
         }
 
-        // Semester Header
+        // Semester Subheader Bar
         if (isUpcoming) {
-          doc.rect(36, curY, 523, 18).fill('#6b21a8');
+          doc.rect(36, curY, 523, 18).fill('#581c87');
           doc.fillColor('#ffffff').font('Helvetica-Bold').fontSize(8.5)
-             .text('SEMESTER 8 — UPCOMING CURRICULUM (NOT STARTED)', 46, curY + 5);
-          doc.fillColor('#e9d5ff').font('Helvetica-Bold').fontSize(8)
+             .text(`SEMESTER ${s} (UPCOMING)`, 46, curY + 5);
+          doc.fillColor('#e9d5ff').font('Helvetica').fontSize(8)
+             .text(`Total Credits: ${semData.totalCredits || 0}`, 160, curY + 5);
+          doc.fillColor('#fbbf24').font('Helvetica-Bold').fontSize(8)
              .text('STATUS: UPCOMING', 430, curY + 5, { width: 120, align: 'right' });
         } else {
           doc.rect(36, curY, 523, 18).fill('#0b2545');
@@ -155,7 +187,7 @@ export function generateGradeCardPdf(student) {
           doc.fillColor('#93c5fd').font('Helvetica').fontSize(8)
              .text(`Credits: ${semData.earnedCredits || semData.totalCredits || 0} / ${semData.totalCredits || 0}`, 130, curY + 5);
           doc.fillColor('#fbbf24').font('Helvetica-Bold').fontSize(8)
-             .text(`SGPA: ${semData.sgpa !== null ? semData.sgpa.toFixed(2) : 'N/A'}`, 430, curY + 5, { width: 120, align: 'right' });
+             .text(semData.sgpa !== null ? `SGPA: ${Number(semData.sgpa).toFixed(2)}` : (isCurrent ? 'Current' : 'N/A'), 430, curY + 5, { width: 120, align: 'right' });
         }
 
         curY += 18;
@@ -179,14 +211,14 @@ export function generateGradeCardPdf(student) {
           doc.fillColor('#334155').font('Helvetica').fontSize(8).text(c.courseName, 120, curY + 4, { width: 270, ellipsis: true });
           doc.fillColor('#64748b').font('Helvetica').fontSize(7.5).text(`${c.credits}`, 410, curY + 4);
 
-          const gradeStr = isUpcoming ? 'UPCOMING' : (c.grade || '—');
+          const gradeStr = isUpcoming ? 'UPCOMING' : (c.grade || (isCurrent ? 'In Progress' : '—'));
           const gColor = getGradeColor(gradeStr);
           doc.fillColor(gColor).font('Helvetica-Bold').fontSize(8).text(gradeStr, 465, curY + 4);
 
           curY += 16;
         });
 
-        curY += 8; // spacing between semester tables
+        curY += 8;
       }
 
       // =========================================================================
@@ -203,9 +235,9 @@ export function generateGradeCardPdf(student) {
       doc.rect(36, curY, 523, 34).fillAndStroke('#f8fafc', '#cbd5e1');
       doc.fillColor('#64748b').font('Helvetica').fontSize(7.5)
          .text(
-           'Disclaimer: This grade card is an AI-generated mock report created for demonstration purposes only. It is not an official university document and should not be considered an authentic academic record. Please verify all academic information with the concerned university or authorized department.',
+           'This academic report is AI-generated for demonstration purposes only. AI-generated information may contain errors. Please independently verify all academic details with the official university records.',
            46,
-           curY + 5,
+           curY + 7,
            { width: 503, align: 'center', lineGap: 1.5 }
          );
 

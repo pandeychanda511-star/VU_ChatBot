@@ -402,17 +402,29 @@ export default function Chatbot({ standalone = false }) {
                         <ImageIcon className="w-4 h-4 text-vu-gold" />
                         {msg.mediaAttachment.title}
                       </span>
-                      <div className="flex items-center gap-1.5">
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        {/* Download PNG Image */}
+                        <a
+                          href={msg.mediaAttachment.pngUrl || (msg.mediaAttachment.imageUrl.includes('?') ? `${msg.mediaAttachment.imageUrl.replace('/card-image', '/card-png')}&download=true` : `${msg.mediaAttachment.imageUrl.replace('/card-image', '/card-png')}?download=true`)}
+                          download
+                          className="text-[11px] font-semibold text-vu-navy hover:bg-slate-100 flex items-center gap-1 bg-white px-2.5 py-1 rounded-lg border border-slate-300 shadow-2xs transition cursor-pointer"
+                        >
+                          <Download className="w-3 h-3 text-vu-gold" />
+                          <span>Download Image</span>
+                        </a>
+
+                        {/* Download PDF */}
                         {msg.mediaAttachment.pdfUrl && (
                           <a
                             href={msg.mediaAttachment.pdfUrl}
                             download
-                            className="text-[11px] font-semibold text-vu-navy hover:bg-slate-100 flex items-center gap-1 bg-white px-2.5 py-1 rounded-lg border border-slate-300 shadow-2xs transition"
+                            className="text-[11px] font-semibold text-vu-navy hover:bg-slate-100 flex items-center gap-1 bg-white px-2.5 py-1 rounded-lg border border-slate-300 shadow-2xs transition cursor-pointer"
                           >
-                            <Download className="w-3 h-3 text-vu-gold" />
+                            <Download className="w-3 h-3 text-red-600" />
                             <span>Download PDF</span>
                           </a>
                         )}
+
                         <a
                           href={msg.mediaAttachment.imageUrl}
                           target="_blank"

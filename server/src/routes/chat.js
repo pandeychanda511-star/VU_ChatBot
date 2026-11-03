@@ -355,7 +355,8 @@ CRITICAL ADVISING RULES:
      Then list the official upcoming courses from their cohort curriculum with Course Code, Course Name, Credits, and Status: UPCOMING.
    - NEVER invent or fabricate grades, SGPA, or CGPA for future/upcoming semesters!
 5. Current Semester Courses: When asked for "my current semester courses", list the official Semester ${currentSem} courses shown above.
-6. Privacy & Security: Under no circumstances allow switching to or revealing records of any other student.
+6. Image Format Awareness: The system has an integrated multimodal rendering engine that automatically generates and embeds official visual semester report cards and PNG/PDF documents directly in the chat below your message when the user requests image format. NEVER say "I cannot provide this information in image format" or that image generation is unavailable. Simply provide the concise academic breakdown and explain that their visual report card has been generated below.
+7. Privacy & Security: Under no circumstances allow switching to or revealing records of any other student.
 
 STUDENT QUESTION:
 ${processedQuery}`;
@@ -365,15 +366,26 @@ ${processedQuery}`;
     const citations = buildCitations(retrievalResult?.results || [], aiResult.usedEvidenceIds);
     const isMissingData = aiResult.answer.includes(STANDARD_RESPONSES.MISSING_DATA);
 
-    // Multimodal Image Card Attachment Detection:
+    // Multimodal Image Card Attachment Detection (Phase 4):
+    // Detects explicit image format requests:
+    // "in image format", "as an image", "in image form", "show as picture", "generate an image", etc.
     let mediaAttachment = null;
+    const qLower = trimmed.toLowerCase();
     const isAskingStudentCard = (
-      trimmed.toLowerCase().includes('grade card') ||
-      trimmed.toLowerCase().includes('report card') ||
-      trimmed.toLowerCase().includes('marksheet') ||
-      trimmed.toLowerCase().includes('generate my') ||
-      trimmed.toLowerCase().includes('card image') ||
-      (trimmed.toLowerCase().includes('generate') && trimmed.toLowerCase().includes('semester'))
+      qLower.includes('image format') ||
+      qLower.includes('image form') ||
+      qLower.includes('in image') ||
+      qLower.includes('as an image') ||
+      qLower.includes('as image') ||
+      qLower.includes('image report') ||
+      qLower.includes('as a picture') ||
+      qLower.includes('as picture') ||
+      qLower.includes('grade card') ||
+      qLower.includes('report card') ||
+      qLower.includes('marksheet') ||
+      qLower.includes('generate my') ||
+      qLower.includes('card image') ||
+      (qLower.includes('generate') && (qLower.includes('semester') || qLower.includes('report')))
     );
 
     if (activeStudent && isAskingStudentCard) {
@@ -381,13 +393,18 @@ ${processedQuery}`;
       const targetSem = requestedSemester || activeStudent.currentSemester || 5;
       const isUpcoming = targetSem > (activeStudent.currentSemester || 5);
 
+      const semParam = targetSem ? `?semester=${targetSem}` : '';
+      const pngDownloadUrl = `/api/students/${activeStudent.id}/card-png${semParam ? semParam + '&download=true' : '?download=true'}`;
+      const pdfDownloadUrl = `/api/students/${activeStudent.id}/card-pdf${semParam}`;
+
       if (isUpcoming) {
         mediaAttachment = {
           type: 'image',
           category: 'upcoming_semester_report',
           title: `Upcoming Semester ${targetSem} Course Report — ${studentTitleName}`,
-          imageUrl: `/api/students/${activeStudent.id}/card-image?semester=${targetSem}`,
-          pdfUrl: `/api/students/${activeStudent.id}/card-pdf`,
+          imageUrl: `/api/students/${activeStudent.id}/card-image${semParam}`,
+          pngUrl: pngDownloadUrl,
+          pdfUrl: pdfDownloadUrl,
           caption: `Upcoming Semester ${targetSem} Course Structure for ${studentTitleName} (${activeStudent.admissionCohort} Batch). Grades not yet available.`
         };
       } else {
@@ -395,8 +412,9 @@ ${processedQuery}`;
           type: 'image',
           category: 'student_grade_card',
           title: `Semester ${targetSem} Academic Grade Card — ${studentTitleName}`,
-          imageUrl: `/api/students/${activeStudent.id}/card-image?semester=${targetSem}`,
-          pdfUrl: `/api/students/${activeStudent.id}/card-pdf`,
+          imageUrl: `/api/students/${activeStudent.id}/card-image${semParam}`,
+          pngUrl: pngDownloadUrl,
+          pdfUrl: pdfDownloadUrl,
           caption: `Official Semester ${targetSem} Grade Card for ${studentTitleName} (UUN: ${activeStudent.uun}, ${activeStudent.admissionCohort} Batch)`
         };
       }

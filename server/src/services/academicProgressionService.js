@@ -126,3 +126,4 @@ export function calculateStudentProgression(student, studentGrades = {}) {
     academicYear: cfg.currentAcademicYear
   };
 }
+
