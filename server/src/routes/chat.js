@@ -11,6 +11,7 @@ import {
   resolveStudentFromQuery,
   normalizeUun
 } from '../services/studentDatabaseService.js';
+import { getCurriculumForCohort } from '../services/curriculumService.js';
 
 const router = express.Router();
 
@@ -50,22 +51,39 @@ function buildCitations(evidenceItems, usedEvidenceIds = null) {
 
     const citation = {
       id: item.id,
-      sourceType: item.sourceType,
       fileName: item.fileName,
-      displayText
+      displayText,
+      sourceType: item.sourceType,
+      textSnippet: item.text.slice(0, 200).trim(),
+      metadata: item.metadata || {}
     };
 
     if (item.sourceType === 'pdf') {
       citation.pageNumber = item.pageNumber;
-    } else if (item.sourceType === 'excel') {
+    } else if (item.sourceType === 'xlsx') {
       citation.sheetName = item.sheetName;
-      citation.rowNumber = item.rowNumber || 1;
+      citation.rowNumber = item.rowNumber;
     }
 
     citations.push(citation);
   }
 
   return citations;
+}
+
+/**
+ * Helper to detect specific semester request from query (e.g., "Semester 1", "Sem 7", "current semester")
+ */
+function extractRequestedSemester(query, currentSemester = 5) {
+  const q = query.toLowerCase();
+  if (q.includes('current semester') || q.includes('my current')) {
+    return currentSemester;
+  }
+  const match = q.match(/\b(semester\s*([1-8])|sem\s*([1-8]))\b/i);
+  if (match) {
+    return parseInt(match[2] || match[3], 10);
+  }
+  return null;
 }
 
 /**
@@ -174,7 +192,8 @@ router.post('/message', optionalAuthenticateToken, async (req, res) => {
   const resolvedStudentFromQuery = resolveStudentFromQuery(trimmed);
 
   if (user && user.role === 'student') {
-    const ownStudent = getStudentByIdOrUun(user.uun) || getStudentByIdOrUun(user.studentProfileId) || null;
+    // Authenticated Student: Retrieve strictly using Firebase UID or registered UUN
+    const ownStudent = getStudentByIdOrUun(user.uid) || getStudentByIdOrUun(user.uun) || getStudentByIdOrUun(user.studentProfileId) || null;
 
     if (resolvedStudentFromQuery && ownStudent && resolvedStudentFromQuery.id !== ownStudent.id) {
       return res.status(200).json({
@@ -208,7 +227,7 @@ router.post('/message', optionalAuthenticateToken, async (req, res) => {
   let retrievalResult = null;
   let searchQuery = processedQuery;
   const semCheck = processedQuery.match(/\b(semester\s*([1-8])|sem\s*([1-8]))\b/i);
-  if (semCheck && (processedQuery.toLowerCase().includes('course') || processedQuery.toLowerCase().includes('courses'))) {
+  if (semCheck && (processedQuery.toLowerCase().includes('course') || processedQuery.toLowerCase().includes('courses') || processedQuery.toLowerCase().includes('syllabus'))) {
     const sNum = semCheck[2] || semCheck[3];
     searchQuery = `courses offered in B.Tech semester ${sNum}`;
   }
@@ -224,8 +243,22 @@ router.post('/message', optionalAuthenticateToken, async (req, res) => {
     });
   }
 
-  // 7. Missing Evidence check
-  if (!retrievalResult || retrievalResult.totalResults === 0 || retrievalResult.results.length === 0) {
+  // 7. Missing Evidence check (Skip if asking about student identity/profile where DB is primary context)
+  const isStudentPersonalQuery = activeStudent && (
+    trimmed.toLowerCase().includes('batch') ||
+    trimmed.toLowerCase().includes('semester') ||
+    trimmed.toLowerCase().includes('status') ||
+    trimmed.toLowerCase().includes('grade') ||
+    trimmed.toLowerCase().includes('cgpa') ||
+    trimmed.toLowerCase().includes('sgpa') ||
+    trimmed.toLowerCase().includes('result') ||
+    trimmed.toLowerCase().includes('course') ||
+    trimmed.toLowerCase().includes('who am i') ||
+    trimmed.toLowerCase().includes('my details') ||
+    trimmed.toLowerCase().includes('card')
+  );
+
+  if (!isStudentPersonalQuery && (!retrievalResult || retrievalResult.totalResults === 0 || retrievalResult.results.length === 0)) {
     return res.status(200).json({
       reply: STANDARD_RESPONSES.MISSING_DATA,
       citations: [],
@@ -238,13 +271,15 @@ router.post('/message', optionalAuthenticateToken, async (req, res) => {
   const geminiService = getGeminiService();
 
   if (!geminiService.isConfigured()) {
-    const citations = buildCitations(retrievalResult.results);
-    const topDoc = retrievalResult.results[0];
-    const locationStr = topDoc.sourceType === 'pdf'
+    const citations = buildCitations(retrievalResult?.results || []);
+    const topDoc = retrievalResult?.results?.[0];
+    const locationStr = topDoc?.sourceType === 'pdf'
       ? `Page ${topDoc.pageNumber}`
-      : `Sheet "${topDoc.sheetName}", Row ${topDoc.rowNumber}`;
+      : `Sheet "${topDoc?.sheetName}", Row ${topDoc?.rowNumber}`;
 
-    const reply = `[Configuration Notice: Gemini API Key is required for conversational synthesis]\n\nI found relevant evidence in **${topDoc.fileName}** (${locationStr}):\n\n"${topDoc.text.slice(0, 300)}..."\n\n*To enable AI synthesized answers, please set your GEMINI_API_KEY in server/.env.*`;
+    const reply = topDoc 
+      ? `[Configuration Notice: Gemini API Key is required for conversational synthesis]\n\nI found relevant evidence in **${topDoc.fileName}** (${locationStr}):\n\n"${topDoc.text.slice(0, 300)}..."`
+      : `[Configuration Notice: Gemini API Key is required for conversational synthesis]`;
 
     return res.status(200).json({
       reply,
@@ -256,74 +291,115 @@ router.post('/message', optionalAuthenticateToken, async (req, res) => {
 
   try {
     let contextualQuery = processedQuery;
+    let requestedSemester = null;
+
     if (activeStudent) {
       const studentName = activeStudent.fullName || activeStudent.name;
-      const s8 = activeStudent.semesters?.find(s => s.semester === 8);
-      const s8Courses = s8 ? s8.courses.map(c => `${c.courseCode} (${c.courseName}, ${c.credits} cr, Status: UPCOMING)`).join('; ') : 'DATA803 (Capstone Project/Industrial Internship, 12 cr, Status: UPCOMING)';
+      const currentSem = activeStudent.currentSemester || 5;
+      const cohort = activeStudent.admissionCohort || '2024';
+      const studentCurriculum = getCurriculumForCohort(cohort);
+      requestedSemester = extractRequestedSemester(processedQuery, currentSem);
 
-      // Build semester-wise course breakdown
+      // Distinguish Completed, Current, and Upcoming Semesters
+      const completedSems = (activeStudent.semesters || []).filter(s => s.semester < currentSem);
+      const currentSemObj = (activeStudent.semesters || []).find(s => s.semester === currentSem);
+      const upcomingSems = (activeStudent.semesters || []).filter(s => s.semester > currentSem);
+
+      // Build semester-wise course breakdown for AI prompt
       const semBreakdown = (activeStudent.semesters || []).map(s => {
-        if (s.isUpcoming || s.semester === 8) {
-          return `Semester 8 (UPCOMING, 12 Credits): ${s.courses.map(c => `${c.courseCode} - ${c.courseName} (${c.credits} cr) [Status: UPCOMING]`).join('; ')}`;
+        if (s.isUpcoming || s.semester > currentSem) {
+          const uCourses = (s.courses || []).map(c => `${c.courseCode} - ${c.courseName} (${c.credits} cr) [Status: UPCOMING]`).join('; ');
+          return `Semester ${s.semester} (Status: UPCOMING, Future Semester): ${uCourses || 'Courses listed in official cohort curriculum'}`;
         }
-        const cList = (s.courses || []).map(c => `${c.courseCode}: ${c.courseName} (${c.credits} cr, Grade: ${c.grade || 'Ungraded'})`).join('; ');
-        return `Semester ${s.semester} (SGPA: ${s.sgpa !== null ? s.sgpa : 'N/A'}, Credits: ${s.earnedCredits}/${s.totalCredits}): ${cList}`;
+        if (s.semester === currentSem) {
+          const cCourses = (s.courses || []).map(c => `${c.courseCode} - ${c.courseName} (${c.credits} cr) [Status: Current Semester - ${c.grade ? `Grade: ${c.grade}` : 'In Progress / Pending'}]`).join('; ');
+          return `Semester ${s.semester} (Status: CURRENT ENROLLMENT, ${s.sgpa !== null ? `SGPA: ${s.sgpa}` : 'Results in Progress'}): ${cCourses}`;
+        }
+        const cList = (s.courses || []).map(c => `${c.courseCode}: ${c.courseName} (${c.credits} cr, Grade: ${c.grade || 'Passed'})`).join('; ');
+        return `Semester ${s.semester} (COMPLETED, SGPA: ${s.sgpa !== null ? s.sgpa : 'N/A'}, Credits: ${s.earnedCredits}/${s.totalCredits}): ${cList}`;
       }).join('\n');
 
-      contextualQuery = `STUDENT PROFILE AND REAL-TIME ACADEMIC RECORDS:
-Full Name: ${studentName}
-UUN Number: ${activeStudent.uun}
-Programme / Major: ${activeStudent.programme || activeStudent.program}
-Admission Cohort: ${activeStudent.cohort || `${activeStudent.admissionCohort} Batch`}
-Current Academic Standing: ${activeStudent.standing || 'Good Standing'}
-Cumulative CGPA: ${activeStudent.cgpa}
-Credits Completed: ${activeStudent.completedCredits} / ${activeStudent.totalCredits || 160}
-Credits Remaining: ${activeStudent.remainingCredits || 0}
-Semesters Completed: 7 (Semesters 1 to 7)
-Upcoming Semester: Semester 8 (Status: UPCOMING, No grades assigned)
-Upcoming Semester 8 Courses: ${s8Courses}
-Active Backlogs: ${(activeStudent.failedCourses || []).map(c => `${c.code} (${c.name}, ${c.credits} cr)`).join('; ') || 'None (Good Standing)'}
+      // Curriculum details for current & upcoming semesters
+      const currSemCoursesList = (studentCurriculum.semesters[currentSem] || []).map(c => `${c.courseCode} - ${c.courseName} (${c.credits} credits, Prerequisite: ${c.prerequisite || 'NIL'})`).join('\n');
 
-SEMESTER-WISE COURSE GRADES:
+      contextualQuery = `AUTHENTICATED STUDENT CONTEXT & OFFICIAL REAL-TIME ACADEMIC PROFILE:
+- Full Name: ${studentName}
+- University UUN: ${activeStudent.uun}
+- Admission Batch: ${cohort} (B.Tech ${cohort} Admission Batch)
+- Programme: ${activeStudent.programme || activeStudent.program}
+- Current Enrolled Semester: Semester ${currentSem} (Automatically determined from admission batch ${cohort} and academic cycle)
+- Completed Semesters: ${completedSems.map(s => `Semester ${s.semester}`).join(', ') || 'None yet'}
+- Current Semester Status: Semester ${currentSem} (${currentSemObj?.sgpa !== null ? 'Results Published' : 'In Progress / Pending Results'})
+- Upcoming Semesters: ${upcomingSems.map(s => `Semester ${s.semester}`).join(', ') || 'None'}
+- Cumulative CGPA (out of 10.00 scale): ${activeStudent.cgpa}
+- Credits Completed: ${activeStudent.completedCredits} / ${activeStudent.totalCredits || 160}
+- Active Backlogs: ${(activeStudent.failedCourses || []).map(c => `${c.code} (${c.name}, ${c.credits} cr)`).join('; ') || 'None (Good Standing)'}
+
+OFFICIAL B.TECH ${cohort} CURRICULUM COURSES FOR CURRENT SEMESTER (Semester ${currentSem}):
+${currSemCoursesList}
+
+DETAILED SEMESTER-WISE RESULTS & STATUS (DATABASE RECORDS):
 ${semBreakdown}
 
-Important Instructions:
-- Always refer to the student by their registered full name: "${studentName}" (UUN: ${activeStudent.uun}).
-- If asked about their grades, semester results, credits, or performance, directly answer using the above real-time academic records.
-- If asked about Semester 8 or upcoming courses, clearly state that Semester 8 is marked as UPCOMING with 12 credits (DATA803 Capstone Project) and has not commenced yet.
+CRITICAL ADVISING RULES:
+1. Always address the student as "${studentName}" (UUN: ${activeStudent.uun}).
+2. Admission Batch: When asked about their batch, answer clearly: "You belong to the B.Tech ${cohort} admission batch."
+3. Current Semester: When asked which semester they are currently studying in:
+   - For 2023 batch: "You are currently in Semester 7 of the B.Tech programme. Your admission batch is 2023."
+   - For 2024 batch: "You are currently in Semester 5 of the B.Tech programme. Your admission batch is 2024."
+   - For 2025 batch: "You are currently in Semester 3 of the B.Tech programme. Your admission batch is 2025."
+   - For 2026 batch: "You are currently in Semester 1 of the B.Tech programme. Your admission batch is 2026."
+4. Upcoming Semester Validation:
+   - If the student requests results or a grade card for an upcoming semester (> Semester ${currentSem}):
+     Explicitly state: "You are currently studying in Semester ${currentSem} (${cohort} Admission Batch). Semester [X] is an upcoming semester for you. Therefore, your Semester [X] grade card is not available yet."
+     Then list the official upcoming courses from their cohort curriculum with Course Code, Course Name, Credits, and Status: UPCOMING.
+   - NEVER invent or fabricate grades, SGPA, or CGPA for future/upcoming semesters!
+5. Current Semester Courses: When asked for "my current semester courses", list the official Semester ${currentSem} courses shown above.
+6. Privacy & Security: Under no circumstances allow switching to or revealing records of any other student.
 
 STUDENT QUESTION:
 ${processedQuery}`;
     }
 
-    const aiResult = await geminiService.generateGroundedAnswer(contextualQuery, retrievalResult.results);
-    const citations = buildCitations(retrievalResult.results, aiResult.usedEvidenceIds);
+    const aiResult = await geminiService.generateGroundedAnswer(contextualQuery, retrievalResult?.results || []);
+    const citations = buildCitations(retrievalResult?.results || [], aiResult.usedEvidenceIds);
     const isMissingData = aiResult.answer.includes(STANDARD_RESPONSES.MISSING_DATA);
 
     // Multimodal Image Card Attachment Detection:
     let mediaAttachment = null;
     const isAskingStudentCard = (
       trimmed.toLowerCase().includes('grade card') ||
-      trimmed.toLowerCase().includes('detail') ||
-      trimmed.toLowerCase().includes('report') ||
-      trimmed.toLowerCase().includes('result') ||
-      trimmed.toLowerCase().includes('card') ||
+      trimmed.toLowerCase().includes('report card') ||
       trimmed.toLowerCase().includes('marksheet') ||
-      trimmed.toLowerCase().includes('performance') ||
-      trimmed.toLowerCase().includes('cgpa') ||
-      trimmed.toLowerCase().includes('image')
+      trimmed.toLowerCase().includes('generate my') ||
+      trimmed.toLowerCase().includes('card image') ||
+      (trimmed.toLowerCase().includes('generate') && trimmed.toLowerCase().includes('semester'))
     );
 
     if (activeStudent && isAskingStudentCard) {
       const studentTitleName = activeStudent.fullName || activeStudent.name;
-      mediaAttachment = {
-        type: 'image',
-        category: 'student_grade_card',
-        title: `Official Student Academic Grade Card — ${studentTitleName}`,
-        imageUrl: `/api/students/${activeStudent.id}/card-image`,
-        pdfUrl: `/api/students/${activeStudent.id}/card-pdf`,
-        caption: `Live Grade Card for ${studentTitleName} (UUN: ${activeStudent.uun}, Semesters 1–7 Results & Upcoming Semester 8)`
-      };
+      const targetSem = requestedSemester || activeStudent.currentSemester || 5;
+      const isUpcoming = targetSem > (activeStudent.currentSemester || 5);
+
+      if (isUpcoming) {
+        mediaAttachment = {
+          type: 'image',
+          category: 'upcoming_semester_report',
+          title: `Upcoming Semester ${targetSem} Course Report — ${studentTitleName}`,
+          imageUrl: `/api/students/${activeStudent.id}/card-image?semester=${targetSem}`,
+          pdfUrl: `/api/students/${activeStudent.id}/card-pdf`,
+          caption: `Upcoming Semester ${targetSem} Course Structure for ${studentTitleName} (${activeStudent.admissionCohort} Batch). Grades not yet available.`
+        };
+      } else {
+        mediaAttachment = {
+          type: 'image',
+          category: 'student_grade_card',
+          title: `Semester ${targetSem} Academic Grade Card — ${studentTitleName}`,
+          imageUrl: `/api/students/${activeStudent.id}/card-image?semester=${targetSem}`,
+          pdfUrl: `/api/students/${activeStudent.id}/card-pdf`,
+          caption: `Official Semester ${targetSem} Grade Card for ${studentTitleName} (UUN: ${activeStudent.uun}, ${activeStudent.admissionCohort} Batch)`
+        };
+      }
     }
 
     return res.status(200).json({

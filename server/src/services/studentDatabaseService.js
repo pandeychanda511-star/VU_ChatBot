@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { getCurriculumForCohort } from './curriculumService.js';
+import { calculateStudentProgression } from './academicProgressionService.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -73,15 +74,6 @@ export function normalizeUun(input) {
 
 /**
  * Letter Grade to 10-Point Grade Scale Mapping (10.0 Scale)
- * Standard Indian University 10-Point Grading System:
- * A+ -> 10.0 (Outstanding)
- * A  -> 9.0  (Excellent)
- * B+ -> 8.0  (Very Good)
- * B  -> 7.0  (Good)
- * C  -> 6.0  (Above Average)
- * D  -> 5.0  (Average / Pass)
- * E  -> 4.0  (Marginal Pass)
- * Fail / Backlog -> 0.0
  */
 export const GRADE_POINT_MAP = {
   'A+': 10.0,
@@ -92,32 +84,47 @@ export const GRADE_POINT_MAP = {
   'D': 5.0,
   'E': 4.0,
   'Fail / Backlog': 0.0,
-  'F': 0.0
+  'F': 0.0,
+  'Fail': 0.0
 };
 
+export const ALLOWED_GRADES = ['A+', 'A', 'B+', 'B', 'C', 'D', 'E', 'Fail / Backlog'];
+
 /**
- * Calculates semester SGPA and cumulative CGPA from grades.
- * Excludes ungraded courses and Semester 8 (UPCOMING).
+ * Calculates academic standing, SGPA per semester, CGPA, backlogs, and distinguishes
+ * Completed Semesters, Current Semester, and Upcoming Semesters.
  */
-export function calculateAcademicStanding(student, allGradesForStudent) {
+export function calculateAcademicStanding(student, allGradesForStudent = {}) {
   const cohort = student.admissionCohort || student.cohort || '2024';
   const curriculum = getCurriculumForCohort(cohort);
+  const progression = calculateStudentProgression(student, allGradesForStudent);
+  const currentSemester = progression.currentSemester;
 
+  let totalCurriculumCredits = 0;
+  let completedCredits = 0;
   let totalQualityPoints = 0;
   let totalGradedCredits = 0;
-  let completedCredits = 0;
-  let totalCurriculumCredits = 0;
-  const semesterSummaries = [];
+
   const backlogs = [];
   const completedCourses = [];
+  const semesterSummaries = [];
+  let completedSemestersCount = 0;
+  let upcomingSemestersCount = 0;
 
   for (let s = 1; s <= 8; s++) {
     const courses = curriculum.semesters[s] || [];
-    const isUpcoming = (s === 8);
-    let semQualityPoints = 0;
-    let semGradedCredits = 0;
     let semEarnedCredits = 0;
+    let semGradedCredits = 0;
+    let semQualityPoints = 0;
     let semTotalCredits = 0;
+
+    const isUpcoming = s > currentSemester;
+    const isCurrent = s === currentSemester;
+    const isPast = s < currentSemester;
+
+    if (isUpcoming) {
+      upcomingSemestersCount++;
+    }
 
     const courseDetails = courses.map(c => {
       semTotalCredits += c.credits;
@@ -133,17 +140,19 @@ export function calculateAcademicStanding(student, allGradesForStudent) {
       }
 
       const assignedGrade = allGradesForStudent[c.courseCode] || allGradesForStudent[c.courseCode.toLowerCase()] || null;
+      
+      // If current semester and no grade assigned yet, it's in progress / pending
       if (!assignedGrade) {
         return {
           ...c,
           grade: null,
-          status: 'Pending',
+          status: isCurrent ? 'In Progress' : 'Pending',
           gradePoints: null
         };
       }
 
-      const isFail = assignedGrade === 'Fail / Backlog' || assignedGrade === 'F';
-      const pts = GRADE_POINT_MAP[assignedGrade] !== undefined ? GRADE_POINT_MAP[assignedGrade] : (isFail ? 0.0 : 3.0);
+      const isFail = assignedGrade === 'Fail / Backlog' || assignedGrade === 'F' || assignedGrade === 'Fail';
+      const pts = GRADE_POINT_MAP[assignedGrade] !== undefined ? GRADE_POINT_MAP[assignedGrade] : (isFail ? 0.0 : 7.0);
 
       if (isFail) {
         backlogs.push({
@@ -181,17 +190,32 @@ export function calculateAcademicStanding(student, allGradesForStudent) {
       }
     });
 
+    const hasAnyGrade = semGradedCredits > 0 || courseDetails.some(c => c.status === 'Backlog');
     const sgpa = semGradedCredits > 0 ? Number((semQualityPoints / semGradedCredits).toFixed(2)) : null;
 
-    if (!isUpcoming && semGradedCredits > 0) {
+    if (hasAnyGrade) {
       totalQualityPoints += semQualityPoints;
       totalGradedCredits += semGradedCredits;
+      if (isPast || (isCurrent && hasAnyGrade)) {
+        completedSemestersCount++;
+      }
+    }
+
+    let semStatus = 'UPCOMING';
+    if (isUpcoming) {
+      semStatus = 'UPCOMING';
+    } else if (isCurrent) {
+      semStatus = hasAnyGrade ? 'Current (Results Published)' : 'Current (In Progress)';
+    } else {
+      semStatus = hasAnyGrade ? 'Completed' : 'Pending';
     }
 
     semesterSummaries.push({
       semester: s,
       isUpcoming,
-      status: isUpcoming ? 'UPCOMING' : (semGradedCredits > 0 ? 'Completed' : 'Pending'),
+      isCurrent,
+      isCompleted: isPast && hasAnyGrade,
+      status: semStatus,
       totalCredits: semTotalCredits,
       earnedCredits: semEarnedCredits,
       sgpa,
@@ -207,25 +231,33 @@ export function calculateAcademicStanding(student, allGradesForStudent) {
     completedCredits,
     totalCurriculumCredits,
     remainingCredits,
-    completedSemesters: 7,
-    upcomingSemesters: 1,
+    currentSemester,
+    completedSemesters: completedSemestersCount,
+    upcomingSemesters: upcomingSemestersCount,
     backlogs,
     completedCourses,
     semesterSummaries,
+    progression,
     academicStatus: backlogs.length > 0 ? 'Academic Warning (Backlog)' : 'Good Standing'
   };
 }
 
 /**
- * Initializes default passing grades for Semesters 1 to 7 upon student registration.
- * Ensures initial grade card and reports are complete and valid.
+ * Initializes default passing grades for past completed semesters upon student registration.
+ * Semesters < currentSemester get valid grades.
+ * Current and Upcoming semesters are NOT graded.
  */
 function createDefaultGradesForCohort(cohort) {
   const curriculum = getCurriculumForCohort(cohort);
+  const fakeStudent = { admissionCohort: cohort };
+  const progression = calculateStudentProgression(fakeStudent);
+  const currentSem = progression.currentSemester;
+
   const grades = {};
   const gradeCycle = ['A+', 'A', 'B+', 'A', 'B+', 'A', 'A+', 'B'];
 
-  for (let s = 1; s <= 7; s++) {
+  // Only assign default grades to COMPLETED prior semesters (< currentSem)
+  for (let s = 1; s < currentSem; s++) {
     const list = curriculum.semesters[s] || [];
     list.forEach((c, idx) => {
       grades[c.courseCode] = gradeCycle[(s + idx) % gradeCycle.length];
@@ -249,6 +281,15 @@ export function createOrUpdateStudent({
   const cleanUun = normalizeUun(uun);
   const studentId = `st_${cleanUun.toLowerCase()}`;
 
+  // Auto-determine cohort if provided or infer from email/uun (e.g., 2023binni -> 2023)
+  let cleanCohort = String(admissionCohort || '2024').replace(/\D/g, '') || '2024';
+  if (!admissionCohort || admissionCohort === '2024') {
+    const emailMatch = String(email || '').match(/\b(202[2-6])\b/);
+    if (emailMatch) {
+      cleanCohort = emailMatch[1];
+    }
+  }
+
   let existingIndex = students.findIndex(s => 
     s.id === studentId || 
     (s.firebaseUid && s.firebaseUid === firebaseUid) || 
@@ -264,7 +305,7 @@ export function createOrUpdateStudent({
       fullName: fullName || students[existingIndex].fullName,
       email: email || students[existingIndex].email,
       programme: programme || students[existingIndex].programme,
-      admissionCohort: admissionCohort || students[existingIndex].admissionCohort,
+      admissionCohort: cleanCohort || students[existingIndex].admissionCohort,
       updatedAt: timestamp
     };
     students[existingIndex] = studentRecord;
@@ -277,14 +318,13 @@ export function createOrUpdateStudent({
       canonicalUan: cleanUun.replace('UUN', 'VU24BTECH'),
       email: email.trim().toLowerCase(),
       programme: programme || 'B.Tech Computer Science and Engineering',
-      admissionCohort: admissionCohort || '2024',
-      currentSemester: 8,
+      admissionCohort: cleanCohort,
       createdAt: timestamp,
       updatedAt: timestamp
     };
     students.push(studentRecord);
 
-    // Initialize default grades for Semesters 1-7
+    // Initialize default grades for past completed semesters
     const allGrades = readJson(studentGradesDbPath, {});
     if (!allGrades[studentId]) {
       allGrades[studentId] = createDefaultGradesForCohort(studentRecord.admissionCohort);
@@ -320,7 +360,7 @@ export function getAllStudents() {
       programme: st.programme,
       cohort: `${st.admissionCohort} Batch`,
       admissionCohort: st.admissionCohort,
-      currentSemester: st.currentSemester || 8,
+      currentSemester: standing.currentSemester,
       cgpa: standing.cgpa,
       completedCredits: standing.completedCredits,
       totalCredits: standing.totalCurriculumCredits,
@@ -330,19 +370,13 @@ export function getAllStudents() {
       failedCourses: standing.backlogs,
       completedCourses: standing.completedCourses,
       semesters: standing.semesterSummaries,
-      sem1_gpa: standing.semesterSummaries[0]?.sgpa || 9.10,
-      sem2_gpa: standing.semesterSummaries[1]?.sgpa || 8.90,
-      sem3_gpa: standing.semesterSummaries[2]?.sgpa || 8.85,
-      sem4_gpa: standing.semesterSummaries[3]?.sgpa || 9.00,
-      sem5_gpa: standing.semesterSummaries[4]?.sgpa || 8.95,
-      sem6_gpa: standing.semesterSummaries[5]?.sgpa || 9.05,
-      sem7_gpa: standing.semesterSummaries[6]?.sgpa || 9.20
+      progression: standing.progression
     };
   });
 }
 
 /**
- * Gets a single student by ID, UUN, or full name.
+ * Gets a single student by ID, UUN, full name, or Firebase UID.
  */
 export function getStudentByIdOrUun(identifier) {
   if (!identifier) return null;
@@ -372,9 +406,11 @@ export function updateStudentProfile(studentId, updates) {
   const current = students[index];
   const updated = {
     ...current,
-    fullName: updates.fullName !== undefined ? updates.fullName.trim() : current.fullName,
-    programme: updates.programme !== undefined ? updates.programme.trim() : current.programme,
-    admissionCohort: updates.admissionCohort !== undefined ? updates.admissionCohort.trim() : current.admissionCohort,
+    fullName: updates.fullName || current.fullName,
+    programme: updates.programme || current.programme,
+    admissionCohort: updates.admissionCohort ? String(updates.admissionCohort).replace(/\D/g, '') : current.admissionCohort,
+    currentSemesterOverride: updates.currentSemesterOverride !== undefined ? updates.currentSemesterOverride : current.currentSemesterOverride,
+    email: updates.email || current.email,
     updatedAt: new Date().toISOString()
   };
 
@@ -384,57 +420,48 @@ export function updateStudentProfile(studentId, updates) {
 }
 
 /**
- * Deletes a student and their academic records (Admin only).
+ * Deletes a student and their grades.
  */
 export function deleteStudent(studentId) {
   const students = readJson(studentsDbPath, []);
-  const index = students.findIndex(s => s.id === studentId || s.uun === normalizeUun(studentId));
-  if (index === -1) return false;
+  const cleanUun = normalizeUun(studentId);
+  const target = students.find(s => s.id === studentId || s.uun === cleanUun);
+  if (!target) return false;
 
-  const targetId = students[index].id;
-  const targetUun = students[index].uun;
-  const targetUid = students[index].firebaseUid;
+  const remaining = students.filter(s => s.id !== target.id);
+  writeJson(studentsDbPath, remaining);
 
-  // 1. Remove from students_db.json
-  const remainingStudents = students.filter(s => s.id !== targetId);
-  writeJson(studentsDbPath, remainingStudents);
-
-  // 2. Remove grades from student_grades_db.json
   const allGrades = readJson(studentGradesDbPath, {});
-  delete allGrades[targetId];
-  writeJson(studentGradesDbPath, allGrades);
+  if (allGrades[target.id]) {
+    delete allGrades[target.id];
+    writeJson(studentGradesDbPath, allGrades);
+  }
 
-  // 3. Remove registration from registered_users.json
   const regs = readJson(registeredUsersPath, []);
-  const remainingRegs = regs.filter(r => r.uid !== targetUid && normalizeUun(r.uun) !== targetUun);
+  const remainingRegs = regs.filter(r => r.studentProfileId !== target.id && r.uun !== target.uun);
   writeJson(registeredUsersPath, remainingRegs);
 
   return true;
 }
 
 /**
- * Updates grades for a student (Admin only).
- * Semester 8 is locked and rejected if grade modification is attempted.
+ * Updates grades for a specific semester for a student.
  */
 export function updateStudentGrades(studentId, { semester, grades }) {
-  if (Number(semester) === 8) {
-    throw new Error('Semester 8 is marked as UPCOMING. Assigning grades is not permitted.');
-  }
-
   const student = getStudentByIdOrUun(studentId);
-  if (!student) {
-    throw new Error(`Student ${studentId} not found.`);
-  }
+  if (!student) throw new Error(`Student ${studentId} not found.`);
+
+  const semNum = parseInt(semester, 10);
+  if (semNum < 1 || semNum > 8) throw new Error('Invalid semester number (must be 1-8).');
 
   const allGrades = readJson(studentGradesDbPath, {});
   if (!allGrades[student.id]) {
     allGrades[student.id] = {};
   }
 
-  // Merge course grades
   Object.entries(grades).forEach(([courseCode, grade]) => {
-    if (grade && typeof grade === 'string') {
-      allGrades[student.id][courseCode.trim()] = grade.trim();
+    if (ALLOWED_GRADES.includes(grade) || grade === null) {
+      allGrades[student.id][courseCode] = grade;
     }
   });
 
@@ -443,39 +470,25 @@ export function updateStudentGrades(studentId, { semester, grades }) {
 }
 
 /**
- * Resolves a student from natural language queries (e.g. "Show me the details of Nitin Kumar").
+ * Resolves a student from natural language queries
  */
 export function resolveStudentFromQuery(query) {
   if (!query || typeof query !== 'string') return null;
-  const students = getAllStudents();
-  const qLower = query.toLowerCase();
+  const all = getAllStudents();
 
-  // 1. Exact or substring full name match
-  for (const st of students) {
-    if (st.fullName && qLower.includes(st.fullName.toLowerCase())) {
-      return st;
-    }
-  }
-
-  // 2. UUN match (e.g. "uun01", "uun 01", "uun1")
-  const uunMatch = query.match(/\buun[\s\-_]*0*(\d+)\b/i);
+  // Try matching UUN tokens
+  const uunMatch = query.match(/\b(UUN\s*[-_]?\s*\d+|VU\d*BTECH\d+)\b/i);
   if (uunMatch) {
-    const normalized = `UUN${String(parseInt(uunMatch[1], 10)).padStart(2, '0')}`;
-    const found = students.find(s => s.uun === normalized);
+    const found = getStudentByIdOrUun(uunMatch[1]);
     if (found) return found;
   }
 
-  // 3. Partial first name match if unambiguous
-  for (const st of students) {
-    const parts = st.fullName.toLowerCase().split(/\s+/);
-    if (parts.length > 0 && parts[0].length >= 3) {
-      const re = new RegExp(`\\b${parts[0]}\\b`, 'i');
-      if (re.test(query)) {
-        return st;
-      }
+  // Try matching full name
+  for (const s of all) {
+    if (s.fullName && query.toLowerCase().includes(s.fullName.toLowerCase())) {
+      return s;
     }
   }
 
   return null;
 }
-

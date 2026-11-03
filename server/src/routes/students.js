@@ -1,5 +1,9 @@
 import express from 'express';
-import { generateStudentGradeCardSvg, generateSemesterCoursesSvg } from '../services/imageCardGenerator.js';
+import { 
+  generateStudentGradeCardSvg, 
+  generateSemesterGradeCardSvg,
+  generateSemesterCoursesSvg 
+} from '../services/imageCardGenerator.js';
 import { generateGradeCardPdf } from '../services/gradeCardPdfService.js';
 import { authenticateToken, requireAdmin, optionalAuthenticateToken } from '../middleware/auth.js';
 import { 
@@ -10,6 +14,10 @@ import {
   updateStudentGrades,
   normalizeUun
 } from '../services/studentDatabaseService.js';
+import { 
+  getAcademicCycleConfig, 
+  updateAcademicCycleConfig 
+} from '../services/academicProgressionService.js';
 import { getCurriculumForCohort } from '../services/curriculumService.js';
 
 const router = express.Router();
@@ -28,8 +36,33 @@ router.get('/', optionalAuthenticateToken, (req, res) => {
 });
 
 /**
+ * GET /api/students/academic-config
+ * Returns current university academic session and batch-progression mapping.
+ */
+router.get('/academic-config', optionalAuthenticateToken, (req, res) => {
+  const cfg = getAcademicCycleConfig();
+  res.status(200).json(cfg);
+});
+
+/**
+ * PUT /api/students/academic-config
+ * Admin updates academic cycle configuration.
+ */
+router.put('/academic-config', authenticateToken, requireAdmin, (req, res) => {
+  try {
+    const updated = updateAcademicCycleConfig(req.body);
+    res.status(200).json({
+      message: 'Academic cycle configuration updated successfully.',
+      config: updated
+    });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+/**
  * GET /api/students/:id
- * Retrieves a single student record with full 8-semester results.
+ * Retrieves a single student record with full semester results and progression status.
  * RBAC: Students can only view their own record. Admins can view any record.
  */
 router.get('/:id', optionalAuthenticateToken, (req, res) => {
@@ -50,29 +83,31 @@ router.get('/:id', optionalAuthenticateToken, (req, res) => {
 
 /**
  * PUT /api/students/:id
- * Admin updates student basic information (Full Name, Programme, Cohort).
+ * Admin updates a student profile (Name, Programme, Admission Cohort, Semester Override).
  */
 router.put('/:id', authenticateToken, requireAdmin, (req, res) => {
-  const { fullName, programme, admissionCohort } = req.body;
-  const updated = updateStudentProfile(req.params.id, {
+  const { fullName, programme, admissionCohort, currentSemesterOverride, email } = req.body;
+  const updatedStudent = updateStudentProfile(req.params.id, {
     fullName,
     programme,
-    admissionCohort
+    admissionCohort,
+    currentSemesterOverride: currentSemesterOverride ? parseInt(currentSemesterOverride, 10) : undefined,
+    email
   });
 
-  if (!updated) {
+  if (!updatedStudent) {
     return res.status(404).json({ error: `Student '${req.params.id}' not found.` });
   }
 
   res.status(200).json({
     message: 'Student profile updated successfully.',
-    student: updated
+    student: updatedStudent
   });
 });
 
 /**
  * DELETE /api/students/:id
- * Admin securely deletes a student and their academic results.
+ * Admin deletes a student and all associated academic records.
  */
 router.delete('/:id', authenticateToken, requireAdmin, (req, res) => {
   const success = deleteStudent(req.params.id);
@@ -103,7 +138,6 @@ router.get('/:id/curriculum', optionalAuthenticateToken, (req, res) => {
 /**
  * PUT /api/students/:id/grades
  * Admin updates grades for a specific semester (Semesters 1 to 7).
- * Semester 8 is locked and rejected.
  */
 router.put('/:id/grades', authenticateToken, requireAdmin, (req, res) => {
   const { semester, grades } = req.body;
@@ -113,14 +147,8 @@ router.put('/:id/grades', authenticateToken, requireAdmin, (req, res) => {
   }
 
   const semNum = parseInt(semester, 10);
-  if (semNum === 8) {
-    return res.status(400).json({
-      error: 'Semester 8 is marked as UPCOMING. Assigning grades is not permitted until the semester is active.'
-    });
-  }
-
-  if (semNum < 1 || semNum > 7) {
-    return res.status(400).json({ error: 'Valid semester range for grade management is 1 to 7.' });
+  if (semNum < 1 || semNum > 8) {
+    return res.status(400).json({ error: 'Valid semester range is 1 to 8.' });
   }
 
   try {
@@ -136,7 +164,8 @@ router.put('/:id/grades', authenticateToken, requireAdmin, (req, res) => {
 
 /**
  * GET /api/students/:id/card-image
- * Dynamically generates and returns the latest academic report card SVG.
+ * Query params: ?semester=1..8 (If omitted, generates full card or current semester)
+ * Dynamically generates and returns SVG grade card.
  */
 router.get('/:id/card-image', optionalAuthenticateToken, (req, res) => {
   const student = getStudentByIdOrUun(req.params.id);
@@ -151,7 +180,14 @@ router.get('/:id/card-image', optionalAuthenticateToken, (req, res) => {
     }
   }
 
-  const svg = generateStudentGradeCardSvg(student);
+  const reqSem = req.query.semester ? parseInt(req.query.semester, 10) : null;
+  let svg;
+  if (reqSem && reqSem >= 1 && reqSem <= 8) {
+    svg = generateSemesterGradeCardSvg(student, reqSem);
+  } else {
+    svg = generateStudentGradeCardSvg(student);
+  }
+
   res.setHeader('Content-Type', 'image/svg+xml');
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.send(svg);
@@ -159,7 +195,6 @@ router.get('/:id/card-image', optionalAuthenticateToken, (req, res) => {
 
 /**
  * GET /api/students/:id/card-pdf
- * Dynamically generates and returns downloadable Grade Card PDF.
  */
 router.get('/:id/card-pdf', optionalAuthenticateToken, async (req, res) => {
   const student = getStudentByIdOrUun(req.params.id);
@@ -167,7 +202,6 @@ router.get('/:id/card-pdf', optionalAuthenticateToken, async (req, res) => {
     return res.status(404).json({ error: `Student '${req.params.id}' not found.` });
   }
 
-  // Security check for student role
   if (req.user && req.user.role === 'student') {
     if (req.user.uid !== student.firebaseUid && normalizeUun(req.user.uun) !== normalizeUun(student.uun)) {
       return res.status(403).json({ error: 'Access denied. You can only download your own grade card.' });

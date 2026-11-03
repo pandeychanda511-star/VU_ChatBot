@@ -27,243 +27,346 @@ function getGradeColor(grade) {
 }
 
 /**
- * Image Card Generator Service
- * Dynamically generates a comprehensive academic report card SVG
- * including Section 1: Student Info, Section 2: Completed Semesters 1-7,
- * Section 3: Upcoming Semester 8, Section 4: Academic Credit Summary,
- * and AI-Generated Watermark.
+ * Generates Semester-Specific Grade Card SVG (Only the requested semester)
  *
- * @param {object} student - Student record with semesters breakdown
- * @returns {string} SVG xml string
+ * Rules:
+ * - Generates ONLY the requested semester information.
+ * - If Upcoming: Distinct layout titled "UPCOMING SEMESTER COURSE REPORT" with prominent notice:
+ *   "THIS SEMESTER IS NOT YET COMPLETED. GRADES AND GPA ARE NOT AVAILABLE."
+ * - If Completed / Current: Shows official Course Code, Name, Credits, Grade Obtained, SGPA, Total Credits.
+ * - Watermark: "AI GENERATED – NOT AN OFFICIAL UNIVERSITY DOCUMENT"
+ * - Disclaimer included.
+ */
+export function generateSemesterGradeCardSvg(student, semesterNumber) {
+  const name = student.fullName || student.displayName || student.name || 'Student';
+  const uun = student.uun || 'UUN01';
+  const program = student.programme || student.program || 'B.Tech Computer Science and Engineering';
+  const cohort = student.cohort || `${student.admissionCohort || '2024'} Batch`;
+  const currentSemester = student.currentSemester || 5;
+
+  const semSummary = (student.semesters || []).find(s => s.semester === semesterNumber) || {
+    semester: semesterNumber,
+    isUpcoming: semesterNumber > currentSemester,
+    isCurrent: semesterNumber === currentSemester,
+    courses: [],
+    sgpa: null,
+    totalCredits: 0,
+    earnedCredits: 0
+  };
+
+  const isUpcoming = semSummary.isUpcoming || semesterNumber > currentSemester;
+  const isCurrent = semSummary.isCurrent || semesterNumber === currentSemester;
+  const courses = semSummary.courses || [];
+  const sgpa = semSummary.sgpa !== null && semSummary.sgpa !== undefined ? Number(semSummary.sgpa).toFixed(2) : null;
+  const earnedCredits = semSummary.earnedCredits || 0;
+  const totalCredits = semSummary.totalCredits || courses.reduce((acc, c) => acc + (c.credits || 0), 0);
+
+  const width = 1000;
+  const rowHeight = 36;
+  const courseListHeight = Math.max(1, courses.length) * rowHeight;
+  const baseHeight = isUpcoming ? 460 : 440;
+  const finalHeight = baseHeight + courseListHeight;
+
+  // Header Title
+  const headerMainTitle = isUpcoming ? 'UPCOMING SEMESTER COURSE REPORT' : `OFFICIAL SEMESTER ${semesterNumber} ACADEMIC GRADE CARD`;
+  const headerGradColor = isUpcoming ? 'url(#upcomingHeaderGrad)' : 'url(#headerGrad)';
+
+  // Build Course Rows SVG
+  let coursesSvg = '';
+  courses.forEach((c, idx) => {
+    const yPos = 40 + idx * rowHeight;
+    const bgFill = idx % 2 === 0 ? '#f8fafc' : '#ffffff';
+    const gradeVal = isUpcoming ? 'UPCOMING' : (c.grade || (isCurrent ? 'In Progress' : 'Pending'));
+    const gradeColor = isUpcoming ? '#9333ea' : getGradeColor(c.grade);
+
+    coursesSvg += `
+    <g transform="translate(0, ${yPos})">
+      <rect width="900" height="34" rx="6" fill="${bgFill}"/>
+      <text x="24" y="22" font-family="monospace" font-size="12" font-weight="700" fill="#0f172a">${escapeXml(c.courseCode)}</text>
+      <text x="180" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#334155">${escapeXml(c.courseName)}</text>
+      <text x="710" y="22" font-family="monospace" font-size="12" font-weight="600" fill="#475569" text-anchor="middle">${c.credits || 0}</text>
+      
+      <!-- Grade Pill -->
+      <g transform="translate(830, 7)">
+        <rect x="-42" y="0" width="84" height="20" rx="10" fill="${gradeColor}" fill-opacity="0.15" stroke="${gradeColor}" stroke-width="1.2"/>
+        <text x="0" y="14" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="800" fill="${gradeColor}" text-anchor="middle">
+          ${escapeXml(gradeVal)}
+        </text>
+      </g>
+    </g>
+    `;
+  });
+
+  // Upcoming Banner
+  const upcomingNoticeSvg = isUpcoming ? `
+    <g transform="translate(50, 150)">
+      <rect width="900" height="50" rx="12" fill="#faf5ff" stroke="#c084fc" stroke-width="1.5"/>
+      <circle cx="36" cy="25" r="14" fill="#9333ea"/>
+      <text x="36" y="30" font-family="system-ui, sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">!</text>
+      <text x="64" y="24" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#6b21a8">
+        THIS SEMESTER IS NOT YET COMPLETED. GRADES AND GPA ARE NOT AVAILABLE.
+      </text>
+      <text x="64" y="40" font-family="system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#7e22ce">
+        Current Progression: Semester ${currentSemester} • This is an official syllabus overview for upcoming academic planning.
+      </text>
+    </g>
+  ` : '';
+
+  // Stats / Metric Cards
+  const statsStartY = isUpcoming ? 215 : 150;
+  const statsCardsSvg = isUpcoming ? `
+    <g transform="translate(50, ${statsStartY})">
+      <!-- Card 1: Requested Semester -->
+      <g transform="translate(0, 0)">
+        <rect width="210" height="64" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748b" text-transform="uppercase">SEMESTER</text>
+        <text x="20" y="48" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#0f172a">Semester ${semesterNumber}</text>
+      </g>
+      <!-- Card 2: Status -->
+      <g transform="translate(230, 0)">
+        <rect width="210" height="64" rx="12" fill="#faf5ff" stroke="#e9d5ff"/>
+        <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#7c3aed" text-transform="uppercase">ACADEMIC STATUS</text>
+        <text x="20" y="48" font-family="system-ui, sans-serif" font-size="17" font-weight="900" fill="#7c3aed">UPCOMING</text>
+      </g>
+      <!-- Card 3: Total Credits -->
+      <g transform="translate(460, 0)">
+        <rect width="210" height="64" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748b" text-transform="uppercase">SEMESTER CREDITS</text>
+        <text x="20" y="48" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#0f172a">${totalCredits} Credits</text>
+      </g>
+      <!-- Card 4: Current Semester -->
+      <g transform="translate(690, 0)">
+        <rect width="210" height="64" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
+        <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#1d4ed8" text-transform="uppercase">CURRENT ENROLLMENT</text>
+        <text x="20" y="48" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#1e40af">Semester ${currentSemester}</text>
+      </g>
+    </g>
+  ` : `
+    <g transform="translate(50, ${statsStartY})">
+      <!-- Card 1: SGPA -->
+      <g transform="translate(0, 0)">
+        <rect width="210" height="64" rx="12" fill="#0b2545"/>
+        <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#93c5fd" text-transform="uppercase">SEMESTER SGPA</text>
+        <text x="20" y="50" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#fbbf24">${sgpa !== null ? sgpa : (isCurrent ? 'In Progress' : 'Pending')}</text>
+        ${sgpa !== null ? `<text x="78" y="50" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#94a3b8">/ 10.00</text>` : ''}
+      </g>
+      <!-- Card 2: Credits Earned -->
+      <g transform="translate(230, 0)">
+        <rect width="210" height="64" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748b" text-transform="uppercase">CREDITS EARNED</text>
+        <text x="20" y="48" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#0f172a">${earnedCredits} / ${totalCredits}</text>
+      </g>
+      <!-- Card 3: Semester Status -->
+      <g transform="translate(460, 0)">
+        <rect width="210" height="64" rx="12" fill="#f0fdf4" stroke="#bbf7d0"/>
+        <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#15803d" text-transform="uppercase">RESULT STATUS</text>
+        <text x="20" y="48" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#166534">${semSummary.status || 'Completed'}</text>
+      </g>
+      <!-- Card 4: Cumulative CGPA -->
+      <g transform="translate(690, 0)">
+        <rect width="210" height="64" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748b" text-transform="uppercase">CUMULATIVE CGPA</text>
+        <text x="20" y="48" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#0f172a">${Number(student.cgpa || 0).toFixed(2)}</text>
+      </g>
+    </g>
+  `;
+
+  const tableStartY = statsStartY + 85;
+
+  return `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${finalHeight}" width="${width}" height="${finalHeight}">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0b2545"/>
+      <stop offset="100%" stop-color="#134074"/>
+    </linearGradient>
+    <linearGradient id="upcomingHeaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#581c87"/>
+      <stop offset="100%" stop-color="#7e22ce"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect x="0" y="0" width="${width}" height="${finalHeight}" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#cardShadow)"/>
+
+  <!-- AI Generated Diagonal Watermarks -->
+  <g transform="translate(500, ${finalHeight / 2}) rotate(-26)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="900" fill="#64748b" fill-opacity="0.08" text-anchor="middle" letter-spacing="3">
+      AI GENERATED – NOT AN OFFICIAL UNIVERSITY DOCUMENT
+    </text>
+  </g>
+
+  <!-- Header Banner -->
+  <g transform="translate(50, 30)">
+    <rect width="900" height="96" rx="14" fill="${headerGradColor}"/>
+    <text x="28" y="38" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#fbbf24" letter-spacing="1">VIDYASHILP UNIVERSITY</text>
+    <text x="28" y="60" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ffffff">${headerMainTitle}</text>
+    <text x="28" y="78" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#e0e7ff">Programme: ${escapeXml(program)} • Admission Batch: ${escapeXml(cohort)}</text>
+
+    <!-- Student Name & UUN Box -->
+    <rect x="580" y="16" width="290" height="64" rx="10" fill="#ffffff15" stroke="#ffffff30"/>
+    <text x="598" y="40" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">${escapeXml(name)}</text>
+    <text x="598" y="62" font-family="monospace" font-size="12.5" font-weight="700" fill="#fbbf24">UUN: ${escapeXml(uun)} • Sem ${semesterNumber}</text>
+  </g>
+
+  <!-- Optional Upcoming Notice -->
+  ${upcomingNoticeSvg}
+
+  <!-- Stats Strip -->
+  ${statsCardsSvg}
+
+  <!-- Course Table -->
+  <g transform="translate(50, ${tableStartY})">
+    <!-- Table Header Strip -->
+    <rect width="900" height="32" rx="8" fill="#0f172a"/>
+    <text x="24" y="21" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">COURSE CODE</text>
+    <text x="180" y="21" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8">COURSE TITLE</text>
+    <text x="710" y="21" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8" text-anchor="middle">CREDITS</text>
+    <text x="830" y="21" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#94a3b8" text-anchor="middle">GRADE / STATUS</text>
+
+    <!-- Rows -->
+    ${coursesSvg}
+  </g>
+
+  <!-- Footer Disclaimer -->
+  <g transform="translate(50, ${finalHeight - 45})">
+    <rect width="900" height="32" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="450" y="20" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="600" fill="#64748b" text-anchor="middle">
+      Disclaimer: This semester report is an AI-generated mock summary created for demonstration purposes only. It is not an official university transcript.
+    </text>
+  </g>
+</svg>
+  `.trim();
+}
+
+/**
+ * Image Card Generator Service
+ * Dynamically generates full 8-semester Grade Card SVG (Legacy / Full Report)
  */
 export function generateStudentGradeCardSvg(student) {
   const name = student.fullName || student.displayName || student.name || 'Student';
   const uun = student.uun || 'UUN01';
   const program = student.programme || student.program || 'B.Tech Computer Science and Engineering';
   const cohort = student.cohort || `${student.admissionCohort || '2024'} Batch`;
-  const cgpa = (student.cgpa !== undefined && student.cgpa !== null ? Number(student.cgpa) : 3.65).toFixed(2);
+  const cgpa = (student.cgpa !== undefined && student.cgpa !== null ? Number(student.cgpa) : 8.85).toFixed(2);
   const completedCredits = student.completedCredits || 0;
   const totalCredits = student.totalCredits || 160;
   const remainingCredits = student.remainingCredits !== undefined ? student.remainingCredits : Math.max(0, totalCredits - completedCredits);
   const backlogs = student.failedCourses || [];
   const standing = backlogs.length > 0 ? 'Academic Warning (Active Backlog)' : 'Good Standing';
+  const currentSemester = student.currentSemester || 5;
 
-  const semesters = student.semesters || [];
-
-  // Responsive SVG canvas dimensions
   const width = 1000;
-  // Calculate dynamic height based on semester tables
-  // Header: 120, Info: 120, Summary: 110, Semesters 1-7 (approx 160 each = 1120), Sem 8: 120, Footer: 70
-  const height = 1800;
+  const rowHeight = 34;
+  let currentY = 240;
 
-  // Render Semester 1 to 7 blocks
-  let currentY = 270;
   let semesterBlocksSvg = '';
+  (student.semesters || []).forEach(sem => {
+    const isUpcoming = sem.isUpcoming || sem.semester > currentSemester;
+    const isCurrent = sem.isCurrent || sem.semester === currentSemester;
+    const courses = sem.courses || [];
+    const blockHeight = 44 + Math.max(1, courses.length) * rowHeight + 10;
 
-  for (let s = 1; s <= 7; s++) {
-    const semData = semesters.find(x => x.semester === s) || {
-      semester: s,
-      sgpa: 3.50,
-      totalCredits: 20,
-      earnedCredits: 20,
-      courses: []
-    };
+    let coursesRows = '';
+    courses.forEach((c, idx) => {
+      const rowY = 38 + idx * rowHeight;
+      const bg = idx % 2 === 0 ? '#f8fafc' : '#ffffff';
+      const gradeVal = isUpcoming ? 'UPCOMING' : (c.grade || (isCurrent ? 'In Progress' : 'Pending'));
+      const gradeColor = isUpcoming ? '#9333ea' : getGradeColor(c.grade);
 
-    const courses = semData.courses || [];
-    const tableHeight = 44 + Math.max(1, courses.length) * 36 + 12;
-
-    semesterBlocksSvg += `
-      <!-- Semester ${s} Card -->
-      <g transform="translate(50, ${currentY})">
-        <rect width="900" height="${tableHeight}" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
-        
-        <!-- Header Strip -->
-        <path d="M 0 14 Q 0 0 14 0 L 886 0 Q 900 0 900 14 L 900 42 L 0 42 Z" fill="#f8fafc"/>
-        <line x1="0" y1="42" x2="900" y2="42" stroke="#e2e8f0" stroke-width="1"/>
-        
-        <text x="24" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" fill="#0b2545">SEMESTER ${s}</text>
-        <text x="145" y="26" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="600" fill="#64748b">Earned: ${semData.earnedCredits || semData.totalCredits || 0} / ${semData.totalCredits || 0} Credits</text>
-        
-        <rect x="760" y="8" width="125" height="26" rx="6" fill="#0b2545"/>
-        <text x="822" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#fbbf24" text-anchor="middle">SGPA: ${semData.sgpa !== null ? semData.sgpa.toFixed(2) : 'N/A'}</text>
-        
-        <!-- Table Column Headers -->
-        <g transform="translate(0, 42)">
-          <rect width="900" height="28" fill="#f1f5f9"/>
-          <text x="24" y="18" font-family="monospace" font-size="10.5" font-weight="700" fill="#64748b">COURSE CODE</text>
-          <text x="160" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#64748b">OFFICIAL COURSE TITLE</text>
-          <text x="680" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#64748b">CREDITS</text>
-          <text x="795" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#64748b">GRADE OBTAINED</text>
+      coursesRows += `
+      <g transform="translate(0, ${rowY})">
+        <rect width="896" height="30" rx="6" fill="${bg}"/>
+        <text x="24" y="20" font-family="monospace" font-size="11.5" font-weight="700" fill="#0f172a">${escapeXml(c.courseCode)}</text>
+        <text x="180" y="20" font-family="system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#334155">${escapeXml(c.courseName)}</text>
+        <text x="710" y="20" font-family="monospace" font-size="11.5" font-weight="600" fill="#475569" text-anchor="middle">${c.credits || 0}</text>
+        <g transform="translate(830, 5)">
+          <rect x="-38" y="0" width="76" height="19" rx="9.5" fill="${gradeColor}" fill-opacity="0.15" stroke="${gradeColor}" stroke-width="1.2"/>
+          <text x="0" y="13.5" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="${gradeColor}" text-anchor="middle">${escapeXml(gradeVal)}</text>
         </g>
-    `;
-
-    courses.forEach((c, cIdx) => {
-      const rowY = 78 + cIdx * 34;
-      const rowBg = cIdx % 2 === 0 ? '#ffffff' : '#f8fafc';
-      const gradeColor = getGradeColor(c.grade);
-
-      semesterBlocksSvg += `
-        <rect x="8" y="${rowY - 8}" width="884" height="30" rx="6" fill="${rowBg}"/>
-        <text x="24" y="${rowY + 12}" font-family="monospace" font-size="11.5" font-weight="700" fill="#1e293b">${c.courseCode}</text>
-        <text x="160" y="${rowY + 12}" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#334155">${escapeXml(c.courseName)}</text>
-        <text x="700" y="${rowY + 12}" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#64748b">${c.credits}</text>
-        
-        <rect x="765" y="${rowY - 4}" width="115" height="23" rx="5" fill="${gradeColor}18" stroke="${gradeColor}40" stroke-width="1"/>
-        <text x="822" y="${rowY + 12}" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="800" fill="${gradeColor}" text-anchor="middle">${c.grade || '—'}</text>
+      </g>
       `;
     });
 
-    semesterBlocksSvg += `</g>`;
-    currentY += tableHeight + 24;
-  }
+    const headerBg = isUpcoming ? '#faf5ff' : '#f1f5f9';
+    const headerBorder = isUpcoming ? '#e9d5ff' : '#cbd5e1';
+    const titleColor = isUpcoming ? '#7c3aed' : '#0f172a';
+    const sgpaText = isUpcoming ? 'Status: UPCOMING' : (sem.sgpa !== null ? `SGPA: ${Number(sem.sgpa).toFixed(2)}` : (isCurrent ? 'Current' : 'Pending'));
 
-  // Section 3: Semester 8 (UPCOMING)
-  const sem8Data = semesters.find(x => x.semester === 8) || {
-    semester: 8,
-    status: 'UPCOMING',
-    courses: [{ courseCode: 'DATA803', courseName: 'Capstone Project/Industrial Internship', credits: 12 }]
-  };
-  const sem8Courses = sem8Data.courses || [];
-  const sem8TableHeight = 45 + Math.max(1, sem8Courses.length) * 32 + 15;
-
-  const sem8Svg = `
-    <!-- Section 3: Semester 8 (UPCOMING) -->
-    <g transform="translate(50, ${currentY})">
-      <rect width="900" height="${sem8TableHeight}" rx="14" fill="#faf5ff" stroke="#d8b4fe" stroke-width="2"/>
-      
-      <!-- Purple Accent Header -->
-      <path d="M 0 14 Q 0 0 14 0 L 886 0 Q 900 0 900 14 L 900 42 L 0 42 Z" fill="#6b21a8"/>
-      <text x="24" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" fill="#ffffff">SEMESTER 8 – UPCOMING CURRICULUM</text>
-      <text x="320" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#e9d5ff">Not Started • In Progress Next Academic Cycle</text>
-      
-      <rect x="760" y="8" width="125" height="26" rx="6" fill="#f3e8ff"/>
-      <text x="822" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="900" fill="#6b21a8" text-anchor="middle">STATUS: UPCOMING</text>
-      
-      <!-- Table Header -->
-      <g transform="translate(0, 45)">
-        <text x="20" y="16" font-family="monospace" font-size="10" font-weight="700" fill="#7e22ce">COURSE CODE</text>
-        <text x="160" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#7e22ce">UPCOMING COURSE NAME</text>
-        <text x="690" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#7e22ce">CREDITS</text>
-        <text x="805" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#7e22ce">ACADEMIC STATUS</text>
-      </g>
-  `;
-
-  let sem8RowsSvg = '';
-  sem8Courses.forEach((c, idx) => {
-    const rowY = 75 + idx * 30;
-    sem8RowsSvg += `
-      <rect x="10" y="${rowY - 14}" width="880" height="26" rx="6" fill="#ffffff" stroke="#f3e8ff"/>
-      <text x="20" y="${rowY + 2}" font-family="monospace" font-size="12" font-weight="800" fill="#581c87">${c.courseCode}</text>
-      <text x="160" y="${rowY + 2}" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#3b0764">${escapeXml(c.courseName)}</text>
-      <text x="705" y="${rowY + 2}" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#6b21a8">${c.credits} Credits</text>
-      
-      <rect x="785" y="${rowY - 10}" width="95" height="20" rx="4" fill="#6b21a8"/>
-      <text x="832" y="${rowY + 4}" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">UPCOMING</text>
+    semesterBlocksSvg += `
+    <g transform="translate(52, ${currentY})">
+      <rect width="896" height="${blockHeight}" rx="12" fill="#ffffff" stroke="${headerBorder}" stroke-width="1.5"/>
+      <rect width="896" height="36" rx="12" fill="${headerBg}"/>
+      <text x="20" y="23" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="${titleColor}">SEMESTER ${sem.semester} • Credits: ${sem.earnedCredits || 0} / ${sem.totalCredits || 0}</text>
+      <text x="876" y="23" font-family="system-ui, sans-serif" font-size="11.5" font-weight="800" fill="${titleColor}" text-anchor="end">${escapeXml(sgpaText)}</text>
+      ${coursesRows}
+    </g>
     `;
+
+    currentY += blockHeight + 14;
   });
 
-  const sem8BlockComplete = sem8Svg + sem8RowsSvg + `</g>`;
-  currentY += sem8TableHeight + 20;
-
-  // Section 4: Academic Credit Summary
-  const summarySvg = `
-    <!-- Section 4: Academic Credit & CGPA Summary -->
-    <g transform="translate(50, 150)">
-      <rect width="900" height="95" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-      
-      <!-- Metric 1: CGPA -->
-      <g transform="translate(20, 16)">
-        <rect width="160" height="62" rx="10" fill="#0b2545"/>
-        <text x="16" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">CUMULATIVE CGPA</text>
-        <text x="16" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="900" fill="#fbbf24">${cgpa}</text>
-        <text x="95" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">/ 10.00</text>
-      </g>
-      
-      <!-- Metric 2: Completed Credits -->
-      <g transform="translate(195, 16)">
-        <rect width="160" height="62" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
-        <text x="16" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#64748b">CREDITS COMPLETED</text>
-        <text x="16" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#0b2545">${completedCredits}</text>
-        <text x="75" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#64748b">Earned</text>
-      </g>
-
-      <!-- Metric 3: Remaining Credits -->
-      <g transform="translate(370, 16)">
-        <rect width="160" height="62" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
-        <text x="16" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#64748b">CREDITS REMAINING</text>
-        <text x="16" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#b45309">${remainingCredits}</text>
-        <text x="75" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#64748b">Pending</text>
-      </g>
-
-      <!-- Metric 4: Semesters -->
-      <g transform="translate(545, 16)">
-        <rect width="160" height="62" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
-        <text x="16" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#64748b">SEMESTERS COMPLETED</text>
-        <text x="16" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#047857">7</text>
-        <text x="50" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#7c3aed">(1 Upcoming)</text>
-      </g>
-
-      <!-- Metric 5: Status -->
-      <g transform="translate(720, 16)">
-        <rect width="160" height="62" rx="10" fill="${backlogs.length > 0 ? '#fef2f2' : '#ecfdf5'}" stroke="${backlogs.length > 0 ? '#fca5a5' : '#a7f3d0'}"/>
-        <text x="16" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="${backlogs.length > 0 ? '#991b1b' : '#065f46'}">ACADEMIC STATUS</text>
-        <text x="16" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" fill="${backlogs.length > 0 ? '#b91c1c' : '#047857'}">${backlogs.length > 0 ? 'Active Backlog' : 'Good Standing'}</text>
-      </g>
-    </g>
-  `;
-
-  // Final adjusted total height
-  const finalHeight = currentY + 70;
+  const finalHeight = currentY + 60;
 
   return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${finalHeight}" width="${width}" height="${finalHeight}">
   <defs>
-    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0b2545"/>
-      <stop offset="100%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#134074"/>
     </linearGradient>
-    <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="104%">
-      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-opacity="0.12"/>
-    </filter>
   </defs>
+  <rect x="0" y="0" width="${width}" height="${finalHeight}" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
 
-  <!-- Background Canvas -->
-  <rect x="0" y="0" width="${width}" height="${finalHeight}" rx="24" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" filter="url(#cardShadow)"/>
-
-  <!-- AI Generated Diagonal Watermarks across canvas -->
-  <g transform="translate(500, 500) rotate(-28)">
-    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="900" fill="#64748b" fill-opacity="0.09" text-anchor="middle" letter-spacing="3">
-      AI GENERATED – NOT AN OFFICIAL UNIVERSITY DOCUMENT
-    </text>
-  </g>
-  <g transform="translate(500, 1100) rotate(-28)">
-    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="900" fill="#64748b" fill-opacity="0.09" text-anchor="middle" letter-spacing="3">
+  <!-- Watermark -->
+  <g transform="translate(500, ${finalHeight / 2}) rotate(-26)">
+    <text x="0" y="0" font-family="system-ui, sans-serif" font-size="32" font-weight="900" fill="#64748b" fill-opacity="0.08" text-anchor="middle" letter-spacing="3">
       AI GENERATED – NOT AN OFFICIAL UNIVERSITY DOCUMENT
     </text>
   </g>
 
-  <!-- Section 1: Header & Student Information -->
+  <!-- Header -->
   <g transform="translate(50, 30)">
-    <rect width="900" height="100" rx="16" fill="url(#headerGrad)"/>
-    
-    <text x="30" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="900" fill="#fbbf24" letter-spacing="1">VIDYASHILP UNIVERSITY</text>
-    <text x="30" y="66" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#ffffff">OFFICIAL STUDENT ACADEMIC GRADE CARD • SEMESTERS 1–8 REPORT</text>
-    <text x="30" y="84" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500" fill="#93c5fd">Programme: ${escapeXml(program)} • Admission Cohort: ${escapeXml(cohort)}</text>
-    
-    <!-- Student Name & UUN in Header -->
-    <rect x="580" y="18" width="290" height="64" rx="12" fill="#ffffff15" stroke="#ffffff30"/>
-    <text x="600" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="900" fill="#ffffff">${escapeXml(name)}</text>
-    <text x="600" y="66" font-family="monospace" font-size="13" font-weight="700" fill="#fbbf24">UUN: ${escapeXml(uun)}</text>
+    <rect width="900" height="96" rx="14" fill="url(#headerGrad)"/>
+    <text x="28" y="38" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#fbbf24" letter-spacing="1">VIDYASHILP UNIVERSITY</text>
+    <text x="28" y="60" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ffffff">OFFICIAL STUDENT ACADEMIC GRADE CARD • SEMESTERS REPORT</text>
+    <text x="28" y="78" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#93c5fd">Programme: ${escapeXml(program)} • Admission Batch: ${escapeXml(cohort)}</text>
+
+    <rect x="580" y="16" width="290" height="64" rx="10" fill="#ffffff15" stroke="#ffffff30"/>
+    <text x="598" y="40" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">${escapeXml(name)}</text>
+    <text x="598" y="62" font-family="monospace" font-size="12.5" font-weight="700" fill="#fbbf24">UUN: ${escapeXml(uun)} • Current Sem ${currentSemester}</text>
   </g>
 
-  <!-- Section 4: Summary Strip -->
-  ${summarySvg}
+  <!-- Summary Cards -->
+  <g transform="translate(50, 145)">
+    <g transform="translate(0, 0)">
+      <rect width="210" height="64" rx="12" fill="#0b2545"/>
+      <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#93c5fd">CUMULATIVE CGPA</text>
+      <text x="20" y="50" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#fbbf24">${cgpa}</text>
+      <text x="76" y="50" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#94a3b8">/ 10.00</text>
+    </g>
+    <g transform="translate(230, 0)">
+      <rect width="210" height="64" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+      <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748b">CREDITS COMPLETED</text>
+      <text x="20" y="48" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#0f172a">${completedCredits} Earned</text>
+    </g>
+    <g transform="translate(460, 0)">
+      <rect width="210" height="64" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+      <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748b">CURRENT PROGRESSION</text>
+      <text x="20" y="48" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#0f172a">Semester ${currentSemester}</text>
+    </g>
+    <g transform="translate(690, 0)">
+      <rect width="210" height="64" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+      <text x="20" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748b">ACADEMIC STANDING</text>
+      <text x="20" y="48" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="${backlogs.length > 0 ? '#b91c1c' : '#15803d'}">${escapeXml(standing)}</text>
+    </g>
+  </g>
 
-  <!-- Section 2: Completed Semesters (1 to 7) -->
+  <!-- Semester Blocks -->
   ${semesterBlocksSvg}
-
-  <!-- Section 3: Upcoming Semester 8 -->
-  ${sem8BlockComplete}
 
   <!-- Footer Disclaimer -->
   <g transform="translate(50, ${finalHeight - 45})">
@@ -276,16 +379,16 @@ export function generateStudentGradeCardSvg(student) {
   `.trim();
 }
 
-/**
- * Semester course listing SVG
- */
 export function generateSemesterCoursesSvg(semesterNumber, batchName = '2024 Batch', courses = []) {
-  const width = 850;
-  const height = 400 + Math.max(1, courses.length) * 35;
-  return `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}">
-  <rect x="0" y="0" width="${width}" height="${height}" fill="#ffffff" rx="16" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="40" y="50" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#0b2545">Semester ${semesterNumber} Curriculum — ${escapeXml(batchName)}</text>
-</svg>
-  `.trim();
+  return generateSemesterGradeCardSvg({
+    fullName: 'Student',
+    uun: 'UUN01',
+    admissionCohort: batchName,
+    currentSemester: 1,
+    semesters: [{
+      semester: semesterNumber,
+      isUpcoming: true,
+      courses
+    }]
+  }, semesterNumber);
 }

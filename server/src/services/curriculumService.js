@@ -34,17 +34,21 @@ function parseCurriculumFromSheet(wb, sheetName, cohortName) {
 
   // Identify column indices for S1 to S8 by scanning Row 0 and Row 1
   const semCols = {};
-  for (let r = 0; r <= 1; r++) {
-    if (!raw[r]) continue;
-    raw[r].forEach((val, c) => {
-      const match = String(val || '').trim().match(/^S([1-8])$/i);
-      if (match) {
-        const sNum = parseInt(match[1], 10);
-        if (!semCols[sNum]) {
-          semCols[sNum] = c;
-        }
+  const row0 = raw[0] || [];
+  const row1 = raw[1] || [];
+
+  for (let c = 0; c < Math.max(row0.length, row1.length); c++) {
+    const val0 = String(row0[c] || '').trim();
+    const val1 = String(row1[c] || '').trim();
+    const match = val0.match(/^S([1-8])$/i) || val1.match(/^S([1-8])$/i);
+    if (match) {
+      const sNum = parseInt(match[1], 10);
+      if (val1.toLowerCase().includes('code')) {
+        semCols[sNum] = c + 1;
+      } else {
+        semCols[sNum] = c;
       }
-    });
+    }
   }
 
   // Fallback defaults if row 0 lacked some
