@@ -73,9 +73,25 @@ function buildCitations(evidenceItems, usedEvidenceIds = null) {
 
 /**
  * Helper to detect specific semester request from query (e.g., "Semester 1", "Sem 7", "current semester")
+ * Returns null if the user is asking for ALL completed semesters or overall report.
  */
 function extractRequestedSemester(query, currentSemester = 5) {
   const q = query.toLowerCase();
+  
+  // If user explicitly asks for ALL completed semesters or entire history, do not lock to a single semester
+  if (
+    q.includes('all completed') ||
+    q.includes('all semester') ||
+    q.includes('every completed') ||
+    q.includes('all my completed') ||
+    q.includes('academic history') ||
+    q.includes('all details') ||
+    q.includes('all grade card') ||
+    q.includes('together')
+  ) {
+    return 'all_completed';
+  }
+
   if (q.includes('current semester') || q.includes('my current')) {
     return currentSemester;
   }
@@ -390,33 +406,57 @@ ${processedQuery}`;
 
     if (activeStudent && isAskingStudentCard) {
       const studentTitleName = activeStudent.fullName || activeStudent.name;
-      const targetSem = requestedSemester || activeStudent.currentSemester || 5;
-      const isUpcoming = targetSem > (activeStudent.currentSemester || 5);
+      const currentSem = activeStudent.currentSemester || 5;
 
-      const semParam = targetSem ? `?semester=${targetSem}` : '';
-      const pngDownloadUrl = `/api/students/${activeStudent.id}/card-png${semParam ? semParam + '&download=true' : '?download=true'}`;
-      const pdfDownloadUrl = `/api/students/${activeStudent.id}/card-pdf${semParam}`;
+      // Scenario 2: ALL COMPLETED SEMESTERS requested
+      if (requestedSemester === 'all_completed') {
+        const completedSems = (activeStudent.semesters || []).filter(s => s.semester < currentSem && (s.isCompleted || s.status === 'Completed' || s.sgpa !== null));
+        const semRangeText = completedSems.length > 0 
+          ? (completedSems.length === 1 ? `Semester ${completedSems[0].semester}` : `Semesters ${completedSems[0].semester}–${completedSems[completedSems.length - 1].semester}`)
+          : 'All Completed Semesters';
 
-      if (isUpcoming) {
+        const pngDownloadUrl = `/api/students/${activeStudent.id}/card-png?completedOnly=true&download=true`;
+        const pdfDownloadUrl = `/api/students/${activeStudent.id}/card-pdf?completedOnly=true`;
+
         mediaAttachment = {
           type: 'image',
-          category: 'upcoming_semester_report',
-          title: `Upcoming Semester ${targetSem} Course Report — ${studentTitleName}`,
-          imageUrl: `/api/students/${activeStudent.id}/card-image${semParam}`,
+          category: 'completed_semesters_report',
+          title: `Official Academic Report Card (${semRangeText}) — ${studentTitleName}`,
+          imageUrl: `/api/students/${activeStudent.id}/card-image?completedOnly=true`,
           pngUrl: pngDownloadUrl,
           pdfUrl: pdfDownloadUrl,
-          caption: `Upcoming Semester ${targetSem} Course Structure for ${studentTitleName} (${activeStudent.admissionCohort} Batch). Grades not yet available.`
+          caption: `Combined Academic Report Card containing all completed semesters in chronological order for ${studentTitleName} (UEN: ${activeStudent.uun}, ${activeStudent.admissionCohort} Batch)`
         };
       } else {
-        mediaAttachment = {
-          type: 'image',
-          category: 'student_grade_card',
-          title: `Semester ${targetSem} Academic Grade Card — ${studentTitleName}`,
-          imageUrl: `/api/students/${activeStudent.id}/card-image${semParam}`,
-          pngUrl: pngDownloadUrl,
-          pdfUrl: pdfDownloadUrl,
-          caption: `Official Semester ${targetSem} Grade Card for ${studentTitleName} (UEN: ${activeStudent.uun}, ${activeStudent.admissionCohort} Batch)`
-        };
+        // Scenario 1: Specific Semester requested (or default current semester)
+        const targetSem = (typeof requestedSemester === 'number') ? requestedSemester : currentSem;
+        const isUpcoming = targetSem > currentSem;
+
+        const semParam = `?semester=${targetSem}`;
+        const pngDownloadUrl = `/api/students/${activeStudent.id}/card-png${semParam}&download=true`;
+        const pdfDownloadUrl = `/api/students/${activeStudent.id}/card-pdf${semParam}`;
+
+        if (isUpcoming) {
+          mediaAttachment = {
+            type: 'image',
+            category: 'upcoming_semester_report',
+            title: `Upcoming Semester ${targetSem} Course Report — ${studentTitleName}`,
+            imageUrl: `/api/students/${activeStudent.id}/card-image${semParam}`,
+            pngUrl: pngDownloadUrl,
+            pdfUrl: pdfDownloadUrl,
+            caption: `Upcoming Semester ${targetSem} Course Structure for ${studentTitleName} (${activeStudent.admissionCohort} Batch). Grades not yet available.`
+          };
+        } else {
+          mediaAttachment = {
+            type: 'image',
+            category: 'student_grade_card',
+            title: `Semester ${targetSem} Academic Grade Card — ${studentTitleName}`,
+            imageUrl: `/api/students/${activeStudent.id}/card-image${semParam}`,
+            pngUrl: pngDownloadUrl,
+            pdfUrl: pdfDownloadUrl,
+            caption: `Official Semester ${targetSem} Grade Card for ${studentTitleName} (UEN: ${activeStudent.uun}, ${activeStudent.admissionCohort} Batch)`
+          };
+        }
       }
     }
 

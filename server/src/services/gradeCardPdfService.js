@@ -22,40 +22,45 @@ function getGradeColor(grade) {
  *
  * @param {object} student - Student record with resolved dynamic performance
  * @param {number|null} semesterNumber - Optional specific semester (1 to 8)
+ * @param {boolean} completedOnly - Whether to only include completed semesters
  * @returns {Promise<Buffer>} Generated PDF buffer
  */
-export function generateGradeCardPdf(student, semesterNumber = null) {
+export function generateGradeCardPdf(student, semesterNumber = null, completedOnly = true) {
   return new Promise((resolve, reject) => {
     try {
+      const currentSemester = student.currentSemester || 5;
+
+      // Filter semesters if specific semester requested or completed only
+      let targetSemesters = [1, 2, 3, 4, 5, 6, 7, 8];
+      if (semesterNumber) {
+        targetSemesters = [semesterNumber];
+      } else if (completedOnly) {
+        targetSemesters = (student.semesters || [])
+          .filter(s => s.semester < currentSemester && (s.isCompleted || s.status === 'Completed' || s.sgpa !== null))
+          .map(s => s.semester);
+        if (targetSemesters.length === 0) {
+          targetSemesters = [1];
+        }
+      }
+
       const doc = new PDFDocument({
         size: 'A4',
         margin: 36,
         bufferPages: true,
         info: {
-          Title: semesterNumber ? `Semester ${semesterNumber} Report - ${student.fullName || student.name}` : `Academic Grade Card - ${student.fullName || student.name}`,
+          Title: semesterNumber ? `Semester ${semesterNumber} Report - ${student.fullName || student.name}` : `Completed Semesters Report - ${student.fullName || student.name}`,
           Author: 'Vidyashilp University Academic Advisor System',
           Subject: 'AI-Generated Mock Grade Card Report'
         }
       });
 
-      const buffers = [];
-      doc.on('data', chunk => buffers.push(chunk));
-      doc.on('end', () => resolve(Buffer.concat(buffers)));
-      doc.on('error', err => reject(err));
-
       const name = student.fullName || student.name || 'Student';
-      const uen = student.uen || 'UEN01';
+      const uen = student.uen || student.uun || 'UEN01';
       const program = student.programme || student.program || 'B.Tech Computer Science and Engineering';
       const cohort = student.cohort || `${student.admissionCohort || '2024'} Batch`;
-      const currentSemester = student.currentSemester || 5;
       const cgpa = (student.cgpa !== undefined && student.cgpa !== null ? Number(student.cgpa) : 8.85).toFixed(2);
       const completedCredits = student.completedCredits || 0;
       const totalCredits = student.totalCredits || 160;
-
-      // Filter semesters if specific semester requested
-      const targetSemesters = semesterNumber 
-        ? [semesterNumber] 
-        : [1, 2, 3, 4, 5, 6, 7, 8];
 
       const isSingleUpcoming = semesterNumber && semesterNumber > currentSemester;
 
