@@ -144,7 +144,7 @@ export default function AgenticPage() {
               >
                 <option value="">None (Anonymous / Generic Student)</option>
                 {students.map(s => {
-                  const scenarioDesc = s.scenario ? ` - ${s.scenario.slice(0, 40)}...` : (s.uun ? ` (${s.uun})` : '');
+                  const scenarioDesc = s.scenario ? ` - ${s.scenario.slice(0, 40)}...` : (s.uen ? ` (${s.uen})` : '');
                   return (
                     <option key={s.id} value={s.id}>
                       {s.fullName || s.name}{scenarioDesc}

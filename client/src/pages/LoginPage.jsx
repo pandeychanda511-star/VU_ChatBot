@@ -37,7 +37,7 @@ export default function LoginPage() {
       if (profile?.role === 'admin' || profile?.isAdmin) {
         navigate('/dashboard');
       } else if (profile?.role === 'student' && !profile?.isRegistered) {
-        navigate('/register-uun');
+        navigate('/register-uen');
       } else {
         navigate('/student/dashboard');
       }
@@ -63,7 +63,7 @@ export default function LoginPage() {
       if (profile?.role === 'admin' || profile?.isAdmin) {
         navigate('/dashboard');
       } else if (profile?.role === 'student' && !profile?.isRegistered) {
-        navigate('/register-uun');
+        navigate('/register-uen');
       } else {
         navigate('/student/dashboard');
       }
@@ -222,7 +222,7 @@ export default function LoginPage() {
             <p className="text-xs text-slate-600">
               New Student?{' '}
               <Link to="/register" className="font-extrabold text-vu-blue hover:underline">
-                Create Student Account (UUN Required)
+                Create Student Account (UEN Required)
               </Link>
             </p>
           </div>

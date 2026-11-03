@@ -303,7 +303,7 @@ export default function Chatbot({ standalone = false }) {
           >
             <option value="">Anonymous (Ask me first)</option>
             {students.map(s => {
-              const scenarioText = s.scenario ? ` (${s.scenario.slice(0, 30)}...)` : (s.uun ? ` (${s.uun})` : '');
+              const scenarioText = s.scenario ? ` (${s.scenario.slice(0, 30)}...)` : (s.uen ? ` (${s.uen})` : '');
               return (
                 <option key={s.id} value={s.id}>
                   {s.fullName || s.name}{scenarioText}

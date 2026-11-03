@@ -36,12 +36,12 @@ function saveRegistrations(regs) {
 
 /**
  * POST /api/auth/verify-uun
- * Validates whether a provided UUN is syntactically valid and available.
+ * Validates whether a provided UEN is syntactically valid and available.
  */
 router.post('/verify-uun', (req, res) => {
   const { uun } = req.body;
   if (!uun || typeof uun !== 'string') {
-    return res.status(400).json({ error: 'UUN number is required.' });
+    return res.status(400).json({ error: 'UEN number is required.' });
   }
 
   const rawUun = uun.trim();
@@ -50,7 +50,7 @@ router.post('/verify-uun', (req, res) => {
   if (!cleanUun || cleanUun.length < 3) {
     return res.status(400).json({
       valid: false,
-      error: `Invalid UUN format "${rawUun}". Please enter a valid University Unique Number (e.g. UUN01, VU24BTECH001).`
+      error: `Invalid UEN format "${rawUun}". Please enter a valid University Unique Number (e.g. UEN01, VU24BTECH001).`
     });
   }
 
@@ -60,7 +60,7 @@ router.post('/verify-uun', (req, res) => {
   if (existing) {
     return res.status(409).json({
       valid: false,
-      error: `UUN "${rawUun}" is already registered to account ${existing.email}. Please sign in or contact the university administrator.`
+      error: `UEN "${rawUun}" is already registered to account ${existing.email}. Please sign in or contact the university administrator.`
     });
   }
 
@@ -90,18 +90,18 @@ router.post('/register-student', authenticateToken, (req, res) => {
   }
 
   if (!uun) {
-    return res.status(400).json({ error: 'UUN number is required to register as a student.' });
+    return res.status(400).json({ error: 'UEN number is required to register as a student.' });
   }
 
   const rawUun = uun.trim();
   const cleanUun = normalizeUun(rawUun);
 
   const registrations = loadRegistrations();
-  // Check if UUN already claimed by a different user
+  // Check if UEN already claimed by a different user
   const uunClaimed = registrations.find(r => normalizeUun(r.uun) === cleanUun && r.uid !== user.uid);
   if (uunClaimed) {
     return res.status(409).json({
-      error: `UUN "${rawUun}" is already registered with another account.`
+      error: `UEN "${rawUun}" is already registered with another account.`
     });
   }
 
@@ -178,7 +178,7 @@ router.get('/me', authenticateToken, (req, res) => {
       name: user.name,
       role: 'student',
       isRegistered: false,
-      message: 'Student account requires UUN registration.'
+      message: 'Student account requires UEN registration.'
     });
   }
 

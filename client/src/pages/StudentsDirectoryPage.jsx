@@ -179,8 +179,8 @@ export default function StudentsDirectoryPage() {
   };
 
   const handleDeleteStudent = async () => {
-    if (deleteConfirmText !== deletingStudent.uun) {
-      alert(`Please type "${deletingStudent.uun}" to confirm permanent deletion.`);
+    if (deleteConfirmText !== deletingStudent.uen) {
+      alert(`Please type "${deletingStudent.uen}" to confirm permanent deletion.`);
       return;
     }
 
@@ -212,7 +212,7 @@ export default function StudentsDirectoryPage() {
     return (
       (st.fullName && st.fullName.toLowerCase().includes(q)) ||
       (st.name && st.name.toLowerCase().includes(q)) ||
-      (st.uun && st.uun.toLowerCase().includes(q)) ||
+      (st.uen && st.uen.toLowerCase().includes(q)) ||
       (st.email && st.email.toLowerCase().includes(q))
     );
   });
@@ -246,7 +246,7 @@ export default function StudentsDirectoryPage() {
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Search by student full name or UUN (e.g. Nitin Kumar, UUN01)..."
+              placeholder="Search by student full name or UEN (e.g. Nitin Kumar, UEN01)..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-vu-gold/40 focus:bg-white transition"
@@ -279,7 +279,7 @@ export default function StudentsDirectoryPage() {
               <div className="bg-white rounded-2xl p-8 text-center text-slate-500 text-xs border border-slate-200 space-y-2">
                 <Users className="w-8 h-8 mx-auto text-slate-300" />
                 <p className="font-semibold text-slate-700">No registered students found.</p>
-                <p className="text-[11px] text-slate-400">Whenever a new student registers with their UUN, they will appear dynamically here.</p>
+                <p className="text-[11px] text-slate-400">Whenever a new student registers with their UEN, they will appear dynamically here.</p>
               </div>
             ) : (
               filteredStudents.map(st => {
@@ -301,7 +301,7 @@ export default function StudentsDirectoryPage() {
                           {st.fullName || st.name}
                         </span>
                         <span className="font-mono text-[10px] font-bold text-vu-blue bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200 shrink-0">
-                          {st.uun}
+                          {st.uen}
                         </span>
                       </div>
                       <p className="text-[11px] text-slate-500 truncate">
@@ -339,7 +339,7 @@ export default function StudentsDirectoryPage() {
                         {selectedStudent.fullName || selectedStudent.name}
                       </h3>
                       <p className="text-xs text-slate-500 font-mono mt-0.5">
-                        UUN: <strong className="text-vu-blue">{selectedStudent.uun}</strong> • {selectedStudent.programme || selectedStudent.program} • {selectedStudent.cohort}
+                        UEN: <strong className="text-vu-blue">{selectedStudent.uen}</strong> • {selectedStudent.programme || selectedStudent.program} • {selectedStudent.cohort}
                       </p>
                     </div>
 
@@ -682,17 +682,17 @@ export default function StudentsDirectoryPage() {
 
               <div className="text-xs text-slate-600 space-y-2 leading-relaxed">
                 <p>
-                  You are about to permanently delete <strong>{deletingStudent.fullName || deletingStudent.name}</strong> (UUN: <code>{deletingStudent.uun}</code>).
+                  You are about to permanently delete <strong>{deletingStudent.fullName || deletingStudent.name}</strong> (UEN: <code>{deletingStudent.uen}</code>).
                 </p>
                 <p className="text-red-700 bg-red-50 p-2.5 rounded-xl border border-red-200">
                   <strong>Warning:</strong> All associated academic results for Semesters 1 to 7, student database records, and authentication links will be deleted. This action cannot be undone.
                 </p>
                 <p>
-                  Please type the student's UUN <code>{deletingStudent.uun}</code> below to confirm:
+                  Please type the student's UEN <code>{deletingStudent.uen}</code> below to confirm:
                 </p>
                 <input
                   type="text"
-                  placeholder={deletingStudent.uun}
+                  placeholder={deletingStudent.uen}
                   value={deleteConfirmText}
                   onChange={(e) => setDeleteConfirmText(e.target.value.trim().toUpperCase())}
                   className="w-full px-3 py-2 border border-slate-300 rounded-xl focus:ring-2 focus:ring-red-500 font-mono text-sm"
@@ -710,7 +710,7 @@ export default function StudentsDirectoryPage() {
                 <button
                   type="button"
                   onClick={handleDeleteStudent}
-                  disabled={deleteConfirmText !== deletingStudent.uun || deleteLoading}
+                  disabled={deleteConfirmText !== deletingStudent.uen || deleteLoading}
                   className="px-4 py-2 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 text-xs disabled:opacity-50"
                 >
                   {deleteLoading ? 'Deleting...' : 'Permanently Delete'}

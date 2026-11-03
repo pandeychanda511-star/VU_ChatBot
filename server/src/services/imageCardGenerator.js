@@ -39,7 +39,7 @@ function getGradeColor(grade) {
  */
 export function generateSemesterGradeCardSvg(student, semesterNumber) {
   const name = student.fullName || student.displayName || student.name || 'Student';
-  const uun = student.uun || 'UUN01';
+  const uen = student.uen || 'UEN01';
   const program = student.programme || student.program || 'B.Tech Computer Science and Engineering';
   const cohort = student.cohort || `${student.admissionCohort || '2024'} Batch`;
   const currentSemester = student.currentSemester || 5;
@@ -206,10 +206,10 @@ export function generateSemesterGradeCardSvg(student, semesterNumber) {
     <text x="28" y="60" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ffffff">${headerMainTitle}</text>
     <text x="28" y="78" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#e0e7ff">Programme: ${escapeXml(program)} • Admission Batch: ${escapeXml(cohort)}</text>
 
-    <!-- Student Name & UUN Box -->
+    <!-- Student Name & UEN Box -->
     <rect x="580" y="16" width="290" height="64" rx="10" fill="#ffffff15" stroke="#ffffff30"/>
     <text x="598" y="40" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">${escapeXml(name)}</text>
-    <text x="598" y="62" font-family="monospace" font-size="12.5" font-weight="700" fill="#fbbf24">UUN: ${escapeXml(uun)} • Sem ${semesterNumber}</text>
+    <text x="598" y="62" font-family="monospace" font-size="12.5" font-weight="700" fill="#fbbf24">UEN: ${escapeXml(uen)} • Sem ${semesterNumber}</text>
   </g>
 
   <!-- Optional Upcoming Notice -->
@@ -248,7 +248,7 @@ export function generateSemesterGradeCardSvg(student, semesterNumber) {
  */
 export function generateStudentGradeCardSvg(student) {
   const name = student.fullName || student.displayName || student.name || 'Student';
-  const uun = student.uun || 'UUN01';
+  const uen = student.uen || 'UEN01';
   const program = student.programme || student.program || 'B.Tech Computer Science and Engineering';
   const cohort = student.cohort || `${student.admissionCohort || '2024'} Batch`;
   const cgpa = (student.cgpa !== undefined && student.cgpa !== null ? Number(student.cgpa) : 8.85).toFixed(2);
@@ -337,7 +337,7 @@ export function generateStudentGradeCardSvg(student) {
 
     <rect x="580" y="16" width="290" height="64" rx="10" fill="#ffffff15" stroke="#ffffff30"/>
     <text x="598" y="40" font-family="system-ui, sans-serif" font-size="16" font-weight="900" fill="#ffffff">${escapeXml(name)}</text>
-    <text x="598" y="62" font-family="monospace" font-size="12.5" font-weight="700" fill="#fbbf24">UUN: ${escapeXml(uun)} • Current Sem ${currentSemester}</text>
+    <text x="598" y="62" font-family="monospace" font-size="12.5" font-weight="700" fill="#fbbf24">UEN: ${escapeXml(uen)} • Current Sem ${currentSemester}</text>
   </g>
 
   <!-- Summary Cards -->
@@ -382,7 +382,7 @@ export function generateStudentGradeCardSvg(student) {
 export function generateSemesterCoursesSvg(semesterNumber, batchName = '2024 Batch', courses = []) {
   return generateSemesterGradeCardSvg({
     fullName: 'Student',
-    uun: 'UUN01',
+    uen: 'UEN01',
     admissionCohort: batchName,
     currentSemester: 1,
     semesters: [{

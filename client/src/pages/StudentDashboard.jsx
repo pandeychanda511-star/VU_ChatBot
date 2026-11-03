@@ -37,8 +37,8 @@ export default function StudentDashboard() {
     name: rawStudent?.name || rawStudent?.fullName || userProfile?.name || 'Student',
     fullName: rawStudent?.fullName || rawStudent?.name || userProfile?.name || 'Student',
     displayName: rawStudent?.displayName || rawStudent?.fullName || rawStudent?.name || userProfile?.name || 'Student',
-    uun: rawStudent?.uun || userProfile?.uun || 'UUN01',
-    uan: rawStudent?.uan || rawStudent?.uun || userProfile?.uun || 'UUN01',
+    uen: rawStudent?.uen || userProfile?.uen || 'UEN01',
+    uan: rawStudent?.uan || rawStudent?.uen || userProfile?.uen || 'UEN01',
     program: rawStudent?.program || rawStudent?.programme || 'B.Tech Computer Science and Engineering',
     programme: rawStudent?.programme || rawStudent?.program || 'B.Tech Computer Science and Engineering',
     currentSemester: rawStudent?.currentSemester || 8,
@@ -47,7 +47,7 @@ export default function StudentDashboard() {
     attendancePercentage: rawStudent?.attendancePercentage || 88
   };
 
-  const studentTargetId = userProfile?.studentProfileId || (student.uun ? `st_${student.uun.toLowerCase()}` : 'st_uun01');
+  const studentTargetId = userProfile?.studentProfileId || (student.uen ? `st_${student.uen.toLowerCase()}` : 'st_uen01');
 
   const handleLogout = async () => {
     await logout();
@@ -107,7 +107,7 @@ export default function StudentDashboard() {
           <div className="p-4 mx-3 my-3 rounded-2xl bg-white/5 border border-white/10 space-y-1">
             <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 block">Logged In Student</span>
             <div className="font-extrabold text-sm text-white truncate">{student.name}</div>
-            <div className="text-[11px] font-mono text-slate-300">UUN: {student.uan}</div>
+            <div className="text-[11px] font-mono text-slate-300">UEN: {student.uan}</div>
           </div>
 
           {/* Nav Items */}
@@ -194,7 +194,7 @@ export default function StudentDashboard() {
                 <div>
                   <span className="text-[10px] uppercase font-bold text-vu-gold tracking-wider">Official Academic Record</span>
                   <h3 className="text-xl font-extrabold text-slate-900">Visual Grade Card — {student.displayName || student.name}</h3>
-                  <p className="text-xs text-slate-500 font-mono">UUN: {student.uan} • {student.program}</p>
+                  <p className="text-xs text-slate-500 font-mono">UEN: {student.uan} • {student.program}</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <a
@@ -246,7 +246,7 @@ export default function StudentDashboard() {
                   <span className="font-bold text-slate-900 text-sm">{currentUser?.email}</span>
                 </div>
                 <div className="bg-slate-50 p-3 rounded-xl border border-slate-200">
-                  <span className="text-slate-400 font-semibold block text-[10px] uppercase">University UUN Number</span>
+                  <span className="text-slate-400 font-semibold block text-[10px] uppercase">University UEN Number</span>
                   <span className="font-bold text-vu-blue font-mono text-sm">{student.uan} (Locked)</span>
                 </div>
                 <div className="bg-slate-50 p-3 rounded-xl border border-slate-200">

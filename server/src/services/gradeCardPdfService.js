@@ -44,7 +44,7 @@ export function generateGradeCardPdf(student, semesterNumber = null) {
       doc.on('error', err => reject(err));
 
       const name = student.fullName || student.name || 'Student';
-      const uun = student.uun || 'UUN01';
+      const uen = student.uen || 'UEN01';
       const program = student.programme || student.program || 'B.Tech Computer Science and Engineering';
       const cohort = student.cohort || `${student.admissionCohort || '2024'} Batch`;
       const currentSemester = student.currentSemester || 5;
@@ -101,7 +101,7 @@ export function generateGradeCardPdf(student, semesterNumber = null) {
       doc.fillColor('#0b2545').font('Helvetica-Bold').fontSize(10)
          .text(name, 392, 53, { width: 150, ellipsis: true });
       doc.fillColor('#d97706').font('Courier-Bold').fontSize(9)
-         .text(`UUN: ${uun}`, 392, 69);
+         .text(`UEN: ${uen}`, 392, 69);
       doc.fillColor('#64748b').font('Helvetica').fontSize(7.5)
          .text(`Batch: ${cohort}`, 392, 81);
 

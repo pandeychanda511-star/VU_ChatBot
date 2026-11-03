@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { GraduationCap, Hash, CheckCircle2, ArrowRight, AlertCircle, LogOut } from 'lucide-react';
 
-export default function RegisterUunPage() {
+export default function RegisterUenPage() {
   const navigate = useNavigate();
   const { currentUser, linkGoogleStudent, logout } = useAuth();
-  const [uun, setUun] = useState('');
-  const [uunVerified, setUunVerified] = useState(null);
+  const [uen, setUun] = useState('');
+  const [uenVerified, setUunVerified] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -20,10 +20,10 @@ export default function RegisterUunPage() {
     }
 
     try {
-      const res = await fetch('/api/auth/verify-uun', {
+      const res = await fetch('/api/auth/verify-uen', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ uun: rawUun })
+        body: JSON.stringify({ uen: rawUun })
       });
       const data = await res.json();
       if (res.ok && data.valid) {
@@ -43,10 +43,10 @@ export default function RegisterUunPage() {
     setLoading(true);
 
     try {
-      await linkGoogleStudent(uun.trim().toUpperCase(), currentUser?.displayName);
+      await linkGoogleStudent(uen.trim().toUpperCase(), currentUser?.displayName);
       navigate('/student/dashboard');
     } catch (err) {
-      setError(err.message || 'Failed to link UUN number.');
+      setError(err.message || 'Failed to link UEN number.');
     } finally {
       setLoading(false);
     }
@@ -59,10 +59,10 @@ export default function RegisterUunPage() {
           <GraduationCap className="w-8 h-8" />
         </div>
         <h2 className="text-xl font-extrabold text-slate-900 text-center">
-          Link Your University UUN
+          Link Your University UEN
         </h2>
         <p className="text-xs text-slate-500 text-center mt-1 mb-6">
-          Signed in with Google as <strong>{currentUser?.email}</strong>. Please enter your university-assigned UUN to access your student records.
+          Signed in with Google as <strong>{currentUser?.email}</strong>. Please enter your university-assigned UEN to access your student records.
         </p>
 
         {error && (
@@ -75,33 +75,33 @@ export default function RegisterUunPage() {
         <form onSubmit={handleLink} className="space-y-4">
           <div>
             <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-              Assigned UUN Number
+              Assigned UEN Number
             </label>
             <div className="relative">
               <Hash className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 required
-                value={uun}
+                value={uen}
                 onChange={(e) => handleVerifyUun(e.target.value)}
                 placeholder="e.g. VU24BTECH001"
                 className="w-full pl-10 pr-3 py-2.5 text-xs font-mono uppercase bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-vu-gold"
               />
             </div>
-            {uunVerified?.valid && (
+            {uenVerified?.valid && (
               <p className="mt-1 text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>Verified: {uunVerified.studentName} ({uunVerified.program})</span>
+                <span>Verified: {uenVerified.studentName} ({uenVerified.program})</span>
               </p>
             )}
           </div>
 
           <button
             type="submit"
-            disabled={loading || !uunVerified?.valid}
+            disabled={loading || !uenVerified?.valid}
             className="w-full py-2.5 rounded-xl font-bold text-xs bg-vu-navy text-amber-400 hover:bg-slate-800 transition flex items-center justify-center gap-2 disabled:opacity-50"
           >
-            {loading ? 'Linking UUN...' : 'Confirm & Open Student Dashboard'}
+            {loading ? 'Linking UEN...' : 'Confirm & Open Student Dashboard'}
             <ArrowRight className="w-4 h-4" />
           </button>
         </form>

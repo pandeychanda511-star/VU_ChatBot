@@ -324,7 +324,7 @@ router.post('/message', optionalAuthenticateToken, async (req, res) => {
 
       contextualQuery = `AUTHENTICATED STUDENT CONTEXT & OFFICIAL REAL-TIME ACADEMIC PROFILE:
 - Full Name: ${studentName}
-- University UUN: ${activeStudent.uun}
+- University UEN: ${activeStudent.uun}
 - Admission Batch: ${cohort} (B.Tech ${cohort} Admission Batch)
 - Programme: ${activeStudent.programme || activeStudent.program}
 - Current Enrolled Semester: Semester ${currentSem} (Automatically determined from admission batch ${cohort} and academic cycle)
@@ -342,7 +342,7 @@ DETAILED SEMESTER-WISE RESULTS & STATUS (DATABASE RECORDS):
 ${semBreakdown}
 
 CRITICAL ADVISING RULES:
-1. Always address the student as "${studentName}" (UUN: ${activeStudent.uun}).
+1. Always address the student as "${studentName}" (UEN: ${activeStudent.uun}).
 2. Admission Batch: When asked about their batch, answer clearly: "You belong to the B.Tech ${cohort} admission batch."
 3. Current Semester: When asked which semester they are currently studying in:
    - For 2023 batch: "You are currently in Semester 7 of the B.Tech programme. Your admission batch is 2023."
@@ -415,7 +415,7 @@ ${processedQuery}`;
           imageUrl: `/api/students/${activeStudent.id}/card-image${semParam}`,
           pngUrl: pngDownloadUrl,
           pdfUrl: pdfDownloadUrl,
-          caption: `Official Semester ${targetSem} Grade Card for ${studentTitleName} (UUN: ${activeStudent.uun}, ${activeStudent.admissionCohort} Batch)`
+          caption: `Official Semester ${targetSem} Grade Card for ${studentTitleName} (UEN: ${activeStudent.uun}, ${activeStudent.admissionCohort} Batch)`
         };
       }
     }

@@ -88,9 +88,9 @@ export function AuthProvider({ children }) {
     return { user: cred.user, profile };
   };
 
-  // Student Registration with UUN validation
+  // Student Registration with UEN validation
   const registerStudent = async ({ fullName, email, password, uun }) => {
-    // 1. First pre-verify UUN on backend before creating Firebase user
+    // 1. First pre-verify UEN on backend before creating Firebase user
     const verifyRes = await fetch('/api/auth/verify-uun', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -99,14 +99,14 @@ export function AuthProvider({ children }) {
 
     const verifyData = await verifyRes.json();
     if (!verifyRes.ok || !verifyData.valid) {
-      throw new Error(verifyData.error || 'Invalid or unregistered UUN number.');
+      throw new Error(verifyData.error || 'Invalid or unregistered UEN number.');
     }
 
     // 2. Create user in Firebase
     const cred = await createUserWithEmailAndPassword(auth, email, password);
     const token = await cred.user.getIdToken();
 
-    // 3. Link UUN to the newly registered Firebase account
+    // 3. Link UEN to the newly registered Firebase account
     const linkRes = await fetch('/api/auth/register-student', {
       method: 'POST',
       headers: {
@@ -118,14 +118,14 @@ export function AuthProvider({ children }) {
 
     if (!linkRes.ok) {
       const linkErr = await linkRes.json().catch(() => ({}));
-      throw new Error(linkErr.error || 'Failed to link student profile with UUN.');
+      throw new Error(linkErr.error || 'Failed to link student profile with UEN.');
     }
 
     const profile = await refreshUserProfile(cred.user);
     return { user: cred.user, profile };
   };
 
-  // Link existing Google user with UUN
+  // Link existing Google user with UEN
   const linkGoogleStudent = async (uun, fullName) => {
     if (!currentUser) throw new Error('No user is currently signed in.');
     const token = await currentUser.getIdToken();
@@ -141,7 +141,7 @@ export function AuthProvider({ children }) {
 
     if (!linkRes.ok) {
       const linkErr = await linkRes.json().catch(() => ({}));
-      throw new Error(linkErr.error || 'Failed to link UUN.');
+      throw new Error(linkErr.error || 'Failed to link UEN.');
     }
 
     return await refreshUserProfile(currentUser);

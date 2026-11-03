@@ -49,28 +49,31 @@ function writeJson(filePath, data) {
 }
 
 /**
- * Normalizes UUN (e.g., "uun01", "UUN-01", "UUN 1", "VU24BTECH001").
+ * Normalizes UEN / UUN (e.g., "uen01", "UEN-01", "uun01", "VU24BTECH001").
+ * Seamlessly supports both UEN and legacy UUN formats while storing canonical UEN.
  */
 export function normalizeUun(input) {
   if (!input || typeof input !== 'string') return '';
   const trimmed = input.trim().toUpperCase().replace(/[\s\-_]/g, '');
   
-  // Format "UUN1" -> "UUN01"
-  const uunMatch = trimmed.match(/^UUN0*(\d+)$/i);
-  if (uunMatch) {
-    const num = parseInt(uunMatch[1], 10);
-    return `UUN${String(num).padStart(2, '0')}`;
+  // Format "UEN1" / "UUN1" -> "UEN01"
+  const uenMatch = trimmed.match(/^(?:UEN|UUN)0*(\d+)$/i);
+  if (uenMatch) {
+    const num = parseInt(uenMatch[1], 10);
+    return `UEN${String(num).padStart(2, '0')}`;
   }
 
-  // Format "VU24BTECH001" -> "UUN01"
+  // Format "VU24BTECH001" -> "UEN01"
   const vuMatch = trimmed.match(/^VU\d*BTECH0*(\d+)$/i);
   if (vuMatch) {
     const num = parseInt(vuMatch[1], 10);
-    return `UUN${String(num).padStart(2, '0')}`;
+    return `UEN${String(num).padStart(2, '0')}`;
   }
 
   return trimmed;
 }
+
+export const normalizeUen = normalizeUun;
 
 /**
  * Letter Grade to 10-Point Grade Scale Mapping (10.0 Scale)
@@ -476,10 +479,10 @@ export function resolveStudentFromQuery(query) {
   if (!query || typeof query !== 'string') return null;
   const all = getAllStudents();
 
-  // Try matching UUN tokens
-  const uunMatch = query.match(/\b(UUN\s*[-_]?\s*\d+|VU\d*BTECH\d+)\b/i);
-  if (uunMatch) {
-    const found = getStudentByIdOrUun(uunMatch[1]);
+  // Try matching UEN or legacy UUN tokens
+  const uenMatch = query.match(/\b((?:UEN|UUN)\s*[-_]?\s*\d+|VU\d*BTECH\d+)\b/i);
+  if (uenMatch) {
+    const found = getStudentByIdOrUun(uenMatch[1]);
     if (found) return found;
   }
 

@@ -67,7 +67,7 @@ export default function RegisterPage() {
       return setError('Password must be at least 6 characters.');
     }
     if (!uun || uun.trim().length === 0) {
-      return setError('University UUN number is required.');
+      return setError('University UEN number is required.');
     }
 
     setLoading(true);
@@ -142,10 +142,10 @@ export default function RegisterPage() {
               </div>
             </div>
 
-            {/* UUN Number */}
+            {/* UEN Number */}
             <div>
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1 flex items-center justify-between">
-                <span>University UUN Number</span>
+                <span>University UEN Number</span>
                 <span className="text-[10px] text-slate-400 font-normal">e.g. VU24BTECH001 to VU24BTECH020</span>
               </label>
               <div className="relative">
@@ -171,7 +171,7 @@ export default function RegisterPage() {
               )}
               {uunVerified === false && (
                 <p className="mt-1 text-[11px] text-amber-700">
-                  UUN not recognized. You may use test UUNs: VU24BTECH001 through VU24BTECH020.
+                  UEN not recognized. You may use test UENs: VU24BTECH001 through VU24BTECH020.
                 </p>
               )}
             </div>
