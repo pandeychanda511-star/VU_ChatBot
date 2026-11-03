@@ -182,10 +182,7 @@ export default function StudentsDirectoryPage() {
   };
 
   const handleDeleteStudent = async () => {
-    if (deleteConfirmText !== deletingStudent.uen) {
-      alert(`Please type "${deletingStudent.uen}" to confirm permanent deletion.`);
-      return;
-    }
+    if (!deletingStudent) return;
 
     setDeleteLoading(true);
     try {
@@ -201,8 +198,9 @@ export default function StudentsDirectoryPage() {
       if (!res.ok) throw new Error(data.error || 'Failed to delete student.');
 
       setDeletingStudent(null);
-      setDeleteConfirmText('');
       await fetchStudents();
+      setSaveSuccessMsg('Student record permanently deleted.');
+      setTimeout(() => setSaveSuccessMsg(null), 4000);
     } catch (err) {
       alert(err.message);
     } finally {
@@ -680,43 +678,34 @@ export default function StudentsDirectoryPage() {
             <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 border border-red-200">
               <div className="flex items-center gap-3 text-red-600 border-b border-red-100 pb-3">
                 <AlertTriangle className="w-6 h-6 shrink-0" />
-                <h3 className="text-base font-extrabold">Permanent Student Deletion</h3>
+                <h3 className="text-base font-extrabold">Are you sure you want to delete this student?</h3>
               </div>
 
               <div className="text-xs text-slate-600 space-y-2 leading-relaxed">
                 <p>
-                  You are about to permanently delete <strong>{deletingStudent.fullName || deletingStudent.name}</strong> (UEN: <code>{deletingStudent.uen}</code>).
+                  You are about to delete <strong>{deletingStudent.fullName || deletingStudent.name}</strong> (UEN: <code>{deletingStudent.uen}</code>).
                 </p>
                 <p className="text-red-700 bg-red-50 p-2.5 rounded-xl border border-red-200">
-                  <strong>Warning:</strong> All associated academic results for Semesters 1 to 7, student database records, and authentication links will be deleted. This action cannot be undone.
+                  This action will permanently delete the selected student's record. Are you sure you want to continue?
                 </p>
-                <p>
-                  Please type the student's UEN <code>{deletingStudent.uen}</code> below to confirm:
-                </p>
-                <input
-                  type="text"
-                  placeholder={deletingStudent.uen}
-                  value={deleteConfirmText}
-                  onChange={(e) => setDeleteConfirmText(e.target.value.trim().toUpperCase())}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-xl focus:ring-2 focus:ring-red-500 font-mono text-sm"
-                />
               </div>
 
-              <div className="flex justify-end gap-2 pt-2 border-t border-slate-100">
+              <div className="flex justify-end gap-3 pt-3 border-t border-slate-100">
                 <button
                   type="button"
-                  onClick={() => { setDeletingStudent(null); setDeleteConfirmText(''); }}
-                  className="px-4 py-2 rounded-xl border border-slate-300 font-bold text-slate-600 hover:bg-slate-50 text-xs"
+                  onClick={() => setDeletingStudent(null)}
+                  disabled={deleteLoading}
+                  className="px-4 py-2 rounded-xl border border-slate-300 font-bold text-slate-700 hover:bg-slate-50 text-xs transition cursor-pointer"
                 >
-                  Cancel
+                  No, Cancel
                 </button>
                 <button
                   type="button"
                   onClick={handleDeleteStudent}
-                  disabled={deleteConfirmText !== deletingStudent.uen || deleteLoading}
-                  className="px-4 py-2 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 text-xs disabled:opacity-50"
+                  disabled={deleteLoading}
+                  className="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs shadow-md transition disabled:opacity-50 cursor-pointer"
                 >
-                  {deleteLoading ? 'Deleting...' : 'Permanently Delete'}
+                  {deleteLoading ? 'Deleting...' : 'Yes, Delete'}
                 </button>
               </div>
             </div>
