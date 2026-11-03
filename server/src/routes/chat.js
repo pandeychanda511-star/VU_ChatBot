@@ -60,7 +60,8 @@ function buildCitations(evidenceItems, usedEvidenceIds = null) {
 
     if (item.sourceType === 'pdf') {
       citation.pageNumber = item.pageNumber;
-    } else if (item.sourceType === 'xlsx') {
+    } else if (item.sourceType === 'excel' || item.sourceType === 'xlsx') {
+      citation.sourceType = 'excel';
       citation.sheetName = item.sheetName;
       citation.rowNumber = item.rowNumber;
     }

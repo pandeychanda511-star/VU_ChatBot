@@ -10,6 +10,14 @@ export default function ExcelViewerModal({ citation, onClose }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Safely resolve sheet name and row number from citation or citation.metadata
+  const rawSheetName = citation?.sheetName || citation?.metadata?.sheetName || (
+    citation?.id ? citation.id.split('::')[1] : ''
+  );
+  const rawRowNumber = citation?.rowNumber || citation?.metadata?.rowNumber || (
+    citation?.id && citation.id.includes('::r') ? citation.id.split('::r')[1] : ''
+  );
+
   useEffect(() => {
     if (!citation) return;
     fetchRowData();
@@ -19,8 +27,14 @@ export default function ExcelViewerModal({ citation, onClose }) {
     setLoading(true);
     setError(null);
     try {
-      const sourceKey = citation.fileName.includes('Minor') ? 'minors' : 'semester_spread';
-      const url = `/api/sources/excel/${sourceKey}?sheet=${encodeURIComponent(citation.sheetName || '')}&row=${citation.rowNumber || ''}`;
+      const fileName = citation?.fileName || '';
+      const sourceKey = fileName.toLowerCase().includes('minor') ? 'minors' : 'semester_spread';
+      
+      const sheetParam = rawSheetName ? `sheet=${encodeURIComponent(rawSheetName)}` : '';
+      const rowParam = rawRowNumber ? `row=${encodeURIComponent(rawRowNumber)}` : '';
+      const queryString = [sheetParam, rowParam].filter(Boolean).join('&');
+
+      const url = `/api/sources/excel/${sourceKey}${queryString ? `?${queryString}` : ''}`;
       const res = await fetch(url);
       if (!res.ok) {
         const errJson = await res.json().catch(() => ({}));
@@ -40,7 +54,7 @@ export default function ExcelViewerModal({ citation, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-      <div className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh]">
+      <div className="bg-white w-full max-w-3xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh]">
         {/* Header */}
         <div className="bg-emerald-800 text-white px-5 py-3.5 flex items-center justify-between">
           <div className="flex items-center space-x-2.5">
@@ -49,23 +63,26 @@ export default function ExcelViewerModal({ citation, onClose }) {
             </div>
             <div>
               <h3 className="font-semibold text-sm sm:text-base leading-tight">
-                {citation.fileName}
+                {citation.fileName || 'Spreadsheet Source'}
               </h3>
               <p className="text-xs text-emerald-200">
-                Sheet: <span className="font-medium text-white">{citation.sheetName}</span> • Cited Row: <span className="font-medium text-white">{citation.rowNumber}</span>
+                Sheet: <span className="font-medium text-white">{rawSheetName || data?.sheetName || 'Overview'}</span>
+                {rawRowNumber ? (
+                  <> • Cited Row: <span className="font-medium text-white">{rawRowNumber}</span></>
+                ) : null}
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1 rounded-lg text-emerald-200 hover:text-white hover:bg-emerald-700 transition"
+            className="p-1 rounded-lg text-emerald-200 hover:text-white hover:bg-emerald-700 transition cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-5 overflow-y-auto flex-1 bg-slate-50">
+        <div className="p-5 overflow-y-auto flex-1 bg-slate-50 space-y-4">
           {loading && (
             <div className="py-12 text-center text-slate-500">
               <div className="inline-block w-6 h-6 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin mb-2" />
@@ -73,7 +90,7 @@ export default function ExcelViewerModal({ citation, onClose }) {
             </div>
           )}
 
-          {error && (
+          {error && !loading && (
             <div className="p-4 bg-rose-50 border border-rose-200 rounded-xl text-rose-800 text-xs flex items-start space-x-2">
               <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
               <div>
@@ -83,12 +100,25 @@ export default function ExcelViewerModal({ citation, onClose }) {
             </div>
           )}
 
+          {/* Fallback to citation snippet if data.record is empty or when loading completes */}
+          {citation.textSnippet && (
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-2xs">
+              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5 flex items-center gap-1.5">
+                <Check className="w-3.5 h-3.5 text-emerald-600" />
+                Verified Citation Evidence:
+              </span>
+              <p className="text-xs font-mono text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-200/70 leading-relaxed whitespace-pre-wrap">
+                {citation.textSnippet}
+              </p>
+            </div>
+          )}
+
           {data && data.record && (
             <div className="space-y-4">
               <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
-                <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 flex items-center">
+                <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5 flex items-center">
                   <Table className="w-3.5 h-3.5 mr-1.5 text-emerald-600" />
-                  Extracted Record Details (Row {citation.rowNumber})
+                  Extracted Record Details {rawRowNumber ? `(Row ${rawRowNumber})` : ''}
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
@@ -106,13 +136,32 @@ export default function ExcelViewerModal({ citation, onClose }) {
               </div>
 
               {/* Full Text Line */}
-              <div className="bg-white p-3.5 rounded-xl border border-slate-200">
-                <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block mb-1">
-                  Full Searchable Row Record:
-                </span>
-                <p className="text-xs font-mono text-slate-700 bg-slate-50 p-2.5 rounded-lg border border-slate-200/60 leading-relaxed whitespace-pre-wrap">
-                  {data.record.text}
-                </p>
+              {data.record.text && (
+                <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-2xs">
+                  <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block mb-1">
+                    Full Searchable Row Record:
+                  </span>
+                  <p className="text-xs font-mono text-slate-700 bg-slate-50 p-2.5 rounded-lg border border-slate-200/60 leading-relaxed whitespace-pre-wrap">
+                    {data.record.text}
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* If sheet has records list */}
+          {data && !data.record && data.records && data.records.length > 0 && (
+            <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5 flex items-center">
+                <Table className="w-3.5 h-3.5 mr-1.5 text-emerald-600" />
+                Sheet Records Overview ({data.sheetName})
+              </h4>
+              <div className="space-y-2 max-h-60 overflow-y-auto">
+                {data.records.slice(0, 10).map((r, i) => (
+                  <div key={i} className="bg-slate-50 p-2 rounded-lg border border-slate-100 text-xs font-mono text-slate-700">
+                    {r.text}
+                  </div>
+                ))}
               </div>
             </div>
           )}
@@ -125,7 +174,7 @@ export default function ExcelViewerModal({ citation, onClose }) {
           </span>
           <button
             onClick={onClose}
-            className="px-4 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition"
+            className="px-4 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition cursor-pointer"
           >
             Close
           </button>
@@ -134,4 +183,3 @@ export default function ExcelViewerModal({ citation, onClose }) {
     </div>
   );
 }
-
