@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { 
@@ -29,18 +29,55 @@ export default function DashboardLayout({ children, title }) {
   const location = useLocation();
   const { currentUser, userProfile, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [studentCount, setStudentCount] = useState(null);
 
   const handleLogout = async () => {
     await logout();
     navigate('/login');
   };
 
+  // Dynamically fetch actual registered students count from database
+  const fetchStudentCount = async () => {
+    try {
+      const res = await fetch('/api/students');
+      if (res.ok) {
+        const data = await res.json();
+        const total = typeof data.total === 'number' ? data.total : (data.students?.length || 0);
+        setStudentCount(total);
+      }
+    } catch (err) {
+      console.error('Failed to fetch dynamic student count:', err);
+    }
+  };
+
+  useEffect(() => {
+    fetchStudentCount();
+
+    // Auto-refresh student count periodically (every 5 seconds) to reflect live registrations/deletions in real time
+    const interval = setInterval(fetchStudentCount, 5000);
+
+    // Also listen to window focus or custom student update events
+    window.addEventListener('focus', fetchStudentCount);
+    window.addEventListener('studentsUpdated', fetchStudentCount);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('focus', fetchStudentCount);
+      window.removeEventListener('studentsUpdated', fetchStudentCount);
+    };
+  }, []);
+
+  // Format count dynamically: e.g. "0 Students", "1 Student", "2 Students", "10 Students"
+  const studentBadgeText = studentCount !== null 
+    ? `${studentCount} ${studentCount === 1 ? 'Student' : 'Students'}`
+    : '...';
+
   const navItems = [
     { name: 'Overview', path: '/dashboard', icon: LayoutDashboard },
     { name: 'Academic Chatbot', path: '/dashboard/chatbot', icon: MessageSquare },
     { name: 'Multi-Agent Studio', path: '/dashboard/agentic', icon: Cpu, badge: 'Phase 9' },
     { name: 'Multimodal Advising', path: '/dashboard/multimodal', icon: Volume2, badge: 'Phase 8' },
-    { name: 'Student Directory & Cards', path: '/dashboard/students', icon: Users, badge: '20 Students' },
+    { name: 'Student Directory & Cards', path: '/dashboard/students', icon: Users, badge: studentBadgeText },
     { name: 'Evaluation & Benchmarks', path: '/dashboard/evaluation', icon: BarChart3, badge: 'Phase 4/5' },
     { name: 'Privacy & Security', path: '/dashboard/security', icon: ShieldCheck, badge: 'Phase 10' },
     { name: 'Ethics & Legal Hub', path: '/dashboard/ethics', icon: Scale, badge: 'Phase 11' },
@@ -156,44 +193,40 @@ export default function DashboardLayout({ children, title }) {
           </div>
 
           <div className="flex items-center space-x-3 sm:space-x-4">
-            {/* Notification Icon */}
+            {/* User Profile Pill */}
+            <div className="flex items-center space-x-2.5 pl-3 border-l border-slate-200">
+              <div className="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs shadow-inner">
+                {currentUser?.email ? (
+                  <User className="w-4 h-4 text-slate-300" />
+                ) : (
+                  <Crown className="w-4 h-4 text-amber-400" />
+                )}
+              </div>
+              <div className="hidden sm:block text-left">
+                <p className="text-xs font-bold text-slate-900 leading-tight">
+                  {userProfile?.name || currentUser?.displayName || (currentUser?.email ? currentUser.email.split('@')[0] : 'Admin User')}
+                </p>
+                <p className="text-[10px] text-slate-500 font-medium leading-none mt-0.5">
+                  {userProfile?.role === 'admin' ? 'University Administrator' : 'Academic Officer'}
+                </p>
+              </div>
+            </div>
+
+            {/* Logout button */}
             <button
               type="button"
-              className="p-2 text-slate-400 hover:text-slate-700 rounded-xl hover:bg-slate-100 transition-colors relative focus:outline-none focus:ring-2 focus:ring-amber-400"
-              title="Notifications"
-              aria-label="View notifications"
+              onClick={handleLogout}
+              className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-red-500/20"
+              title="Sign Out"
+              aria-label="Sign Out"
             >
-              <Bell className="w-4 h-4" />
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-amber-500 rounded-full ring-2 ring-white"></span>
+              <LogOut className="w-4 h-4" />
             </button>
-
-            {/* Administrator Profile Pill */}
-            <div className="flex items-center space-x-2 pl-2 sm:pl-3 border-l border-slate-200">
-              <div className="flex items-center space-x-2 bg-slate-100/90 hover:bg-slate-100 border border-slate-200/80 px-2.5 sm:px-3 py-1.5 rounded-full transition-colors">
-                <div className="w-6 h-6 rounded-full bg-[#0b2545] text-amber-400 flex items-center justify-center font-bold text-xs shadow-2xs">
-                  <User className="w-3.5 h-3.5" />
-                </div>
-                <span className="text-xs font-semibold text-slate-700 hidden sm:inline">
-                  {currentUser?.displayName || 'Administrator'}
-                </span>
-              </div>
-
-              {/* Logout/Exit back to Login */}
-              <button
-                type="button"
-                onClick={handleLogout}
-                className="p-1.5 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition-colors"
-                title="Sign Out"
-                aria-label="Sign out"
-              >
-                <LogOut className="w-4 h-4" />
-              </button>
-            </div>
           </div>
         </header>
 
-        {/* Page Content Container */}
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-slate-50/60">
+        {/* Dynamic Children Content (Scrollable) */}
+        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-slate-50/50">
           {children}
         </main>
       </div>

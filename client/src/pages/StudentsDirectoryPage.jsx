@@ -63,6 +63,9 @@ export default function StudentsDirectoryPage() {
       const data = await res.json();
       const list = data.students || [];
       setStudents(list);
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('studentsUpdated'));
+      }
       if (list.length > 0) {
         // Keep currently selected or pick first
         setSelectedStudent(prev => {
